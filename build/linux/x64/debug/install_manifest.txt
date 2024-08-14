@@ -1,0 +1,12 @@
+/home/carlo/StudioProjects/where_are_you/build/linux/x64/debug/bundle/where_are_you
+/home/carlo/StudioProjects/where_are_you/build/linux/x64/debug/bundle/data/icudtl.dat
+/home/carlo/StudioProjects/where_are_you/build/linux/x64/debug/bundle/lib/libflutter_linux_gtk.so
+/home/carlo/StudioProjects/where_are_you/build/linux/x64/debug/bundle/data/flutter_assets/kernel_blob.bin
+/home/carlo/StudioProjects/where_are_you/build/linux/x64/debug/bundle/data/flutter_assets/NOTICES.Z
+/home/carlo/StudioProjects/where_are_you/build/linux/x64/debug/bundle/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+/home/carlo/StudioProjects/where_are_you/build/linux/x64/debug/bundle/data/flutter_assets/FontManifest.json
+/home/carlo/StudioProjects/where_are_you/build/linux/x64/debug/bundle/data/flutter_assets/AssetManifest.bin
+/home/carlo/StudioProjects/where_are_you/build/linux/x64/debug/bundle/data/flutter_assets/AssetManifest.json
+/home/carlo/StudioProjects/where_are_you/build/linux/x64/debug/bundle/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+/home/carlo/StudioProjects/where_are_you/build/linux/x64/debug/bundle/data/flutter_assets/shaders/ink_sparkle.frag
+/home/carlo/StudioProjects/where_are_you/build/linux/x64/debug/bundle/data/flutter_assets/version.json
