@@ -1,8 +1,8 @@
 -- Merging decision tree log ---
 application
-INJECTED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:5:5-36:19
-MERGED from [:geolocator_android] /home/carlo/StudioProjects/where_are_you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-17:19
-MERGED from [:geolocator_android] /home/carlo/StudioProjects/where_are_you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-17:19
+INJECTED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:5:5-36:19
+MERGED from [:geolocator_android] /home/carlo/Documenti/GitHub/where-are-you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-17:19
+MERGED from [:geolocator_android] /home/carlo/Documenti/GitHub/where-are-you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-17:19
 MERGED from [androidx.window:window:1.2.0] /home/carlo/.gradle/caches/transforms-3/d4a6ca5503a19dcea0f3b651be9acab7/transformed/jetified-window-1.2.0/AndroidManifest.xml:22:5-29:19
 MERGED from [androidx.window:window:1.2.0] /home/carlo/.gradle/caches/transforms-3/d4a6ca5503a19dcea0f3b651be9acab7/transformed/jetified-window-1.2.0/AndroidManifest.xml:22:5-29:19
 MERGED from [com.google.android.gms:play-services-location:17.0.0] /home/carlo/.gradle/caches/transforms-3/f17e8153c985026f103c701829e07bb6/transformed/jetified-play-services-location-17.0.0/AndroidManifest.xml:7:5-20
@@ -28,16 +28,16 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/carlo
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.1] /home/carlo/.gradle/caches/transforms-3/f41476b6df1d004d92c59b9e1ffb379a/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
 	android:name
-		INJECTED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml
 manifest
-ADDED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:1:1-48:12
-INJECTED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:1:1-48:12
-INJECTED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:1:1-48:12
-INJECTED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:1:1-48:12
-MERGED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:1:1-48:12
-MERGED from [:geocoding_android] /home/carlo/StudioProjects/where_are_you/build/geocoding_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
-MERGED from [:geolocator_android] /home/carlo/StudioProjects/where_are_you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-19:12
-MERGED from [:shared_preferences_android] /home/carlo/StudioProjects/where_are_you/build/shared_preferences_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+ADDED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:1:1-48:12
+INJECTED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:1:1-48:12
+INJECTED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:1:1-48:12
+INJECTED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:1:1-48:12
+MERGED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:1:1-48:12
+MERGED from [:geocoding_android] /home/carlo/Documenti/GitHub/where-are-you/build/geocoding_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:geolocator_android] /home/carlo/Documenti/GitHub/where-are-you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-19:12
+MERGED from [:shared_preferences_android] /home/carlo/Documenti/GitHub/where-are-you/build/shared_preferences_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.window:window:1.2.0] /home/carlo/.gradle/caches/transforms-3/d4a6ca5503a19dcea0f3b651be9acab7/transformed/jetified-window-1.2.0/AndroidManifest.xml:17:1-31:12
 MERGED from [androidx.window:window-java:1.2.0] /home/carlo/.gradle/caches/transforms-3/bff6cdd8f93b9dc439a08ed8543e8b3a/transformed/jetified-window-java-1.2.0/AndroidManifest.xml:17:1-21:12
 MERGED from [com.google.android.gms:play-services-location:17.0.0] /home/carlo/.gradle/caches/transforms-3/f17e8153c985026f103c701829e07bb6/transformed/jetified-play-services-location-17.0.0/AndroidManifest.xml:2:1-9:12
@@ -70,57 +70,57 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] /home/carlo/.gradle/cache
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/carlo/.gradle/caches/transforms-3/9951615a76436abc29116e2966a26f6d/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/carlo/.gradle/caches/transforms-3/8f70ce624891e96e7f46fe52bc92a16b/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.window.extensions.core:core:1.0.0] /home/carlo/.gradle/caches/transforms-3/5d8e855bf0475f63c60be78c10a177d1/transformed/jetified-core-1.0.0/AndroidManifest.xml:2:1-7:12
-INJECTED from /home/carlo/StudioProjects/where_are_you/android/app/src/debug/AndroidManifest.xml:1:1-10:12
-INJECTED from /home/carlo/StudioProjects/where_are_you/android/app/src/debug/AndroidManifest.xml:1:1-10:12
-INJECTED from /home/carlo/StudioProjects/where_are_you/android/app/src/debug/AndroidManifest.xml:1:1-10:12
+INJECTED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/debug/AndroidManifest.xml:1:1-10:12
+INJECTED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/debug/AndroidManifest.xml:1:1-10:12
+INJECTED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/debug/AndroidManifest.xml:1:1-10:12
 	package
-		INJECTED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:1:1-48:12
-		INJECTED from /home/carlo/StudioProjects/where_are_you/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:1:1-48:12
+		INJECTED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/debug/AndroidManifest.xml
 	android:versionName
-		INJECTED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:1:1-48:12
-		INJECTED from /home/carlo/StudioProjects/where_are_you/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:1:1-48:12
+		INJECTED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/debug/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:1:1-48:12
-		INJECTED from /home/carlo/StudioProjects/where_are_you/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:1:1-48:12
+		INJECTED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/debug/AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:1:11-69
+		ADDED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:1:11-69
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:2:5-78
-MERGED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:2:5-78
-MERGED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:2:5-78
+ADDED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:2:5-78
+MERGED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:2:5-78
+MERGED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:2:5-78
 	android:name
-		ADDED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:2:22-76
+		ADDED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:2:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:3:5-80
-MERGED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:3:5-80
-MERGED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:3:5-80
+ADDED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:3:5-80
+MERGED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:3:5-80
+MERGED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:3:5-80
 	android:name
-		ADDED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:3:22-78
+		ADDED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:3:22-78
 queries
-ADDED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:42:5-47:15
+ADDED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:42:5-47:15
 intent#action:name:android.intent.action.PROCESS_TEXT+data:mimeType:text/plain
-ADDED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:43:9-46:18
+ADDED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:43:9-46:18
 action#android.intent.action.PROCESS_TEXT
-ADDED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:44:13-72
+ADDED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:44:13-72
 	android:name
-		ADDED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:44:21-70
+		ADDED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:44:21-70
 data
-ADDED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:45:13-50
+ADDED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:45:13-50
 	android:mimeType
-		ADDED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:45:19-48
+		ADDED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:45:19-48
 uses-sdk
-INJECTED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml
-INJECTED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml
-MERGED from [:geocoding_android] /home/carlo/StudioProjects/where_are_you/build/geocoding_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
-MERGED from [:geocoding_android] /home/carlo/StudioProjects/where_are_you/build/geocoding_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
-MERGED from [:geolocator_android] /home/carlo/StudioProjects/where_are_you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
-MERGED from [:geolocator_android] /home/carlo/StudioProjects/where_are_you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
-MERGED from [:shared_preferences_android] /home/carlo/StudioProjects/where_are_you/build/shared_preferences_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
-MERGED from [:shared_preferences_android] /home/carlo/StudioProjects/where_are_you/build/shared_preferences_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+INJECTED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml
+MERGED from [:geocoding_android] /home/carlo/Documenti/GitHub/where-are-you/build/geocoding_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:geocoding_android] /home/carlo/Documenti/GitHub/where-are-you/build/geocoding_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:geolocator_android] /home/carlo/Documenti/GitHub/where-are-you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:geolocator_android] /home/carlo/Documenti/GitHub/where-are-you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:shared_preferences_android] /home/carlo/Documenti/GitHub/where-are-you/build/shared_preferences_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:shared_preferences_android] /home/carlo/Documenti/GitHub/where-are-you/build/shared_preferences_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.window:window:1.2.0] /home/carlo/.gradle/caches/transforms-3/d4a6ca5503a19dcea0f3b651be9acab7/transformed/jetified-window-1.2.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.window:window:1.2.0] /home/carlo/.gradle/caches/transforms-3/d4a6ca5503a19dcea0f3b651be9acab7/transformed/jetified-window-1.2.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.window:window-java:1.2.0] /home/carlo/.gradle/caches/transforms-3/bff6cdd8f93b9dc439a08ed8543e8b3a/transformed/jetified-window-java-1.2.0/AndroidManifest.xml:19:5-44
@@ -185,32 +185,32 @@ MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/carlo/.gradle/caches/t
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/carlo/.gradle/caches/transforms-3/8f70ce624891e96e7f46fe52bc92a16b/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.window.extensions.core:core:1.0.0] /home/carlo/.gradle/caches/transforms-3/5d8e855bf0475f63c60be78c10a177d1/transformed/jetified-core-1.0.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.window.extensions.core:core:1.0.0] /home/carlo/.gradle/caches/transforms-3/5d8e855bf0475f63c60be78c10a177d1/transformed/jetified-core-1.0.0/AndroidManifest.xml:5:5-44
-INJECTED from /home/carlo/StudioProjects/where_are_you/android/app/src/debug/AndroidManifest.xml
-INJECTED from /home/carlo/StudioProjects/where_are_you/android/app/src/debug/AndroidManifest.xml
+INJECTED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/debug/AndroidManifest.xml
+INJECTED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/debug/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml
-		INJECTED from /home/carlo/StudioProjects/where_are_you/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/debug/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml
-		INJECTED from /home/carlo/StudioProjects/where_are_you/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/debug/AndroidManifest.xml
 uses-permission#android.permission.INTERNET
-ADDED from /home/carlo/StudioProjects/where_are_you/android/app/src/debug/AndroidManifest.xml:6:5-66
+ADDED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/debug/AndroidManifest.xml:6:5-66
 	android:name
-		ADDED from /home/carlo/StudioProjects/where_are_you/android/app/src/debug/AndroidManifest.xml:6:22-64
+		ADDED from /home/carlo/Documenti/GitHub/where-are-you/android/app/src/debug/AndroidManifest.xml:6:22-64
 uses-permission#android.permission.FOREGROUND_SERVICE
-ADDED from [:geolocator_android] /home/carlo/StudioProjects/where_are_you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-77
+ADDED from [:geolocator_android] /home/carlo/Documenti/GitHub/where-are-you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-77
 	android:name
-		ADDED from [:geolocator_android] /home/carlo/StudioProjects/where_are_you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-74
+		ADDED from [:geolocator_android] /home/carlo/Documenti/GitHub/where-are-you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-74
 service#com.baseflow.geolocator.GeolocatorLocationService
-ADDED from [:geolocator_android] /home/carlo/StudioProjects/where_are_you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:12:9-16:56
+ADDED from [:geolocator_android] /home/carlo/Documenti/GitHub/where-are-you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:12:9-16:56
 	android:enabled
-		ADDED from [:geolocator_android] /home/carlo/StudioProjects/where_are_you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-35
+		ADDED from [:geolocator_android] /home/carlo/Documenti/GitHub/where-are-you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-35
 	android:exported
-		ADDED from [:geolocator_android] /home/carlo/StudioProjects/where_are_you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-37
+		ADDED from [:geolocator_android] /home/carlo/Documenti/GitHub/where-are-you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-37
 	android:foregroundServiceType
-		ADDED from [:geolocator_android] /home/carlo/StudioProjects/where_are_you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-53
+		ADDED from [:geolocator_android] /home/carlo/Documenti/GitHub/where-are-you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-53
 	android:name
-		ADDED from [:geolocator_android] /home/carlo/StudioProjects/where_are_you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-77
+		ADDED from [:geolocator_android] /home/carlo/Documenti/GitHub/where-are-you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-77
 uses-library#androidx.window.extensions
 ADDED from [androidx.window:window:1.2.0] /home/carlo/.gradle/caches/transforms-3/d4a6ca5503a19dcea0f3b651be9acab7/transformed/jetified-window-1.2.0/AndroidManifest.xml:23:9-25:40
 	android:required

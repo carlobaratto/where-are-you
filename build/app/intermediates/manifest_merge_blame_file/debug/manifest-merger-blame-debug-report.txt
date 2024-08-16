@@ -13,14 +13,14 @@
 13         to allow setting breakpoints, to provide hot reload, etc.
 14    -->
 15    <uses-permission android:name="android.permission.INTERNET" />
-15-->/home/carlo/StudioProjects/where_are_you/android/app/src/debug/AndroidManifest.xml:6:5-66
-15-->/home/carlo/StudioProjects/where_are_you/android/app/src/debug/AndroidManifest.xml:6:22-64
+15-->/home/carlo/Documenti/GitHub/where-are-you/android/app/src/debug/AndroidManifest.xml:6:5-66
+15-->/home/carlo/Documenti/GitHub/where-are-you/android/app/src/debug/AndroidManifest.xml:6:22-64
 16    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-16-->/home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:2:5-78
-16-->/home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:2:22-76
+16-->/home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:2:5-78
+16-->/home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:2:22-76
 17    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-17-->/home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:3:5-80
-17-->/home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:3:22-78
+17-->/home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:3:5-80
+17-->/home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:3:22-78
 18
 19    <!--
 20     Required to query activities that can process text, see:
@@ -30,22 +30,22 @@
 24         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin.
 25    -->
 26    <queries>
-26-->/home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:42:5-47:15
+26-->/home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:42:5-47:15
 27        <intent>
-27-->/home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:43:9-46:18
+27-->/home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:43:9-46:18
 28            <action android:name="android.intent.action.PROCESS_TEXT" />
-28-->/home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:44:13-72
-28-->/home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:44:21-70
+28-->/home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:44:13-72
+28-->/home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:44:21-70
 29
 30            <data android:mimeType="text/plain" />
-30-->/home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:45:13-50
-30-->/home/carlo/StudioProjects/where_are_you/android/app/src/main/AndroidManifest.xml:45:19-48
+30-->/home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:45:13-50
+30-->/home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:45:19-48
 31        </intent>
 32    </queries>
 33
 34    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-34-->[:geolocator_android] /home/carlo/StudioProjects/where_are_you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-77
-34-->[:geolocator_android] /home/carlo/StudioProjects/where_are_you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-74
+34-->[:geolocator_android] /home/carlo/Documenti/GitHub/where-are-you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-77
+34-->[:geolocator_android] /home/carlo/Documenti/GitHub/where-are-you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-74
 35
 36    <permission
 36-->[androidx.core:core:1.13.1] /home/carlo/.gradle/caches/transforms-3/f41476b6df1d004d92c59b9e1ffb379a/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
@@ -100,15 +100,15 @@
 80            android:value="2" />
 81
 82        <service
-82-->[:geolocator_android] /home/carlo/StudioProjects/where_are_you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:12:9-16:56
+82-->[:geolocator_android] /home/carlo/Documenti/GitHub/where-are-you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:12:9-16:56
 83            android:name="com.baseflow.geolocator.GeolocatorLocationService"
-83-->[:geolocator_android] /home/carlo/StudioProjects/where_are_you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-77
+83-->[:geolocator_android] /home/carlo/Documenti/GitHub/where-are-you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-77
 84            android:enabled="true"
-84-->[:geolocator_android] /home/carlo/StudioProjects/where_are_you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-35
+84-->[:geolocator_android] /home/carlo/Documenti/GitHub/where-are-you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-35
 85            android:exported="false"
-85-->[:geolocator_android] /home/carlo/StudioProjects/where_are_you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-37
+85-->[:geolocator_android] /home/carlo/Documenti/GitHub/where-are-you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-37
 86            android:foregroundServiceType="location" />
-86-->[:geolocator_android] /home/carlo/StudioProjects/where_are_you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-53
+86-->[:geolocator_android] /home/carlo/Documenti/GitHub/where-are-you/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-53
 87
 88        <uses-library
 88-->[androidx.window:window:1.2.0] /home/carlo/.gradle/caches/transforms-3/d4a6ca5503a19dcea0f3b651be9acab7/transformed/jetified-window-1.2.0/AndroidManifest.xml:23:9-25:40

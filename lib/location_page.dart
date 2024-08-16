@@ -18,10 +18,12 @@ Future<void> syncPosition(String lat, String long) async {
     Uri.parse('https://carlobaratto.it/test_ws.php'),
 
     body: {
+      'apikey': global.apikey,
       'name': global.name,
       'lat': lat,
       'long': long,
     });
+  print(response);
 }
 
 class _LocationPageState extends State<LocationPage> {

@@ -1,9 +1,9 @@
-#Tue Aug 13 16:25:08 CEST 2024
-base.0=/home/carlo/StudioProjects/where_are_you/build/app/intermediates/dex/debug/mergeExtDexDebug/classes.dex
-base.1=/home/carlo/StudioProjects/where_are_you/build/app/intermediates/dex/debug/mergeLibDexDebug/0/classes.dex
-base.2=/home/carlo/StudioProjects/where_are_you/build/app/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
-base.3=/home/carlo/StudioProjects/where_are_you/build/app/intermediates/dex/debug/mergeProjectDexDebug/1/classes.dex
-base.4=/home/carlo/StudioProjects/where_are_you/build/app/intermediates/dex/debug/mergeProjectDexDebug/3/classes.dex
+#Fri Aug 16 15:40:15 CEST 2024
+base.0=/home/carlo/Documenti/GitHub/where-are-you/build/app/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+base.1=/home/carlo/Documenti/GitHub/where-are-you/build/app/intermediates/dex/debug/mergeLibDexDebug/0/classes.dex
+base.2=/home/carlo/Documenti/GitHub/where-are-you/build/app/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
+base.3=/home/carlo/Documenti/GitHub/where-are-you/build/app/intermediates/dex/debug/mergeProjectDexDebug/1/classes.dex
+base.4=/home/carlo/Documenti/GitHub/where-are-you/build/app/intermediates/dex/debug/mergeProjectDexDebug/3/classes.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=0/classes.dex
