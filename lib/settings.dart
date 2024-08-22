@@ -82,6 +82,7 @@ class _settingsState extends State<settings> {
                 decoration: InputDecoration(
                   border: UnderlineInputBorder(),
                   labelText: global.name,
+
                 ),
                 controller: nameController,
               ),
