@@ -1,0 +1,74 @@
+[
+    {
+        "merged": "com.baseflow.geolocator.geolocator_android-merged_res-28:/drawable/common_google_signin_btn_icon_dark_focused.xml",
+        "source": "com.baseflow.geolocator.geolocator_android-jetified-play-services-base-17.0.0-12:/drawable/common_google_signin_btn_icon_dark_focused.xml"
+    },
+    {
+        "merged": "com.baseflow.geolocator.geolocator_android-merged_res-28:/drawable/notification_icon_background.xml",
+        "source": "com.baseflow.geolocator.geolocator_android-core-1.13.1-21:/drawable/notification_icon_background.xml"
+    },
+    {
+        "merged": "com.baseflow.geolocator.geolocator_android-merged_res-28:/drawable/common_google_signin_btn_icon_light_normal.xml",
+        "source": "com.baseflow.geolocator.geolocator_android-jetified-play-services-base-17.0.0-12:/drawable/common_google_signin_btn_icon_light_normal.xml"
+    },
+    {
+        "merged": "com.baseflow.geolocator.geolocator_android-merged_res-28:/drawable/common_google_signin_btn_text_dark_normal.xml",
+        "source": "com.baseflow.geolocator.geolocator_android-jetified-play-services-base-17.0.0-12:/drawable/common_google_signin_btn_text_dark_normal.xml"
+    },
+    {
+        "merged": "com.baseflow.geolocator.geolocator_android-merged_res-28:/drawable/common_google_signin_btn_icon_disabled.xml",
+        "source": "com.baseflow.geolocator.geolocator_android-jetified-play-services-base-17.0.0-12:/drawable/common_google_signin_btn_icon_disabled.xml"
+    },
+    {
+        "merged": "com.baseflow.geolocator.geolocator_android-merged_res-28:/drawable/common_google_signin_btn_icon_light.xml",
+        "source": "com.baseflow.geolocator.geolocator_android-jetified-play-services-base-17.0.0-12:/drawable/common_google_signin_btn_icon_light.xml"
+    },
+    {
+        "merged": "com.baseflow.geolocator.geolocator_android-merged_res-28:/drawable/common_google_signin_btn_text_disabled.xml",
+        "source": "com.baseflow.geolocator.geolocator_android-jetified-play-services-base-17.0.0-12:/drawable/common_google_signin_btn_text_disabled.xml"
+    },
+    {
+        "merged": "com.baseflow.geolocator.geolocator_android-merged_res-28:/drawable/notification_bg.xml",
+        "source": "com.baseflow.geolocator.geolocator_android-core-1.13.1-21:/drawable/notification_bg.xml"
+    },
+    {
+        "merged": "com.baseflow.geolocator.geolocator_android-merged_res-28:/drawable/common_google_signin_btn_icon_light_focused.xml",
+        "source": "com.baseflow.geolocator.geolocator_android-jetified-play-services-base-17.0.0-12:/drawable/common_google_signin_btn_icon_light_focused.xml"
+    },
+    {
+        "merged": "com.baseflow.geolocator.geolocator_android-merged_res-28:/drawable/common_google_signin_btn_text_dark_focused.xml",
+        "source": "com.baseflow.geolocator.geolocator_android-jetified-play-services-base-17.0.0-12:/drawable/common_google_signin_btn_text_dark_focused.xml"
+    },
+    {
+        "merged": "com.baseflow.geolocator.geolocator_android-merged_res-28:/drawable/common_google_signin_btn_text_light_normal.xml",
+        "source": "com.baseflow.geolocator.geolocator_android-jetified-play-services-base-17.0.0-12:/drawable/common_google_signin_btn_text_light_normal.xml"
+    },
+    {
+        "merged": "com.baseflow.geolocator.geolocator_android-merged_res-28:/drawable/common_google_signin_btn_icon_dark_normal.xml",
+        "source": "com.baseflow.geolocator.geolocator_android-jetified-play-services-base-17.0.0-12:/drawable/common_google_signin_btn_icon_dark_normal.xml"
+    },
+    {
+        "merged": "com.baseflow.geolocator.geolocator_android-merged_res-28:/drawable/common_google_signin_btn_text_dark.xml",
+        "source": "com.baseflow.geolocator.geolocator_android-jetified-play-services-base-17.0.0-12:/drawable/common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "com.baseflow.geolocator.geolocator_android-merged_res-28:/drawable/notification_bg_low.xml",
+        "source": "com.baseflow.geolocator.geolocator_android-core-1.13.1-21:/drawable/notification_bg_low.xml"
+    },
+    {
+        "merged": "com.baseflow.geolocator.geolocator_android-merged_res-28:/drawable/common_google_signin_btn_text_light_focused.xml",
+        "source": "com.baseflow.geolocator.geolocator_android-jetified-play-services-base-17.0.0-12:/drawable/common_google_signin_btn_text_light_focused.xml"
+    },
+    {
+        "merged": "com.baseflow.geolocator.geolocator_android-merged_res-28:/drawable/common_google_signin_btn_text_light.xml",
+        "source": "com.baseflow.geolocator.geolocator_android-jetified-play-services-base-17.0.0-12:/drawable/common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "com.baseflow.geolocator.geolocator_android-merged_res-28:/drawable/notification_tile_bg.xml",
+        "source": "com.baseflow.geolocator.geolocator_android-core-1.13.1-21:/drawable/notification_tile_bg.xml"
+    },
+    {
+        "merged": "com.baseflow.geolocator.geolocator_android-merged_res-28:/drawable/common_google_signin_btn_icon_dark.xml",
+        "source": "com.baseflow.geolocator.geolocator_android-jetified-play-services-base-17.0.0-12:/drawable/common_google_signin_btn_icon_dark.xml"
+    }
+]

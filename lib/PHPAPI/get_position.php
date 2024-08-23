@@ -1,5 +1,5 @@
 <?php
-$key=$_GET['apikey'];
+$key=$_POST['apikey'];
 
 
 //https://stackoverflow.com/questions/15485354/angular-http-post-to-php-and-undefined

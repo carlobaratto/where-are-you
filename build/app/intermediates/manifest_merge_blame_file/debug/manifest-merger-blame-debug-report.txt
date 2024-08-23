@@ -13,8 +13,8 @@
 13         to allow setting breakpoints, to provide hot reload, etc.
 14    -->
 15    <uses-permission android:name="android.permission.INTERNET" />
-15-->/home/carlo/Documenti/GitHub/where-are-you/android/app/src/debug/AndroidManifest.xml:6:5-66
-15-->/home/carlo/Documenti/GitHub/where-are-you/android/app/src/debug/AndroidManifest.xml:6:22-64
+15-->/home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:4:5-66
+15-->/home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:4:22-64
 16    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 16-->/home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:2:5-78
 16-->/home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:2:22-76
@@ -30,16 +30,16 @@
 24         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin.
 25    -->
 26    <queries>
-26-->/home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:42:5-47:15
+26-->/home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:43:5-48:15
 27        <intent>
-27-->/home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:43:9-46:18
+27-->/home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:44:9-47:18
 28            <action android:name="android.intent.action.PROCESS_TEXT" />
-28-->/home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:44:13-72
-28-->/home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:44:21-70
+28-->/home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:45:13-72
+28-->/home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:45:21-70
 29
 30            <data android:mimeType="text/plain" />
-30-->/home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:45:13-50
-30-->/home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:45:19-48
+30-->/home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:46:13-50
+30-->/home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/AndroidManifest.xml:46:19-48
 31        </intent>
 32    </queries>
 33
