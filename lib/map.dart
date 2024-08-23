@@ -25,8 +25,8 @@ class _MyMap extends State {
       body: Stack(
         children: [
           FlutterMap(
-            options: const MapOptions(
-              // initialCenter: latLng,
+            options: MapOptions(
+              initialCenter: latLng.LatLng(37.4220936,-122.083922)!,
               initialZoom: 15,
             ),
             children: [
@@ -38,9 +38,11 @@ class _MyMap extends State {
               MarkerLayer(
                 markers: [
                   Marker(
-                    point: latLng.LatLng(50,50)!,
+                    point: latLng.LatLng(37.4220936,-122.083922)!,
+
                     child: const Icon(
                       Icons.location_on,
+                      
                       color: Colors.red,
                       size: 30,
                     ),
