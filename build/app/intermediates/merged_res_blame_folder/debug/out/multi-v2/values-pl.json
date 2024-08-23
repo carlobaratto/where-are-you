@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.where_are_you.app-mergeDebugResources-29:/values-pl/values-pl.xml",
+            "outputFile": "com.example.where_are_you.app-mergeDebugResources-30:/values-pl/values-pl.xml",
             "map": [
                 {
                     "source": "/home/carlo/.gradle/caches/transforms-3/f41476b6df1d004d92c59b9e1ffb379a/transformed/core-1.13.1/res/values-pl/values-pl.xml",
@@ -13,11 +13,28 @@
                         "endOffsets": "147,249,347,446,560,665,787,888"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,27",
+                        "startLines": "2,3,4,5,6,7,8,31",
                         "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,202,304,402,501,615,720,3583",
+                        "startOffsets": "105,202,304,402,501,615,720,4001",
                         "endColumns": "96,101,97,98,113,104,121,100",
-                        "endOffsets": "197,299,397,496,610,715,837,3679"
+                        "endOffsets": "197,299,397,496,610,715,837,4097"
+                    }
+                },
+                {
+                    "source": "/home/carlo/.gradle/caches/transforms-3/d132d9a89e9154d07bd292c078e03ccb/transformed/browser-1.8.0/res/values-pl/values-pl.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,155,254,369",
+                        "endColumns": "99,98,114,103",
+                        "endOffsets": "150,249,364,468"
+                    },
+                    "to": {
+                        "startLines": "27,28,29,30",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "3583,3683,3782,3897",
+                        "endColumns": "99,98,114,103",
+                        "endOffsets": "3678,3777,3892,3996"
                     }
                 },
                 {

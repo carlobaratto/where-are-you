@@ -1,8 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.where_are_you.app-mergeDebugResources-29:/values-th/values-th.xml",
+            "outputFile": "com.example.where_are_you.app-mergeDebugResources-30:/values-th/values-th.xml",
             "map": [
+                {
+                    "source": "/home/carlo/.gradle/caches/transforms-3/d132d9a89e9154d07bd292c078e03ccb/transformed/browser-1.8.0/res/values-th/values-th.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,158,257,368",
+                        "endColumns": "102,98,110,97",
+                        "endOffsets": "153,252,363,461"
+                    },
+                    "to": {
+                        "startLines": "27,28,29,30",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "3433,3536,3635,3746",
+                        "endColumns": "102,98,110,97",
+                        "endOffsets": "3531,3630,3741,3839"
+                    }
+                },
                 {
                     "source": "/home/carlo/.gradle/caches/transforms-3/f41476b6df1d004d92c59b9e1ffb379a/transformed/core-1.13.1/res/values-th/values-th.xml",
                     "from": {
@@ -13,11 +30,11 @@
                         "endOffsets": "146,249,347,445,548,653,765,866"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,27",
+                        "startLines": "2,3,4,5,6,7,8,31",
                         "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,201,304,402,500,603,708,3433",
+                        "startOffsets": "105,201,304,402,500,603,708,3844",
                         "endColumns": "95,102,97,97,102,104,111,100",
-                        "endOffsets": "196,299,397,495,598,703,815,3529"
+                        "endOffsets": "196,299,397,495,598,703,815,3940"
                     }
                 },
                 {

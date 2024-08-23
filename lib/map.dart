@@ -3,17 +3,18 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:http/http.dart' as http;
-import 'location_page.dart';
-import 'package:geolocator/geolocator.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'globals.dart' as global;
 import 'package:latlong2/latlong.dart' as latLng;
 import 'dart:async';
-import 'dart:convert';
+import 'settings.dart';
 
 Future<Position> fetchPosition() async {
   final response = await http.post(
-      Uri.parse('https://carlobaratto.it/whereareyou/get_position.php'),
+      Uri.parse(global.api_url),
       body: {
-      'apikey': 'IDDKFA',
+        'apikey': global.apikey,
+        'getset' : 'get',
       });
 
   if (response.statusCode == 200) {
@@ -28,11 +29,13 @@ Future<Position> fetchPosition() async {
 }
 
 class Position {
+  final String name;
   final String datetime;
   final String lat;
   final String long;
 
   const Position({
+    required this.name,
     required this.datetime,
     required this.lat,
     required this.long,
@@ -41,11 +44,13 @@ class Position {
   factory Position.fromJson(Map<String, dynamic> json) {
     return switch (json) {
       {
-      'datetime': String datetime,
-      'lat': String lat,
-      'long': String long,
+        'name': String name,
+        'datetime': String datetime,
+        'lat': String lat,
+        'long': String long,
       } =>
           Position(
+            name: name,
             datetime: datetime,
             lat: lat,
             long: long,
@@ -66,6 +71,7 @@ class _MyMap extends State {
   late Future<Position> futurePosition;
 
   initState() {
+
     super.initState();
 
     futurePosition = fetchPosition();
@@ -112,7 +118,17 @@ class _MyMap extends State {
                     ),
                   ],
                 ),
+                RichAttributionWidget(
+                  animationConfig: const ScaleRAWA(), // Or `FadeRAWA` as is default
+                  attributions: [
+                    TextSourceAttribution(
+                      'OpenStreetMap contributors',
+                      onTap: () => launchUrl(Uri.parse('https://openstreetmap.org/copyright')),
+                    ),
+                  ],
+                ),
               ]
+
           );
     }
       else if (snapshot.hasError) {

@@ -1,8 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.where_are_you.app-mergeDebugResources-29:/values-bs/values-bs.xml",
+            "outputFile": "com.example.where_are_you.app-mergeDebugResources-30:/values-bs/values-bs.xml",
             "map": [
+                {
+                    "source": "/home/carlo/.gradle/caches/transforms-3/d132d9a89e9154d07bd292c078e03ccb/transformed/browser-1.8.0/res/values-bs/values-bs.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,159,259,373",
+                        "endColumns": "103,99,113,99",
+                        "endOffsets": "154,254,368,468"
+                    },
+                    "to": {
+                        "startLines": "27,28,29,30",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "3515,3619,3719,3833",
+                        "endColumns": "103,99,113,99",
+                        "endOffsets": "3614,3714,3828,3928"
+                    }
+                },
                 {
                     "source": "/home/carlo/.gradle/caches/transforms-3/e65621d561d53d05e9a574b17f78619a/transformed/jetified-play-services-basement-17.0.0/res/values-bs/values.xml",
                     "from": {
@@ -47,11 +64,11 @@
                         "endOffsets": "148,250,348,452,556,658,775,876"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,27",
+                        "startLines": "2,3,4,5,6,7,8,31",
                         "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,203,305,403,507,611,713,3515",
+                        "startOffsets": "105,203,305,403,507,611,713,3933",
                         "endColumns": "97,101,97,103,103,101,116,100",
-                        "endOffsets": "198,300,398,502,606,708,825,3611"
+                        "endOffsets": "198,300,398,502,606,708,825,4029"
                     }
                 }
             ]

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.where_are_you.app-mergeDebugResources-29:/values-ne/values-ne.xml",
+            "outputFile": "com.example.where_are_you.app-mergeDebugResources-30:/values-ne/values-ne.xml",
             "map": [
                 {
                     "source": "/home/carlo/.gradle/caches/transforms-3/b0573e6b7d96cc8a6f58e5c30f5ec330/transformed/jetified-play-services-base-17.0.0/res/values-ne/values.xml",
@@ -30,11 +30,11 @@
                         "endOffsets": "153,256,358,464,562,662,770,871"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,27",
+                        "startLines": "2,3,4,5,6,7,8,31",
                         "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,208,311,413,519,617,717,3653",
+                        "startOffsets": "105,208,311,413,519,617,717,4088",
                         "endColumns": "102,102,101,105,97,99,107,100",
-                        "endOffsets": "203,306,408,514,612,712,820,3749"
+                        "endOffsets": "203,306,408,514,612,712,820,4184"
                     }
                 },
                 {
@@ -52,6 +52,23 @@
                         "startOffsets": "2029",
                         "endColumns": "222",
                         "endOffsets": "2247"
+                    }
+                },
+                {
+                    "source": "/home/carlo/.gradle/caches/transforms-3/d132d9a89e9154d07bd292c078e03ccb/transformed/browser-1.8.0/res/values-ne/values-ne.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,156,268,382",
+                        "endColumns": "100,111,113,107",
+                        "endOffsets": "151,263,377,485"
+                    },
+                    "to": {
+                        "startLines": "27,28,29,30",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "3653,3754,3866,3980",
+                        "endColumns": "100,111,113,107",
+                        "endOffsets": "3749,3861,3975,4083"
                     }
                 }
             ]

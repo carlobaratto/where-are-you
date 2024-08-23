@@ -1,8 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.where_are_you.app-mergeDebugResources-29:/values-sq/values-sq.xml",
+            "outputFile": "com.example.where_are_you.app-mergeDebugResources-30:/values-sq/values-sq.xml",
             "map": [
+                {
+                    "source": "/home/carlo/.gradle/caches/transforms-3/d132d9a89e9154d07bd292c078e03ccb/transformed/browser-1.8.0/res/values-sq/values-sq.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,170,271,382",
+                        "endColumns": "114,100,110,100",
+                        "endOffsets": "165,266,377,478"
+                    },
+                    "to": {
+                        "startLines": "27,28,29,30",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "3679,3794,3895,4006",
+                        "endColumns": "114,100,110,100",
+                        "endOffsets": "3789,3890,4001,4102"
+                    }
+                },
                 {
                     "source": "/home/carlo/.gradle/caches/transforms-3/b0573e6b7d96cc8a6f58e5c30f5ec330/transformed/jetified-play-services-base-17.0.0/res/values-sq/values.xml",
                     "from": {
@@ -47,11 +64,11 @@
                         "endOffsets": "149,251,349,446,554,665,787,888"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,27",
+                        "startLines": "2,3,4,5,6,7,8,31",
                         "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,204,306,404,501,609,720,3679",
+                        "startOffsets": "105,204,306,404,501,609,720,4107",
                         "endColumns": "98,101,97,96,107,110,121,100",
-                        "endOffsets": "199,301,399,496,604,715,837,3775"
+                        "endOffsets": "199,301,399,496,604,715,837,4203"
                     }
                 }
             ]

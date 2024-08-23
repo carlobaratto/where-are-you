@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.where_are_you.app-mergeDebugResources-29:/values-ms/values-ms.xml",
+            "outputFile": "com.example.where_are_you.app-mergeDebugResources-30:/values-ms/values-ms.xml",
             "map": [
                 {
                     "source": "/home/carlo/.gradle/caches/transforms-3/e65621d561d53d05e9a574b17f78619a/transformed/jetified-play-services-basement-17.0.0/res/values-ms/values.xml",
@@ -30,11 +30,28 @@
                         "endOffsets": "145,247,344,454,560,678,793,894"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,27",
+                        "startLines": "2,3,4,5,6,7,8,31",
                         "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,200,302,399,509,615,733,3693",
+                        "startOffsets": "105,200,302,399,509,615,733,4119",
                         "endColumns": "94,101,96,109,105,117,114,100",
-                        "endOffsets": "195,297,394,504,610,728,843,3789"
+                        "endOffsets": "195,297,394,504,610,728,843,4215"
+                    }
+                },
+                {
+                    "source": "/home/carlo/.gradle/caches/transforms-3/d132d9a89e9154d07bd292c078e03ccb/transformed/browser-1.8.0/res/values-ms/values-ms.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,160,260,379",
+                        "endColumns": "104,99,118,101",
+                        "endOffsets": "155,255,374,476"
+                    },
+                    "to": {
+                        "startLines": "27,28,29,30",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "3693,3798,3898,4017",
+                        "endColumns": "104,99,118,101",
+                        "endOffsets": "3793,3893,4012,4114"
                     }
                 },
                 {

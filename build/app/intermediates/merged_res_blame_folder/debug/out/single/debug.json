@@ -1,26 +1,26 @@
 [
     {
-        "merged": "com.example.where_are_you.app-merged_res-31:/drawable-v21_launch_background.xml.flat",
-        "source": "com.example.where_are_you.app-main-25:/drawable-v21/launch_background.xml"
+        "merged": "com.example.where_are_you.app-merged_res-32:/drawable-v21_launch_background.xml.flat",
+        "source": "com.example.where_are_you.app-main-26:/drawable-v21/launch_background.xml"
     },
     {
-        "merged": "com.example.where_are_you.app-merged_res-31:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.example.where_are_you.app-main-25:/mipmap-hdpi/ic_launcher.png"
+        "merged": "com.example.where_are_you.app-merged_res-32:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.example.where_are_you.app-main-26:/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.where_are_you.app-merged_res-31:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.example.where_are_you.app-main-25:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "com.example.where_are_you.app-merged_res-32:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.example.where_are_you.app-main-26:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.where_are_you.app-merged_res-31:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "com.example.where_are_you.app-main-25:/mipmap-mdpi/ic_launcher.png"
+        "merged": "com.example.where_are_you.app-merged_res-32:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.example.where_are_you.app-main-26:/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.where_are_you.app-merged_res-31:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.example.where_are_you.app-main-25:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "com.example.where_are_you.app-merged_res-32:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.example.where_are_you.app-main-26:/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.where_are_you.app-merged_res-31:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.example.where_are_you.app-main-25:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "com.example.where_are_you.app-merged_res-32:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.example.where_are_you.app-main-26:/mipmap-xxhdpi/ic_launcher.png"
     }
 ]

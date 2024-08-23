@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.where_are_you.app-mergeDebugResources-29:/values-as/values-as.xml",
+            "outputFile": "com.example.where_are_you.app-mergeDebugResources-30:/values-as/values-as.xml",
             "map": [
                 {
                     "source": "/home/carlo/.gradle/caches/transforms-3/e65621d561d53d05e9a574b17f78619a/transformed/jetified-play-services-basement-17.0.0/res/values-as/values.xml",
@@ -47,11 +47,28 @@
                         "endOffsets": "151,254,362,467,571,671,800,901"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,27",
+                        "startLines": "2,3,4,5,6,7,8,31",
                         "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,206,309,417,522,626,726,3464",
+                        "startOffsets": "105,206,309,417,522,626,726,3892",
                         "endColumns": "100,102,107,104,103,99,128,100",
-                        "endOffsets": "201,304,412,517,621,721,850,3560"
+                        "endOffsets": "201,304,412,517,621,721,850,3988"
+                    }
+                },
+                {
+                    "source": "/home/carlo/.gradle/caches/transforms-3/d132d9a89e9154d07bd292c078e03ccb/transformed/browser-1.8.0/res/values-as/values-as.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,163,269,377",
+                        "endColumns": "107,105,107,105",
+                        "endOffsets": "158,264,372,478"
+                    },
+                    "to": {
+                        "startLines": "27,28,29,30",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "3464,3572,3678,3786",
+                        "endColumns": "107,105,107,105",
+                        "endOffsets": "3567,3673,3781,3887"
                     }
                 }
             ]

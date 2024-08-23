@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.where_are_you.app-mergeDebugResources-29:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.example.where_are_you.app-mergeDebugResources-30:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "/home/carlo/Documenti/GitHub/where-are-you/android/app/src/main/res/values-night/styles.xml",

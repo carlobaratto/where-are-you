@@ -19,6 +19,7 @@ Future<void> syncPosition(String lat, String long) async {
 
     body: {
       'apikey': global.apikey,
+      'getset' : 'set',
       'name': global.name,
       'lat': lat,
       'long': long,
@@ -63,7 +64,7 @@ class _LocationPageState extends State<LocationPage> {
     final hasPermission = await _handleLocationPermission();
 
     if (!hasPermission) return;
-    await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high)
+    await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.best)
         .then((Position position) {
       setState(() => _currentPosition = position);
       _getAddressFromLatLng(_currentPosition!);

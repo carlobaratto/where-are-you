@@ -1,8 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.where_are_you.app-mergeDebugResources-29:/values-sl/values-sl.xml",
+            "outputFile": "com.example.where_are_you.app-mergeDebugResources-30:/values-sl/values-sl.xml",
             "map": [
+                {
+                    "source": "/home/carlo/.gradle/caches/transforms-3/d132d9a89e9154d07bd292c078e03ccb/transformed/browser-1.8.0/res/values-sl/values-sl.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,161,265,377",
+                        "endColumns": "105,103,111,101",
+                        "endOffsets": "156,260,372,474"
+                    },
+                    "to": {
+                        "startLines": "27,28,29,30",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "3541,3647,3751,3863",
+                        "endColumns": "105,103,111,101",
+                        "endOffsets": "3642,3746,3858,3960"
+                    }
+                },
                 {
                     "source": "/home/carlo/.gradle/caches/transforms-3/f41476b6df1d004d92c59b9e1ffb379a/transformed/core-1.13.1/res/values-sl/values-sl.xml",
                     "from": {
@@ -13,11 +30,11 @@
                         "endOffsets": "147,249,347,451,554,656,773,874"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,27",
+                        "startLines": "2,3,4,5,6,7,8,31",
                         "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,202,304,402,506,609,711,3541",
+                        "startOffsets": "105,202,304,402,506,609,711,3965",
                         "endColumns": "96,101,97,103,102,101,116,100",
-                        "endOffsets": "197,299,397,501,604,706,823,3637"
+                        "endOffsets": "197,299,397,501,604,706,823,4061"
                     }
                 },
                 {

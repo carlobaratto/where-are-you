@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.where_are_you.app-mergeDebugResources-29:/values-eu/values-eu.xml",
+            "outputFile": "com.example.where_are_you.app-mergeDebugResources-30:/values-eu/values-eu.xml",
             "map": [
                 {
                     "source": "/home/carlo/.gradle/caches/transforms-3/e65621d561d53d05e9a574b17f78619a/transformed/jetified-play-services-basement-17.0.0/res/values-eu/values.xml",
@@ -47,11 +47,28 @@
                         "endOffsets": "148,251,351,454,559,662,781,882"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,27",
+                        "startLines": "2,3,4,5,6,7,8,31",
                         "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,203,306,406,509,614,717,3622",
+                        "startOffsets": "105,203,306,406,509,614,717,4042",
                         "endColumns": "97,102,99,102,104,102,118,100",
-                        "endOffsets": "198,301,401,504,609,712,831,3718"
+                        "endOffsets": "198,301,401,504,609,712,831,4138"
+                    }
+                },
+                {
+                    "source": "/home/carlo/.gradle/caches/transforms-3/d132d9a89e9154d07bd292c078e03ccb/transformed/browser-1.8.0/res/values-eu/values-eu.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,155,257,370",
+                        "endColumns": "99,101,112,104",
+                        "endOffsets": "150,252,365,470"
+                    },
+                    "to": {
+                        "startLines": "27,28,29,30",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "3622,3722,3824,3937",
+                        "endColumns": "99,101,112,104",
+                        "endOffsets": "3717,3819,3932,4037"
                     }
                 }
             ]

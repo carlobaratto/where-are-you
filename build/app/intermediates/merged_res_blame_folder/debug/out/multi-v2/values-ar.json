@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.where_are_you.app-mergeDebugResources-29:/values-ar/values-ar.xml",
+            "outputFile": "com.example.where_are_you.app-mergeDebugResources-30:/values-ar/values-ar.xml",
             "map": [
                 {
                     "source": "/home/carlo/.gradle/caches/transforms-3/f41476b6df1d004d92c59b9e1ffb379a/transformed/core-1.13.1/res/values-ar/values-ar.xml",
@@ -13,11 +13,11 @@
                         "endOffsets": "143,245,340,443,546,648,762,863"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,27",
+                        "startLines": "2,3,4,5,6,7,8,31",
                         "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,198,300,395,498,601,703,3402",
+                        "startOffsets": "105,198,300,395,498,601,703,3810",
                         "endColumns": "92,101,94,102,102,101,113,100",
-                        "endOffsets": "193,295,390,493,596,698,812,3498"
+                        "endOffsets": "193,295,390,493,596,698,812,3906"
                     }
                 },
                 {
@@ -35,6 +35,23 @@
                         "startOffsets": "1929",
                         "endColumns": "188",
                         "endOffsets": "2113"
+                    }
+                },
+                {
+                    "source": "/home/carlo/.gradle/caches/transforms-3/d132d9a89e9154d07bd292c078e03ccb/transformed/browser-1.8.0/res/values-ar/values-ar.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,155,253,361",
+                        "endColumns": "99,97,107,101",
+                        "endOffsets": "150,248,356,458"
+                    },
+                    "to": {
+                        "startLines": "27,28,29,30",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "3402,3502,3600,3708",
+                        "endColumns": "99,97,107,101",
+                        "endOffsets": "3497,3595,3703,3805"
                     }
                 },
                 {

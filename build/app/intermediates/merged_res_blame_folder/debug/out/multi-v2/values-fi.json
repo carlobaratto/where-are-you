@@ -1,8 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.where_are_you.app-mergeDebugResources-29:/values-fi/values-fi.xml",
+            "outputFile": "com.example.where_are_you.app-mergeDebugResources-30:/values-fi/values-fi.xml",
             "map": [
+                {
+                    "source": "/home/carlo/.gradle/caches/transforms-3/d132d9a89e9154d07bd292c078e03ccb/transformed/browser-1.8.0/res/values-fi/values-fi.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,158,259,368",
+                        "endColumns": "102,100,108,98",
+                        "endOffsets": "153,254,363,462"
+                    },
+                    "to": {
+                        "startLines": "27,28,29,30",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "3499,3602,3703,3812",
+                        "endColumns": "102,100,108,98",
+                        "endOffsets": "3597,3698,3807,3906"
+                    }
+                },
                 {
                     "source": "/home/carlo/.gradle/caches/transforms-3/f41476b6df1d004d92c59b9e1ffb379a/transformed/core-1.13.1/res/values-fi/values-fi.xml",
                     "from": {
@@ -13,11 +30,11 @@
                         "endOffsets": "146,248,346,451,556,668,784,885"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,27",
+                        "startLines": "2,3,4,5,6,7,8,31",
                         "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,201,303,401,506,611,723,3499",
+                        "startOffsets": "105,201,303,401,506,611,723,3911",
                         "endColumns": "95,101,97,104,104,111,115,100",
-                        "endOffsets": "196,298,396,501,606,718,834,3595"
+                        "endOffsets": "196,298,396,501,606,718,834,4007"
                     }
                 },
                 {

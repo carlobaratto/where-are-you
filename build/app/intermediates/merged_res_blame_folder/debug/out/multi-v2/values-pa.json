@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.where_are_you.app-mergeDebugResources-29:/values-pa/values-pa.xml",
+            "outputFile": "com.example.where_are_you.app-mergeDebugResources-30:/values-pa/values-pa.xml",
             "map": [
                 {
                     "source": "/home/carlo/.gradle/caches/transforms-3/b0573e6b7d96cc8a6f58e5c30f5ec330/transformed/jetified-play-services-base-17.0.0/res/values-pa/values.xml",
@@ -30,11 +30,28 @@
                         "endOffsets": "148,250,353,454,556,654,783,884"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,27",
+                        "startLines": "2,3,4,5,6,7,8,31",
                         "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,203,305,408,509,611,709,3594",
+                        "startOffsets": "105,203,305,408,509,611,709,4017",
                         "endColumns": "97,101,102,100,101,97,128,100",
-                        "endOffsets": "198,300,403,504,606,704,833,3690"
+                        "endOffsets": "198,300,403,504,606,704,833,4113"
+                    }
+                },
+                {
+                    "source": "/home/carlo/.gradle/caches/transforms-3/d132d9a89e9154d07bd292c078e03ccb/transformed/browser-1.8.0/res/values-pa/values-pa.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,160,261,375",
+                        "endColumns": "104,100,113,102",
+                        "endOffsets": "155,256,370,473"
+                    },
+                    "to": {
+                        "startLines": "27,28,29,30",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "3594,3699,3800,3914",
+                        "endColumns": "104,100,113,102",
+                        "endOffsets": "3694,3795,3909,4012"
                     }
                 },
                 {
