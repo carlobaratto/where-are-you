@@ -3,6 +3,8 @@ import 'location_page.dart';
 import 'map.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'settings.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'globals.dart' as global;
 
 void main() => runApp(const MyApp());
 
@@ -20,6 +22,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
@@ -30,6 +33,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  @override
+
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
@@ -76,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
-              child: Text('Drawer Header'),
+              child: Text('Where are you\nOpen source location sharing software'),
             ),
             ListTile(
               title: const Text('Map'),
@@ -114,3 +119,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
