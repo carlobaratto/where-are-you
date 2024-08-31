@@ -20,7 +20,7 @@ Future<Position> fetchPosition() async {
   if (response.statusCode == 200) {
 final data =Position.fromJson(response.body as Map<String, dynamic>);
 return data;
-    return Position.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    //return Position.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
 
   } else {
       throw Exception('Failed to load position');
