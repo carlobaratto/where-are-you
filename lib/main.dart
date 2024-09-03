@@ -3,7 +3,6 @@ import 'location_page.dart';
 import 'map.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'settings.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'globals.dart' as global;
 
 void main() => runApp(const MyApp());
@@ -38,10 +37,10 @@ class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    MyMap(),
-    LocationPage(),
-    settings()
+  static List<Widget> _widgetOptions = <Widget>[
+    const MyListScreenPosition(),
+    const LocationPage(),
+    const settings()
   ];
 
   void _onItemTapped(int index) {

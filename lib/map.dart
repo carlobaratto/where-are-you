@@ -4,70 +4,71 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:where_are_you/settings.dart';
 import 'globals.dart' as global;
 import 'package:latlong2/latlong.dart' as latLng;
 import 'dart:async';
 
+const baseUrl = "https://nordicwalkingitalia.it/ws/ws_eventi.php";
 
-Future<Position> fetchPosition() async {
-  final response = await http.post(
-      Uri.parse(global.api_url),
-      body: {
-        'apikey': global.apikey,
-        'getset' : 'get',
-      });
-
-  if (response.statusCode == 200) {
-final data =Position.fromJson(response.body as Map<String, dynamic>);
-return data;
-    //return Position.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-
-  } else {
-      throw Exception('Failed to load position');
+class API {
+  static Future getPosition() {
+    return http.post(
+        Uri.parse(global.api_url),
+        body: {
+          'apikey': global.apikey,
+          'getset' : 'get',
+        });
   }
 }
 
-class Position {
-  final String name;
-  final String datetime;
-  final String lat;
-  final String long;
-
-  const Position({
-    required this.name,
-    required this.datetime,
-    required this.lat,
-    required this.long,
-  });
-
-  factory Position.fromJson(Map<String, dynamic> json) {
-    return switch (json) {
-      {
-      'name': String name,
-      'datetime': String datetime,
-      'lat': String lat,
-      'long': String long,
-      } =>
-          Position(
-            name: name,
-            datetime: datetime,
-            lat: lat,
-            long: long,
-          ),
-      _ => throw const FormatException('Failed to load album.'),
-    };
-  }
-}
-
-class MyMap extends StatefulWidget {
-  const MyMap({super.key});
+class allposition extends StatelessWidget {
 
   @override
-  State<MyMap> createState() => _MyAppState();
+
+  build(context) {
+
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'ENWI',
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+      ),
+      home: MyListScreenPosition(),
+    );
+  }
 }
 
-class _MyAppState extends State<MyMap> {
-  late Future<Position> futurePosition;
+class MyListScreenPosition extends StatefulWidget {
+  const MyListScreenPosition({super.key});
+  @override
+  createState() => _MyListScreenPositionState();
+}
+
+class _MyListScreenPositionState extends State {
+  var posizioni = <Posizione>[];
+
+  _getPosizione() {
+    API.getPosition().then((response) {
+      setState(() {
+        Iterable list = json.decode(response.body);
+        posizioni = list.map((model) => Posizione.fromJson(model)).toList();
+      });
+    });
+  }
+
+  initState() {
+    super.initState();
+    _readSettings();
+    _getPosizione();
+  }
+
+  dispose() {
+    super.dispose();
+  }
+
+  final GlobalKey<ScaffoldState> scaffoldState = GlobalKey();
+
   final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
 
   Future<String> _readSettings() async {
@@ -76,6 +77,13 @@ class _MyAppState extends State<MyMap> {
     String api_url = prefs.getString('api_url').toString();
     String apikey = prefs.getString('apikey').toString();
 
+    if (name == '')
+      {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => settings()),
+        );
+      }
     setState(() {
       global.name = name;
       global.api_url = api_url;
@@ -84,27 +92,14 @@ class _MyAppState extends State<MyMap> {
     return name;
   }
   @override
-  void initState() {
-    super.initState();
-      _readSettings();
-    futurePosition = fetchPosition();
-  }
 
-  @override
-  Widget build(BuildContext context) {
-
+  build(context) {
     return Scaffold(
-
       body: Stack(
         children: [
-          FutureBuilder<Position>(
-              future: fetchPosition(),
-              builder: (context, snapshot)
-              {
-                if (snapshot.hasData) {
-                  return FlutterMap(
+          FlutterMap(
                       options: MapOptions(
-                        initialCenter: latLng.LatLng(double.parse(snapshot.data!.lat),double.parse(snapshot.data!.long)),
+                        initialCenter: latLng.LatLng(double.parse(posizioni[0].lat),double.parse(posizioni[0].long)),
                         initialZoom: 15,
                       ),
                       children: [
@@ -115,9 +110,9 @@ class _MyAppState extends State<MyMap> {
 
                         MarkerLayer(
                           markers: [
+                            for (int i=0; i<3; i++)
                             Marker(
-                              point: latLng.LatLng(double.parse(snapshot.data!.lat),double.parse(snapshot.data!.long))!,
-
+                             point: latLng.LatLng(double.parse(posizioni[i].lat),double.parse(posizioni[i].long)),
                               child: const Icon(
                                 Icons.location_on,
                                 color: Colors.red,
@@ -138,14 +133,6 @@ class _MyAppState extends State<MyMap> {
                         ),
                       ]
 
-                  );
-                }
-                else if (snapshot.hasError) {
-                  return Text('${snapshot.error}');
-                }
-                return Text("No widget to build");
-              }
-
           ),
         ],
       ),
@@ -154,3 +141,19 @@ class _MyAppState extends State<MyMap> {
   }
 }
 
+class Posizione {
+  final String name;
+  final String datetime;
+  final String lat;
+  final String long;
+
+  Posizione.fromJson(Map json)
+      : name = json['name'],
+        datetime = json['datetime'],
+        lat = json['lat'],
+        long = json['long'];
+
+  Map toJson() {
+    return {'name': name, 'datetime': datetime, 'lat':lat, 'long':long};
+  }
+}

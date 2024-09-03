@@ -1,6 +1,36 @@
 _COROUTINE.ArtificialStackFrames:
     public final java.lang.StackTraceElement coroutineCreation()
 _COROUTINE._CREATION
+android.support.customtabs.ICustomTabsCallback$Default
+android.support.customtabs.ICustomTabsCallback$Stub$Proxy
+android.support.customtabs.ICustomTabsCallback$Stub
+android.support.customtabs.ICustomTabsCallback$_Parcel
+android.support.customtabs.ICustomTabsCallback
+android.support.customtabs.ICustomTabsService$Default
+android.support.customtabs.ICustomTabsService$Stub$Proxy
+android.support.customtabs.ICustomTabsService$Stub
+android.support.customtabs.ICustomTabsService$_Parcel
+android.support.customtabs.ICustomTabsService
+android.support.customtabs.IEngagementSignalsCallback$Default
+android.support.customtabs.IEngagementSignalsCallback$Stub$Proxy
+android.support.customtabs.IEngagementSignalsCallback$Stub
+android.support.customtabs.IEngagementSignalsCallback$_Parcel
+android.support.customtabs.IEngagementSignalsCallback
+android.support.customtabs.IPostMessageService$Default
+android.support.customtabs.IPostMessageService$Stub$Proxy
+android.support.customtabs.IPostMessageService$Stub
+android.support.customtabs.IPostMessageService$_Parcel
+android.support.customtabs.IPostMessageService
+android.support.customtabs.trusted.ITrustedWebActivityCallback$Default
+android.support.customtabs.trusted.ITrustedWebActivityCallback$Stub$Proxy
+android.support.customtabs.trusted.ITrustedWebActivityCallback$Stub
+android.support.customtabs.trusted.ITrustedWebActivityCallback$_Parcel
+android.support.customtabs.trusted.ITrustedWebActivityCallback
+android.support.customtabs.trusted.ITrustedWebActivityService$Default
+android.support.customtabs.trusted.ITrustedWebActivityService$Stub$Proxy
+android.support.customtabs.trusted.ITrustedWebActivityService$Stub
+android.support.customtabs.trusted.ITrustedWebActivityService$_Parcel
+android.support.customtabs.trusted.ITrustedWebActivityService
 android.support.v4.app.INotificationSideChannel$Default
 android.support.v4.app.INotificationSideChannel$Stub$Proxy:
     public void cancel(java.lang.String,int,java.lang.String)
@@ -287,6 +317,300 @@ androidx.arch.core.executor.DefaultTaskExecutor$Api28Impl:
 androidx.arch.core.executor.TaskExecutor:
     public void executeOnMainThread(java.lang.Runnable)
 androidx.arch.core.util.Function
+androidx.browser.R$color
+androidx.browser.R$dimen:
+    private void <init>()
+androidx.browser.R$id
+androidx.browser.R$layout
+androidx.browser.R$string
+androidx.browser.R$xml
+androidx.browser.R
+androidx.browser.browseractions.BrowserActionItem
+androidx.browser.browseractions.BrowserActionsFallbackMenuAdapter$1
+androidx.browser.browseractions.BrowserActionsFallbackMenuAdapter$2
+androidx.browser.browseractions.BrowserActionsFallbackMenuAdapter$ViewHolderItem
+androidx.browser.browseractions.BrowserActionsFallbackMenuAdapter
+androidx.browser.browseractions.BrowserActionsFallbackMenuDialog$1
+androidx.browser.browseractions.BrowserActionsFallbackMenuDialog
+androidx.browser.browseractions.BrowserActionsFallbackMenuUi$1
+androidx.browser.browseractions.BrowserActionsFallbackMenuUi$2
+androidx.browser.browseractions.BrowserActionsFallbackMenuUi$3
+androidx.browser.browseractions.BrowserActionsFallbackMenuUi$BrowserActionsFallMenuUiListener
+androidx.browser.browseractions.BrowserActionsFallbackMenuUi
+androidx.browser.browseractions.BrowserActionsIntent$BrowserActionsFallDialogListener
+androidx.browser.browseractions.BrowserActionsIntent$BrowserActionsItemId
+androidx.browser.browseractions.BrowserActionsIntent$BrowserActionsUrlType
+androidx.browser.browseractions.BrowserActionsIntent$Builder
+androidx.browser.browseractions.BrowserActionsIntent
+androidx.browser.browseractions.BrowserServiceFileProvider$1
+androidx.browser.browseractions.BrowserServiceFileProvider$FileCleanupTask
+androidx.browser.browseractions.BrowserServiceFileProvider$FileSaveTask
+androidx.browser.browseractions.BrowserServiceFileProvider
+androidx.browser.customtabs.Api33Impl
+androidx.browser.customtabs.CustomTabColorSchemeParams$Builder:
+    public androidx.browser.customtabs.CustomTabColorSchemeParams$Builder setNavigationBarColor(int)
+    public androidx.browser.customtabs.CustomTabColorSchemeParams$Builder setNavigationBarDividerColor(int)
+    public androidx.browser.customtabs.CustomTabColorSchemeParams$Builder setSecondaryToolbarColor(int)
+    public androidx.browser.customtabs.CustomTabColorSchemeParams$Builder setToolbarColor(int)
+androidx.browser.customtabs.CustomTabColorSchemeParams:
+    static androidx.browser.customtabs.CustomTabColorSchemeParams fromBundle(android.os.Bundle)
+    androidx.browser.customtabs.CustomTabColorSchemeParams withDefaults(androidx.browser.customtabs.CustomTabColorSchemeParams)
+androidx.browser.customtabs.CustomTabsCallback$ActivityLayoutState
+androidx.browser.customtabs.CustomTabsCallback
+androidx.browser.customtabs.CustomTabsClient$1
+androidx.browser.customtabs.CustomTabsClient$2$10
+androidx.browser.customtabs.CustomTabsClient$2$1
+androidx.browser.customtabs.CustomTabsClient$2$2
+androidx.browser.customtabs.CustomTabsClient$2$3
+androidx.browser.customtabs.CustomTabsClient$2$4
+androidx.browser.customtabs.CustomTabsClient$2$5
+androidx.browser.customtabs.CustomTabsClient$2$6
+androidx.browser.customtabs.CustomTabsClient$2$7
+androidx.browser.customtabs.CustomTabsClient$2$8
+androidx.browser.customtabs.CustomTabsClient$2$9
+androidx.browser.customtabs.CustomTabsClient$2
+androidx.browser.customtabs.CustomTabsClient:
+    private static final java.lang.String TAG
+    private final android.content.Context mApplicationContext
+    private final android.support.customtabs.ICustomTabsService mService
+    private final android.content.ComponentName mServiceComponentName
+    void <init>(android.support.customtabs.ICustomTabsService,android.content.ComponentName,android.content.Context)
+    public androidx.browser.customtabs.CustomTabsSession attachSession(androidx.browser.customtabs.CustomTabsSession$PendingSession)
+    public static boolean bindCustomTabsService(android.content.Context,java.lang.String,androidx.browser.customtabs.CustomTabsServiceConnection)
+    public static boolean bindCustomTabsServicePreservePriority(android.content.Context,java.lang.String,androidx.browser.customtabs.CustomTabsServiceConnection)
+    public static boolean connectAndInitialize(android.content.Context,java.lang.String)
+    private android.support.customtabs.ICustomTabsCallback$Stub createCallbackWrapper(androidx.browser.customtabs.CustomTabsCallback)
+    private static android.app.PendingIntent createSessionId(android.content.Context,int)
+    public android.os.Bundle extraCommand(java.lang.String,android.os.Bundle)
+    public static androidx.browser.customtabs.CustomTabsSession$PendingSession newPendingSession(android.content.Context,androidx.browser.customtabs.CustomTabsCallback,int)
+    public androidx.browser.customtabs.CustomTabsSession newSession(androidx.browser.customtabs.CustomTabsCallback)
+    public androidx.browser.customtabs.CustomTabsSession newSession(androidx.browser.customtabs.CustomTabsCallback,int)
+    private androidx.browser.customtabs.CustomTabsSession newSessionInternal(androidx.browser.customtabs.CustomTabsCallback,android.app.PendingIntent)
+    public boolean warmup(long)
+androidx.browser.customtabs.CustomTabsFeatures$CustomTabsFeature
+androidx.browser.customtabs.CustomTabsFeatures
+androidx.browser.customtabs.CustomTabsIntent$ActivityHeightResizeBehavior
+androidx.browser.customtabs.CustomTabsIntent$ActivitySideSheetDecorationType
+androidx.browser.customtabs.CustomTabsIntent$ActivitySideSheetPosition
+androidx.browser.customtabs.CustomTabsIntent$ActivitySideSheetRoundedCornersPosition
+androidx.browser.customtabs.CustomTabsIntent$Api21Impl
+androidx.browser.customtabs.CustomTabsIntent$Api23Impl:
+    private void <init>()
+androidx.browser.customtabs.CustomTabsIntent$Api24Impl:
+    private void <init>()
+androidx.browser.customtabs.CustomTabsIntent$Api34Impl:
+    private void <init>()
+androidx.browser.customtabs.CustomTabsIntent$Builder:
+    public void <init>(androidx.browser.customtabs.CustomTabsSession)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder addDefaultShareMenuItem()
+    public androidx.browser.customtabs.CustomTabsIntent$Builder addMenuItem(java.lang.String,android.app.PendingIntent)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder addToolbarItem(int,android.graphics.Bitmap,java.lang.String,android.app.PendingIntent)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder enableUrlBarHiding()
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setActionButton(android.graphics.Bitmap,java.lang.String,android.app.PendingIntent)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setActionButton(android.graphics.Bitmap,java.lang.String,android.app.PendingIntent,boolean)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setActivitySideSheetBreakpointDp(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setActivitySideSheetDecorationType(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setActivitySideSheetMaximizationEnabled(boolean)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setActivitySideSheetPosition(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setActivitySideSheetRoundedCornersPosition(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setBackgroundInteractionEnabled(boolean)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setBookmarksButtonEnabled(boolean)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setCloseButtonIcon(android.graphics.Bitmap)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setCloseButtonPosition(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setColorScheme(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setColorSchemeParams(int,androidx.browser.customtabs.CustomTabColorSchemeParams)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setDefaultColorSchemeParams(androidx.browser.customtabs.CustomTabColorSchemeParams)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setDefaultShareMenuItemEnabled(boolean)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setDownloadButtonEnabled(boolean)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setExitAnimations(android.content.Context,int,int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setInitialActivityHeightPx(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setInitialActivityHeightPx(int,int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setInitialActivityWidthPx(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setInstantAppsEnabled(boolean)
+    private void setLanguageTag(java.util.Locale)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setNavigationBarColor(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setNavigationBarDividerColor(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setPendingSession(androidx.browser.customtabs.CustomTabsSession$PendingSession)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setSecondaryToolbarColor(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setSecondaryToolbarSwipeUpGesture(android.app.PendingIntent)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setSecondaryToolbarViews(android.widget.RemoteViews,int[],android.app.PendingIntent)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setSendToExternalDefaultHandlerEnabled(boolean)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setSession(androidx.browser.customtabs.CustomTabsSession)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setShareIdentityEnabled(boolean)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setShareState(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setStartAnimations(android.content.Context,int,int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setToolbarColor(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setToolbarCornerRadiusDp(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setTranslateLocale(java.util.Locale)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setUrlBarHidingEnabled(boolean)
+androidx.browser.customtabs.CustomTabsIntent$CloseButtonPosition
+androidx.browser.customtabs.CustomTabsIntent$ColorScheme
+androidx.browser.customtabs.CustomTabsIntent$ShareState
+androidx.browser.customtabs.CustomTabsIntent:
+    public static final int ACTIVITY_HEIGHT_ADJUSTABLE
+    public static final int ACTIVITY_HEIGHT_DEFAULT
+    public static final int ACTIVITY_HEIGHT_FIXED
+    private static final int ACTIVITY_HEIGHT_MAX
+    public static final int ACTIVITY_SIDE_SHEET_DECORATION_TYPE_DEFAULT
+    public static final int ACTIVITY_SIDE_SHEET_DECORATION_TYPE_DIVIDER
+    private static final int ACTIVITY_SIDE_SHEET_DECORATION_TYPE_MAX
+    public static final int ACTIVITY_SIDE_SHEET_DECORATION_TYPE_NONE
+    public static final int ACTIVITY_SIDE_SHEET_DECORATION_TYPE_SHADOW
+    public static final int ACTIVITY_SIDE_SHEET_POSITION_DEFAULT
+    public static final int ACTIVITY_SIDE_SHEET_POSITION_END
+    private static final int ACTIVITY_SIDE_SHEET_POSITION_MAX
+    public static final int ACTIVITY_SIDE_SHEET_POSITION_START
+    public static final int ACTIVITY_SIDE_SHEET_ROUNDED_CORNERS_POSITION_DEFAULT
+    private static final int ACTIVITY_SIDE_SHEET_ROUNDED_CORNERS_POSITION_MAX
+    public static final int ACTIVITY_SIDE_SHEET_ROUNDED_CORNERS_POSITION_NONE
+    public static final int ACTIVITY_SIDE_SHEET_ROUNDED_CORNERS_POSITION_TOP
+    public static final int CLOSE_BUTTON_POSITION_DEFAULT
+    public static final int CLOSE_BUTTON_POSITION_END
+    private static final int CLOSE_BUTTON_POSITION_MAX
+    public static final int CLOSE_BUTTON_POSITION_START
+    public static final int COLOR_SCHEME_DARK
+    public static final int COLOR_SCHEME_LIGHT
+    private static final int COLOR_SCHEME_MAX
+    public static final int COLOR_SCHEME_SYSTEM
+    public static final java.lang.String EXTRA_ACTION_BUTTON_BUNDLE
+    public static final java.lang.String EXTRA_ACTIVITY_HEIGHT_RESIZE_BEHAVIOR
+    public static final java.lang.String EXTRA_ACTIVITY_SIDE_SHEET_BREAKPOINT_DP
+    public static final java.lang.String EXTRA_ACTIVITY_SIDE_SHEET_DECORATION_TYPE
+    public static final java.lang.String EXTRA_ACTIVITY_SIDE_SHEET_ENABLE_MAXIMIZATION
+    public static final java.lang.String EXTRA_ACTIVITY_SIDE_SHEET_POSITION
+    public static final java.lang.String EXTRA_ACTIVITY_SIDE_SHEET_ROUNDED_CORNERS_POSITION
+    public static final java.lang.String EXTRA_CLOSE_BUTTON_ICON
+    public static final java.lang.String EXTRA_CLOSE_BUTTON_POSITION
+    public static final java.lang.String EXTRA_COLOR_SCHEME
+    public static final java.lang.String EXTRA_COLOR_SCHEME_PARAMS
+    public static final java.lang.String EXTRA_DEFAULT_SHARE_MENU_ITEM
+    public static final java.lang.String EXTRA_DISABLE_BACKGROUND_INTERACTION
+    public static final java.lang.String EXTRA_DISABLE_BOOKMARKS_BUTTON
+    public static final java.lang.String EXTRA_DISABLE_DOWNLOAD_BUTTON
+    public static final java.lang.String EXTRA_ENABLE_INSTANT_APPS
+    public static final java.lang.String EXTRA_ENABLE_URLBAR_HIDING
+    public static final java.lang.String EXTRA_EXIT_ANIMATION_BUNDLE
+    public static final java.lang.String EXTRA_INITIAL_ACTIVITY_HEIGHT_PX
+    public static final java.lang.String EXTRA_INITIAL_ACTIVITY_WIDTH_PX
+    public static final java.lang.String EXTRA_MENU_ITEMS
+    public static final java.lang.String EXTRA_NAVIGATION_BAR_COLOR
+    public static final java.lang.String EXTRA_NAVIGATION_BAR_DIVIDER_COLOR
+    public static final java.lang.String EXTRA_REMOTEVIEWS
+    public static final java.lang.String EXTRA_REMOTEVIEWS_CLICKED_ID
+    public static final java.lang.String EXTRA_REMOTEVIEWS_PENDINGINTENT
+    public static final java.lang.String EXTRA_REMOTEVIEWS_VIEW_IDS
+    public static final java.lang.String EXTRA_SECONDARY_TOOLBAR_COLOR
+    public static final java.lang.String EXTRA_SECONDARY_TOOLBAR_SWIPE_UP_GESTURE
+    public static final java.lang.String EXTRA_SEND_TO_EXTERNAL_DEFAULT_HANDLER
+    public static final java.lang.String EXTRA_SESSION
+    public static final java.lang.String EXTRA_SESSION_ID
+    public static final java.lang.String EXTRA_SHARE_STATE
+    public static final java.lang.String EXTRA_TINT_ACTION_BUTTON
+    public static final java.lang.String EXTRA_TITLE_VISIBILITY_STATE
+    public static final java.lang.String EXTRA_TOOLBAR_COLOR
+    public static final java.lang.String EXTRA_TOOLBAR_CORNER_RADIUS_DP
+    public static final java.lang.String EXTRA_TOOLBAR_ITEMS
+    public static final java.lang.String EXTRA_TRANSLATE_LANGUAGE_TAG
+    private static final java.lang.String EXTRA_USER_OPT_OUT_FROM_CUSTOM_TABS
+    private static final java.lang.String HTTP_ACCEPT_LANGUAGE
+    public static final java.lang.String KEY_DESCRIPTION
+    public static final java.lang.String KEY_ICON
+    public static final java.lang.String KEY_ID
+    public static final java.lang.String KEY_MENU_ITEM_TITLE
+    public static final java.lang.String KEY_PENDING_INTENT
+    private static final int MAX_TOOLBAR_CORNER_RADIUS_DP
+    private static final int MAX_TOOLBAR_ITEMS
+    public static final int NO_TITLE
+    public static final int SHARE_STATE_DEFAULT
+    private static final int SHARE_STATE_MAX
+    public static final int SHARE_STATE_OFF
+    public static final int SHARE_STATE_ON
+    public static final int SHOW_PAGE_TITLE
+    public static final int TOOLBAR_ACTION_BUTTON_ID
+    public static int getActivityResizeBehavior(android.content.Intent)
+    public static int getActivitySideSheetBreakpointDp(android.content.Intent)
+    public static int getActivitySideSheetDecorationType(android.content.Intent)
+    public static int getActivitySideSheetPosition(android.content.Intent)
+    public static int getActivitySideSheetRoundedCornersPosition(android.content.Intent)
+    public static int getCloseButtonPosition(android.content.Intent)
+    public static androidx.browser.customtabs.CustomTabColorSchemeParams getColorSchemeParams(android.content.Intent,int)
+    public static int getInitialActivityHeightPx(android.content.Intent)
+    public static int getInitialActivityWidthPx(android.content.Intent)
+    private static java.util.Locale getLocaleForLanguageTag(android.content.Intent)
+    public static int getMaxToolbarItems()
+    public static android.app.PendingIntent getSecondaryToolbarSwipeUpGesture(android.content.Intent)
+    public static int getToolbarCornerRadiusDp(android.content.Intent)
+    public static java.util.Locale getTranslateLocale(android.content.Intent)
+    public static boolean isActivitySideSheetMaximizationEnabled(android.content.Intent)
+    public static boolean isBackgroundInteractionEnabled(android.content.Intent)
+    public static boolean isBookmarksButtonEnabled(android.content.Intent)
+    public static boolean isDownloadButtonEnabled(android.content.Intent)
+    public static boolean isSendToExternalDefaultHandlerEnabled(android.content.Intent)
+    public static android.content.Intent setAlwaysUseBrowserUI(android.content.Intent)
+    public static boolean shouldAlwaysUseBrowserUI(android.content.Intent)
+androidx.browser.customtabs.CustomTabsService$1
+androidx.browser.customtabs.CustomTabsService$FilePurpose
+androidx.browser.customtabs.CustomTabsService$Relation
+androidx.browser.customtabs.CustomTabsService$Result
+androidx.browser.customtabs.CustomTabsService
+androidx.browser.customtabs.CustomTabsServiceConnection$1
+androidx.browser.customtabs.CustomTabsServiceConnection
+androidx.browser.customtabs.CustomTabsSession$1
+androidx.browser.customtabs.CustomTabsSession$2
+androidx.browser.customtabs.CustomTabsSession$MockSession
+androidx.browser.customtabs.CustomTabsSession$PendingSession
+androidx.browser.customtabs.CustomTabsSession
+androidx.browser.customtabs.CustomTabsSessionToken$1
+androidx.browser.customtabs.CustomTabsSessionToken$MockCallback
+androidx.browser.customtabs.CustomTabsSessionToken
+androidx.browser.customtabs.EngagementSignalsCallback
+androidx.browser.customtabs.EngagementSignalsCallbackRemote
+androidx.browser.customtabs.ExperimentalMinimizationCallback
+androidx.browser.customtabs.PostMessageBackend
+androidx.browser.customtabs.PostMessageService$1
+androidx.browser.customtabs.PostMessageService
+androidx.browser.customtabs.PostMessageServiceConnection
+androidx.browser.customtabs.TrustedWebUtils
+androidx.browser.trusted.ConnectionHolder$WrapperFactory
+androidx.browser.trusted.ConnectionHolder
+androidx.browser.trusted.FutureUtils
+androidx.browser.trusted.NotificationApiHelperForM
+androidx.browser.trusted.NotificationApiHelperForO
+androidx.browser.trusted.PackageIdentityUtils$Api28Implementation
+androidx.browser.trusted.PackageIdentityUtils$Pre28Implementation
+androidx.browser.trusted.PackageIdentityUtils$SignaturesCompat
+androidx.browser.trusted.PackageIdentityUtils
+androidx.browser.trusted.ScreenOrientation$LockType
+androidx.browser.trusted.ScreenOrientation
+androidx.browser.trusted.Token
+androidx.browser.trusted.TokenContents
+androidx.browser.trusted.TokenStore
+androidx.browser.trusted.TrustedWebActivityCallback
+androidx.browser.trusted.TrustedWebActivityCallbackRemote
+androidx.browser.trusted.TrustedWebActivityDisplayMode$DefaultMode
+androidx.browser.trusted.TrustedWebActivityDisplayMode$ImmersiveMode
+androidx.browser.trusted.TrustedWebActivityDisplayMode
+androidx.browser.trusted.TrustedWebActivityIntent
+androidx.browser.trusted.TrustedWebActivityIntentBuilder
+androidx.browser.trusted.TrustedWebActivityService$1
+androidx.browser.trusted.TrustedWebActivityService
+androidx.browser.trusted.TrustedWebActivityServiceConnection$1
+androidx.browser.trusted.TrustedWebActivityServiceConnection$ActiveNotificationsArgs
+androidx.browser.trusted.TrustedWebActivityServiceConnection$CancelNotificationArgs
+androidx.browser.trusted.TrustedWebActivityServiceConnection$NotificationsEnabledArgs
+androidx.browser.trusted.TrustedWebActivityServiceConnection$NotifyNotificationArgs
+androidx.browser.trusted.TrustedWebActivityServiceConnection$ResultArgs
+androidx.browser.trusted.TrustedWebActivityServiceConnection
+androidx.browser.trusted.TrustedWebActivityServiceConnectionPool$BindToServiceAsyncTask
+androidx.browser.trusted.TrustedWebActivityServiceConnectionPool
+androidx.browser.trusted.sharing.ShareData
+androidx.browser.trusted.sharing.ShareTarget$EncodingType
+androidx.browser.trusted.sharing.ShareTarget$FileFormField
+androidx.browser.trusted.sharing.ShareTarget$Params
+androidx.browser.trusted.sharing.ShareTarget$RequestMethod
+androidx.browser.trusted.sharing.ShareTarget
+androidx.browser.trusted.splashscreens.SplashScreenParamKey
+androidx.browser.trusted.splashscreens.SplashScreenVersion
 androidx.collection.ArrayMap:
     public void <init>(androidx.collection.SimpleArrayMap)
     public boolean containsAll(java.util.Collection)
@@ -490,9 +814,19 @@ androidx.core.app.AlarmManagerCompat
 androidx.core.app.AppComponentFactory
 androidx.core.app.AppLaunchChecker
 androidx.core.app.AppLocalesStorageHelper
-androidx.core.app.AppOpsManagerCompat$Api23Impl
-androidx.core.app.AppOpsManagerCompat$Api29Impl
-androidx.core.app.AppOpsManagerCompat
+androidx.core.app.AppOpsManagerCompat$Api23Impl:
+    private void <init>()
+androidx.core.app.AppOpsManagerCompat$Api29Impl:
+    private void <init>()
+androidx.core.app.AppOpsManagerCompat:
+    public static final int MODE_ALLOWED
+    public static final int MODE_DEFAULT
+    public static final int MODE_ERRORED
+    public static final int MODE_IGNORED
+    private void <init>()
+    public static int noteOp(android.content.Context,java.lang.String,int,java.lang.String)
+    public static int noteOpNoThrow(android.content.Context,java.lang.String,int,java.lang.String)
+    public static int noteProxyOp(android.content.Context,java.lang.String,java.lang.String)
 androidx.core.app.BundleCompat
 androidx.core.app.ComponentActivity$ExtraData
 androidx.core.app.ComponentActivity:
@@ -1151,11 +1485,13 @@ androidx.core.content.ContextCompat$Api21Impl
 androidx.core.content.ContextCompat$Api23Impl:
     private void <init>()
 androidx.core.content.ContextCompat$Api24Impl
-androidx.core.content.ContextCompat$Api26Impl
+androidx.core.content.ContextCompat$Api26Impl:
+    private void <init>()
 androidx.core.content.ContextCompat$Api28Impl:
     private void <init>()
 androidx.core.content.ContextCompat$Api30Impl
-androidx.core.content.ContextCompat$Api33Impl
+androidx.core.content.ContextCompat$Api33Impl:
+    private void <init>()
 androidx.core.content.ContextCompat$LegacyServiceMapHolder
 androidx.core.content.ContextCompat$RegisterReceiverFlags
 androidx.core.content.ContextCompat:
@@ -1183,12 +1519,8 @@ androidx.core.content.ContextCompat:
     public static java.lang.Object getSystemService(android.content.Context,java.lang.Class)
     public static java.lang.String getSystemServiceName(android.content.Context,java.lang.Class)
     public static boolean isDeviceProtectedStorage(android.content.Context)
-    static java.lang.String obtainAndCheckReceiverPermission(android.content.Context)
-    public static android.content.Intent registerReceiver(android.content.Context,android.content.BroadcastReceiver,android.content.IntentFilter,int)
-    public static android.content.Intent registerReceiver(android.content.Context,android.content.BroadcastReceiver,android.content.IntentFilter,java.lang.String,android.os.Handler,int)
     public static boolean startActivities(android.content.Context,android.content.Intent[])
     public static boolean startActivities(android.content.Context,android.content.Intent[],android.os.Bundle)
-    public static void startActivity(android.content.Context,android.content.Intent,android.os.Bundle)
     public static void startForegroundService(android.content.Context,android.content.Intent)
 androidx.core.content.ContextKt
 androidx.core.content.FileProvider$Api21Impl
@@ -1218,7 +1550,13 @@ androidx.core.content.PackageManagerCompat$Api30Impl
 androidx.core.content.PackageManagerCompat$UnusedAppRestrictionsStatus
 androidx.core.content.PackageManagerCompat
 androidx.core.content.PermissionChecker$PermissionResult
-androidx.core.content.PermissionChecker
+androidx.core.content.PermissionChecker:
+    public static final int PERMISSION_DENIED
+    public static final int PERMISSION_DENIED_APP_OP
+    public static final int PERMISSION_GRANTED
+    private void <init>()
+    public static int checkCallingOrSelfPermission(android.content.Context,java.lang.String)
+    public static int checkCallingPermission(android.content.Context,java.lang.String,java.lang.String)
 androidx.core.content.SharedPreferencesCompat$EditorCompat$Helper
 androidx.core.content.SharedPreferencesCompat$EditorCompat
 androidx.core.content.SharedPreferencesCompat
@@ -5165,6 +5503,7 @@ com.example.where_are_you.R$mipmap
 com.example.where_are_you.R$string
 com.example.where_are_you.R$style
 com.example.where_are_you.R$styleable
+com.example.where_are_you.R$xml
 com.example.where_are_you.R
 com.google.android.gms.actions.ItemListIntents
 com.google.android.gms.actions.NoteIntents
@@ -7218,6 +7557,34 @@ io.flutter.plugins.sharedpreferences.SharedPreferencesPluginKt:
     public static final java.lang.String LIST_PREFIX
     public static final java.lang.String SHARED_PREFERENCES_NAME
     public static final java.lang.String TAG
+io.flutter.plugins.urllauncher.BuildConfig
+io.flutter.plugins.urllauncher.Messages$BrowserOptions$Builder
+io.flutter.plugins.urllauncher.Messages$WebViewOptions$Builder
+io.flutter.plugins.urllauncher.Messages:
+    public void <init>()
+io.flutter.plugins.urllauncher.R$anim
+io.flutter.plugins.urllauncher.R$animator
+io.flutter.plugins.urllauncher.R$attr
+io.flutter.plugins.urllauncher.R$color
+io.flutter.plugins.urllauncher.R$dimen
+io.flutter.plugins.urllauncher.R$drawable
+io.flutter.plugins.urllauncher.R$id
+io.flutter.plugins.urllauncher.R$integer
+io.flutter.plugins.urllauncher.R$layout
+io.flutter.plugins.urllauncher.R$string
+io.flutter.plugins.urllauncher.R$style
+io.flutter.plugins.urllauncher.R$styleable
+io.flutter.plugins.urllauncher.R$xml
+io.flutter.plugins.urllauncher.R
+io.flutter.plugins.urllauncher.UrlLauncher:
+    private static final java.lang.String TAG
+io.flutter.plugins.urllauncher.UrlLauncherPlugin:
+    private static final java.lang.String TAG
+io.flutter.plugins.urllauncher.WebViewActivity:
+    public static final java.lang.String ACTION_CLOSE
+    static final java.lang.String ENABLE_DOM_EXTRA
+    static final java.lang.String ENABLE_JS_EXTRA
+    static final java.lang.String URL_EXTRA
 io.flutter.util.HandlerCompat:
     public void <init>()
 io.flutter.util.PathUtils:
@@ -14160,6 +14527,8 @@ io.flutter.plugin.platform.PlatformPlugin$PlatformPluginDelegate$-CC
 io.flutter.plugin.platform.PlatformView$-CC
 io.flutter.plugin.platform.VirtualDisplayController:
     private static java.lang.String TAG
+io.flutter.plugins.urllauncher.UrlLauncher:
+    static final synthetic boolean $assertionsDisabled
 kotlin.coroutines.jvm.internal.CoroutineStackFrame:
     public abstract java.lang.StackTraceElement getStackTraceElement()
 kotlin.jvm.internal.PropertyReference1:

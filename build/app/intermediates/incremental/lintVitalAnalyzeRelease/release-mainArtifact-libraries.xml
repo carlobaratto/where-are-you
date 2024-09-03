@@ -43,6 +43,19 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="/home/carlo/Documenti/GitHub/where-are-you/android@@:url_launcher_android::release"
+      jars="/home/carlo/Documenti/GitHub/where-are-you/build/url_launcher_android/.transforms/b95f4a11c189b805bc30d76eca04ce48/transformed/out/jars/classes.jar:/home/carlo/Documenti/GitHub/where-are-you/build/url_launcher_android/.transforms/b95f4a11c189b805bc30d76eca04ce48/transformed/out/jars/libs/R.jar"
+      resolved="io.flutter.plugins.urllauncher:url_launcher_android:unspecified"
+      folder="/home/carlo/Documenti/GitHub/where-are-you/build/url_launcher_android/.transforms/b95f4a11c189b805bc30d76eca04ce48/transformed/out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="io.flutter:flutter_embedding_release:1.0.0-b8800d88be4866db1b15f8b954ab2573bba9960f@jar"
       jars="/home/carlo/.gradle/caches/modules-2/files-2.1/io.flutter/flutter_embedding_release/1.0.0-b8800d88be4866db1b15f8b954ab2573bba9960f/be503c14c11d0b9e0576ab352c15bc6fef02d540/flutter_embedding_release-1.0.0-b8800d88be4866db1b15f8b954ab2573bba9960f.jar"
       resolved="io.flutter:flutter_embedding_release:1.0.0-b8800d88be4866db1b15f8b954ab2573bba9960f"/>
@@ -334,9 +347,9 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="androidx.annotation:annotation-jvm:1.8.0@jar"
-      jars="/home/carlo/.gradle/caches/modules-2/files-2.1/androidx.annotation/annotation-jvm/1.8.0/b8a16fe526014b7941c1debaccaf9c5153692dbb/annotation-jvm-1.8.0.jar"
-      resolved="androidx.annotation:annotation-jvm:1.8.0"/>
+      name="androidx.annotation:annotation-jvm:1.8.2@jar"
+      jars="/home/carlo/.gradle/caches/modules-2/files-2.1/androidx.annotation/annotation-jvm/1.8.2/b8a16fe526014b7941c1debaccaf9c5153692dbb/annotation-jvm-1.8.2.jar"
+      resolved="androidx.annotation:annotation-jvm:1.8.2"/>
   <library
       name="org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.0@jar"
       jars="/home/carlo/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk7/1.9.0/f320478990d05e0cfaadd74f9619fd6027adbf37/kotlin-stdlib-jdk7-1.9.0.jar"
@@ -384,6 +397,19 @@
       jars="/home/carlo/.gradle/caches/transforms-3/b853b92da8bed945f39542d28d785126/transformed/jetified-tracing-1.2.0/jars/classes.jar"
       resolved="androidx.tracing:tracing:1.2.0"
       folder="/home/carlo/.gradle/caches/transforms-3/b853b92da8bed945f39542d28d785126/transformed/jetified-tracing-1.2.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="androidx.browser:browser:1.8.0@aar"
+      jars="/home/carlo/.gradle/caches/transforms-3/d132d9a89e9154d07bd292c078e03ccb/transformed/browser-1.8.0/jars/classes.jar"
+      resolved="androidx.browser:browser:1.8.0"
+      folder="/home/carlo/.gradle/caches/transforms-3/d132d9a89e9154d07bd292c078e03ccb/transformed/browser-1.8.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"

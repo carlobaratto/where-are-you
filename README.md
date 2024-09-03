@@ -4,10 +4,10 @@ A new way to share position, not personal information.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
+Remember to configure settings page and put on your self hosting the API (but change the API key!)
 ## TODO
-- Get global preferences on app open
 - Set name on the marker
-- Get more positions a time--> Use List
 - Create icon
+
+## KNOWN ERRORS
+-RangeError on load

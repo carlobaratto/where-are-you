@@ -135,6 +135,9 @@
 -keep class com.baseflow.geolocator.GeolocatorLocationService { <init>(); }
 -keep class com.example.where_are_you.MainActivity { <init>(); }
 -keep class com.google.android.gms.common.api.GoogleApiActivity { <init>(); }
+-keep class io.flutter.plugins.urllauncher.WebViewActivity { <init>(); }
+-keep class androidx.browser.browseractions.BrowserActionsFallbackMenuView { <init>(android.content.Context, android.util.AttributeSet); }
+
 
 # End of content from /home/carlo/Documenti/GitHub/where-are-you/build/app/intermediates/aapt_proguard_file/release/aapt_rules.txt
 # The proguard configuration file for the following section is /home/carlo/.gradle/caches/transforms-3/d4a6ca5503a19dcea0f3b651be9acab7/transformed/jetified-window-1.2.0/proguard.txt
@@ -457,7 +460,7 @@
   public *** apply(***);
 }
 # End of content from /home/carlo/.gradle/caches/transforms-3/5d8e855bf0475f63c60be78c10a177d1/transformed/jetified-core-1.0.0/proguard.txt
-# The proguard configuration file for the following section is /home/carlo/.gradle/caches/transforms-3/29e32a95dbca2e49d9974180009775e0/transformed/rules/lib/META-INF/proguard/androidx-annotations.pro
+# The proguard configuration file for the following section is /home/carlo/.gradle/caches/transforms-3/32059226d42611c564632b835846fd00/transformed/rules/lib/META-INF/proguard/androidx-annotations.pro
 -keep,allowobfuscation @interface androidx.annotation.Keep
 -keep @androidx.annotation.Keep class * {*;}
 
@@ -477,7 +480,7 @@
   @androidx.annotation.DoNotInline <methods>;
 }
 
-# End of content from /home/carlo/.gradle/caches/transforms-3/29e32a95dbca2e49d9974180009775e0/transformed/rules/lib/META-INF/proguard/androidx-annotations.pro
+# End of content from /home/carlo/.gradle/caches/transforms-3/32059226d42611c564632b835846fd00/transformed/rules/lib/META-INF/proguard/androidx-annotations.pro
 # The proguard configuration file for the following section is <unknown>
 -ignorewarnings
 # End of content from <unknown>
