@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:where_are_you/main.dart';
 import 'globals.dart' as global;
 import 'map.dart';
 
@@ -54,14 +55,17 @@ class _settingsState extends State<settings> {
      // global.onoff = onoff as bool;
     });
 
-    if (global.api_url != "")
+    if (global.api_url != "Insert API URL")
       {
+        global.selectedIndex = 0;
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => allposition()),
+          MaterialPageRoute(builder: (context) => const MyApp()),
         );
       }
-    return name;
+    else {
+      return name;
+    }
     return apiUrl;
     return apikey;
   }

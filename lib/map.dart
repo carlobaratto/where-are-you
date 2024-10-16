@@ -2,14 +2,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:http/http.dart' as http;
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:where_are_you/settings.dart';
 import 'globals.dart' as global;
 import 'package:latlong2/latlong.dart' as latLng;
 import 'dart:async';
-
-const baseUrl = "https://carlobaratto.it/whereareyou/api_position.php";
 
 class API {
   static Future getPosition() {
