@@ -9,7 +9,7 @@ import 'globals.dart' as global;
 import 'package:latlong2/latlong.dart' as latLng;
 import 'dart:async';
 
-const baseUrl = "https://nordicwalkingitalia.it/ws/ws_eventi.php";
+const baseUrl = "https://carlobaratto.it/whereareyou/api_position.php";
 
 class API {
   static Future getPosition() {
@@ -23,6 +23,8 @@ class API {
 }
 
 class allposition extends StatelessWidget {
+  const allposition({super.key});
+
 
   @override
 
@@ -30,11 +32,11 @@ class allposition extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'ENWI',
+      title: 'Where are you',
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: MyListScreenPosition(),
+      home: const MyListScreenPosition(),
     );
   }
 }
@@ -42,12 +44,12 @@ class allposition extends StatelessWidget {
 class MyListScreenPosition extends StatefulWidget {
   const MyListScreenPosition({super.key});
   @override
-  createState() => _MyListScreenPositionState();
+
+  _MyListScreenPositionState createState()=> _MyListScreenPositionState();
 }
 
 class _MyListScreenPositionState extends State {
   var posizioni = <Posizione>[];
-
   _getPosizione() {
     API.getPosition().then((response) {
       setState(() {
@@ -57,40 +59,19 @@ class _MyListScreenPositionState extends State {
     });
   }
 
+  @override
   initState() {
     super.initState();
-    _readSettings();
     _getPosizione();
   }
 
+  @override
   dispose() {
     super.dispose();
   }
 
   final GlobalKey<ScaffoldState> scaffoldState = GlobalKey();
 
-  final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
-
-  Future<String> _readSettings() async {
-    final SharedPreferences prefs = await _prefs;
-    String name = prefs.getString('name').toString();
-    String api_url = prefs.getString('api_url').toString();
-    String apikey = prefs.getString('apikey').toString();
-
-    if (name == '')
-      {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => settings()),
-        );
-      }
-    setState(() {
-      global.name = name;
-      global.api_url = api_url;
-      global.apikey = apikey;
-    });
-    return name;
-  }
   @override
 
   build(context) {
@@ -140,6 +121,7 @@ class _MyListScreenPositionState extends State {
     );
   }
 }
+
 
 class Posizione {
   final String name;

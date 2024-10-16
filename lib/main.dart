@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'location_page.dart';
 import 'map.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'settings.dart';
-import 'globals.dart' as global;
 
 void main() => runApp(const MyApp());
 
@@ -34,10 +32,10 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
 
-  int _selectedIndex = 0;
+  int _selectedIndex = 2;
   static const TextStyle optionStyle =
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static List<Widget> _widgetOptions = <Widget>[
+  static final List<Widget> _widgetOptions = <Widget>[
     const MyListScreenPosition(),
     const LocationPage(),
     const settings()

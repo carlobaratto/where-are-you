@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'globals.dart' as global;
+import 'map.dart';
 
 class settings extends StatefulWidget {
   const settings({super.key});
@@ -15,27 +16,32 @@ class _settingsState extends State<settings> {
   final nameController = TextEditingController();
   final api_url_Controller = TextEditingController();
   final api_Controller = TextEditingController();
+  //final onoff_Controller = TextEditingController();
 
-  Future<void> _insertSettings(name, api_url, apikey) async {
+  Future<void> _insertSettings(name, apiUrl, apikey) async {
     final SharedPreferences prefs = await _prefs;
+  //  onoff = onoff as Bool;
     prefs.setString('name', name);
-    prefs.setString('api_url', api_url);
+    prefs.setString('api_url', apiUrl);
     prefs.setString('apikey', apikey);
+   // prefs.setBool('onoff', onoff as bool);
     //prefs.clear();
   }
 
   Future<String> _readSettings() async {
     final SharedPreferences prefs = await _prefs;
     String name = prefs.getString('name').toString();
-    String api_url = prefs.getString('api_url').toString();
+    String apiUrl = prefs.getString('api_url').toString();
     String apikey = prefs.getString('apikey').toString();
+    //String onoff = prefs.getBool('onoff').toString();
+
     if (name=="null")
     {
       name = 'Insert screen name';
     }
-    if (api_url=="null")
+    if (apiUrl=="null")
     {
-      api_url = 'Insert API URL';
+      apiUrl = 'Insert API URL';
     }
     if (apikey=="null")
     {
@@ -43,14 +49,24 @@ class _settingsState extends State<settings> {
     }
     setState(() {
       global.name = name;
-      global.api_url = api_url;
+      global.api_url = apiUrl;
       global.apikey = apikey;
+     // global.onoff = onoff as bool;
     });
+
+    if (global.api_url != "")
+      {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => allposition()),
+        );
+      }
     return name;
-    return api_url;
+    return apiUrl;
     return apikey;
   }
 
+  @override
   initState() {
     _readSettings();
     super.initState();
@@ -60,10 +76,10 @@ class _settingsState extends State<settings> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Settings'),
-        leading: new IconButton(
+        title: const Text('Settings'),
+        leading: IconButton(
           icon:
-          new Icon(Icons.arrow_back_ios, color: Colors.white),
+          const Icon(Icons.arrow_back_ios, color: Colors.white),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -80,7 +96,7 @@ class _settingsState extends State<settings> {
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
               child: TextField(
                 decoration: InputDecoration(
-                  border: UnderlineInputBorder(),
+                  border: const UnderlineInputBorder(),
                   labelText: global.name,
 
                 ),
@@ -91,7 +107,7 @@ class _settingsState extends State<settings> {
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
               child: TextField(
                 decoration: InputDecoration(
-                  border: UnderlineInputBorder(),
+                  border: const UnderlineInputBorder(),
                   labelText: global.api_url,
                 ),
                 controller: api_url_Controller,
@@ -101,12 +117,28 @@ class _settingsState extends State<settings> {
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
               child: TextField(
                 decoration: InputDecoration(
-                  border: UnderlineInputBorder(),
+                  border: const UnderlineInputBorder(),
                   labelText: global.apikey,
                 ),
                 controller: api_Controller,
               ),
             ),
+            const Text('Activate auto update location'),
+            /*
+            Switch(
+              // thumb color (round icon)
+              activeColor: Colors.amber,
+              activeTrackColor: Colors.cyan,
+              inactiveThumbColor: Colors.blueGrey.shade600,
+              inactiveTrackColor: Colors.grey.shade400,
+              splashRadius: 50.0,
+              // boolean variable value
+              value: global.onoff,
+              // changes the state of the switch
+              onChanged: (value) => setState(() => global.onoff = value),
+            ),
+
+             */
             const SizedBox(height: 30),
             ElevatedButton(
               style: ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20)),
@@ -124,4 +156,3 @@ class _settingsState extends State<settings> {
     );
   }
 }
-
