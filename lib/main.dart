@@ -31,11 +31,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  @override
-
   int _selectedIndex = global.selectedIndex;
-  static const TextStyle optionStyle =
-  TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+
   static final List<Widget> _widgetOptions = <Widget>[
     const MyListScreenPosition(),
     const LocationPage(),

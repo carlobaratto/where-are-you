@@ -74,42 +74,44 @@ class _MyListScreenPositionState extends State {
     return Scaffold(
       body: Stack(
         children: [
-          FlutterMap(
-                      options: MapOptions(
-                        initialCenter: latLng.LatLng(double.parse(posizioni[0].lat),double.parse(posizioni[0].long)),
-                        initialZoom: 15,
-                      ),
-                      children: [
-                        TileLayer(
-                          urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                          userAgentPackageName: 'com.example.app',
+          Expanded(child:
+            FlutterMap(
+                        options: MapOptions(
+                          initialCenter: latLng.LatLng(double.parse(posizioni[0].lat),double.parse(posizioni[0].long)),
+                          initialZoom: 15,
                         ),
+                        children: [
+                          TileLayer(
+                            urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                            userAgentPackageName: 'com.example.app',
+                          ),
 
-                        MarkerLayer(
-                          markers: [
-                            for (int i=0; i<3; i++)
-                            Marker(
-                             point: latLng.LatLng(double.parse(posizioni[i].lat),double.parse(posizioni[i].long)),
-                              child: const Icon(
-                                Icons.location_on,
-                                color: Colors.red,
-                                size: 30,
+                          MarkerLayer(
+                            markers: [
+                              for (int i=0; i<posizioni.length; i++)
+                              Marker(
+                               point: latLng.LatLng(double.parse(posizioni[i].lat),double.parse(posizioni[i].long)),
+                                child: const Icon(
+                                  Icons.location_on,
+                                  color: Colors.red,
+                                  size: 30,
+                                ),
+                                rotate: true,
                               ),
-                              rotate: true,
-                            ),
-                          ],
-                        ),
-                        RichAttributionWidget(
-                          animationConfig: const ScaleRAWA(), // Or `FadeRAWA` as is default
-                          attributions: [
-                            TextSourceAttribution(
-                              'OpenStreetMap contributors',
-                              onTap: () => launchUrl(Uri.parse('https://openstreetmap.org/copyright')),
-                            ),
-                          ],
-                        ),
-                      ]
+                            ],
+                          ),
+                          RichAttributionWidget(
+                            animationConfig: const ScaleRAWA(), // Or `FadeRAWA` as is default
+                            attributions: [
+                              TextSourceAttribution(
+                                'OpenStreetMap contributors',
+                                onTap: () => launchUrl(Uri.parse('https://openstreetmap.org/copyright')),
+                              ),
+                            ],
+                          ),
+                        ]
 
+            ),
           ),
         ],
       ),

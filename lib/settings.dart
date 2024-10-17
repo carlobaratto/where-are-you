@@ -2,8 +2,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:where_are_you/main.dart';
+import 'package:where_are_you/map.dart';
 import 'globals.dart' as global;
-import 'map.dart';
 
 class settings extends StatefulWidget {
   const settings({super.key});
@@ -54,18 +54,18 @@ class _settingsState extends State<settings> {
       global.apikey = apikey;
      // global.onoff = onoff as bool;
     });
-
+/*
     if (global.api_url != "Insert API URL")
       {
-        global.selectedIndex = 0;
+        //global.selectedIndex = 0;
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => const MyApp()),
         );
       }
     else {
+  */
       return name;
-    }
     return apiUrl;
     return apikey;
   }
