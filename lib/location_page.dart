@@ -15,7 +15,7 @@ class LocationPage extends StatefulWidget {
 Future<void> syncPosition(String lat, String long) async {
 
   final response = await http.post(
-    Uri.parse(global.api_url),
+    Uri.parse(global.apiUrl),
 
     body: {
       'apikey': global.apikey,

@@ -50,7 +50,7 @@ class _settingsState extends State<settings> {
     }
     setState(() {
       global.name = name;
-      global.api_url = apiUrl;
+      global.apiUrl = apiUrl;
       global.apikey = apikey;
      // global.onoff = onoff as bool;
     });
@@ -93,9 +93,12 @@ class _settingsState extends State<settings> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
+        Expanded(child:
             const Divider(
               height: 25, //height spacing of divider
             ),
+        ),
+      Expanded(child:
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
               child: TextField(
@@ -107,16 +110,20 @@ class _settingsState extends State<settings> {
                 controller: nameController,
               ),
             ),
+      ),
+      Expanded(child:
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
               child: TextField(
                 decoration: InputDecoration(
                   border: const UnderlineInputBorder(),
-                  labelText: global.api_url,
+                  labelText: global.apiUrl,
                 ),
                 controller: api_url_Controller,
               ),
             ),
+      ),
+      Expanded(child:
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
               child: TextField(
@@ -127,6 +134,7 @@ class _settingsState extends State<settings> {
                 controller: api_Controller,
               ),
             ),
+      ),
             const Text('Activate auto update location'),
             /*
             Switch(

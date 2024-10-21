@@ -6,26 +6,25 @@ import 'package:url_launcher/url_launcher.dart';
 import 'globals.dart' as global;
 import 'package:latlong2/latlong.dart' as latLng;
 import 'dart:async';
+import 'settings.dart';
 
 class API {
-  static Future getPosition() {
+  static Future<http.Response> getPosition() {
     return http.post(
-        Uri.parse(global.api_url),
-        body: {
-          'apikey': global.apikey,
-          'getset' : 'get',
-        });
+      Uri.parse(global.apiUrl),
+      body: {
+        'apikey': global.apikey,
+        'getset': 'get',
+      },
+    );
   }
 }
 
-class allposition extends StatelessWidget {
-  const allposition({super.key});
-
+class AllPosition extends StatelessWidget {
+  const AllPosition({super.key});
 
   @override
-
-  build(context) {
-
+  Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Where are you',
@@ -39,87 +38,115 @@ class allposition extends StatelessWidget {
 
 class MyListScreenPosition extends StatefulWidget {
   const MyListScreenPosition({super.key});
-  @override
 
-  _MyListScreenPositionState createState()=> _MyListScreenPositionState();
+  @override
+  _MyListScreenPositionState createState() => _MyListScreenPositionState();
 }
 
-class _MyListScreenPositionState extends State {
+class _MyListScreenPositionState extends State<MyListScreenPosition> {
   var posizioni = <Posizione>[];
-  _getPosizione() {
+
+  void _checkApiUrlAndRedirect() {
+    if (global.apiUrl == "Insert API URL") {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const settings()),
+      );
+    } else {
+      _getPosizione();
+    }
+  }
+
+  void _getPosizione() {
     API.getPosition().then((response) {
-      setState(() {
-        Iterable list = json.decode(response.body);
-        posizioni = list.map((model) => Posizione.fromJson(model)).toList();
-      });
+      if (response.statusCode == 200) {
+        setState(() {
+          Iterable list = json.decode(response.body);
+          posizioni = list.map((model) => Posizione.fromJson(model)).toList();
+        });
+      } else {
+        // Gestire errore
+        print('Errore: ${response.statusCode}');
+      }
+    }).catchError((error) {
+      print('Errore di rete: $error');
     });
   }
 
   @override
-  initState() {
+  void initState() {
     super.initState();
-    _getPosizione();
+    _checkApiUrlAndRedirect();
   }
 
   @override
-  dispose() {
-    super.dispose();
-  }
-
-  final GlobalKey<ScaffoldState> scaffoldState = GlobalKey();
-
-  @override
-
-  build(context) {
+  Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
-          Expanded(child:
+          if (posizioni.isNotEmpty)
             FlutterMap(
-                        options: MapOptions(
-                          initialCenter: latLng.LatLng(double.parse(posizioni[0].lat),double.parse(posizioni[0].long)),
-                          initialZoom: 15,
+              options: MapOptions(
+                initialCenter: latLng.LatLng(
+                  double.parse(posizioni[0].lat),
+                  double.parse(posizioni[0].long),
+                ),
+                initialZoom: 15,
+              ),
+              children: [
+                TileLayer(
+                  urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                  userAgentPackageName: 'com.example.app',
+                ),
+                MarkerLayer(
+                  markers: [
+                    for (var posizione in posizioni)
+
+                      Marker(
+                        point: latLng.LatLng(
+                          double.parse(posizione.lat),
+                          double.parse(posizione.long),
                         ),
-                        children: [
-                          TileLayer(
-                            urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                            userAgentPackageName: 'com.example.app',
-                          ),
+/*
+                        child: Text(
+                            posizione.name,
+                            style: TextStyle(
+                            color: Colors.red,
+                            fontSize: 13,
+                            fontWeight: FontWeight.bold,
+                            ),
+                        */
+                        child: const Icon(
+                          Icons.location_on,
+                          color: Colors.red,
+                          size: 30,
+                        ),
+                      ),
 
-                          MarkerLayer(
-                            markers: [
-                              for (int i=0; i<posizioni.length; i++)
-                              Marker(
-                               point: latLng.LatLng(double.parse(posizioni[i].lat),double.parse(posizioni[i].long)),
-                                child: const Icon(
-                                  Icons.location_on,
-                                  color: Colors.red,
-                                  size: 30,
-                                ),
-                                rotate: true,
-                              ),
-                            ],
-                          ),
-                          RichAttributionWidget(
-                            animationConfig: const ScaleRAWA(), // Or `FadeRAWA` as is default
-                            attributions: [
-                              TextSourceAttribution(
-                                'OpenStreetMap contributors',
-                                onTap: () => launchUrl(Uri.parse('https://openstreetmap.org/copyright')),
-                              ),
-                            ],
-                          ),
-                        ]
 
-            ),
-          ),
+
+                  ],
+
+                ),
+                RichAttributionWidget(
+                  animationConfig: const ScaleRAWA(),
+                  attributions: [
+                    TextSourceAttribution(
+                      'OpenStreetMap contributors',
+                      onTap: () =>
+                          launchUrl(Uri.parse('https://openstreetmap.org/copyright')),
+                    ),
+                  ],
+                ),
+              ],
+            )
+          else
+            const Center(child: CircularProgressIndicator()),
         ],
       ),
-
     );
   }
 }
-
 
 class Posizione {
   final String name;
@@ -127,13 +154,15 @@ class Posizione {
   final String lat;
   final String long;
 
-  Posizione.fromJson(Map json)
+  Posizione.fromJson(Map<String, dynamic> json)
       : name = json['name'],
         datetime = json['datetime'],
         lat = json['lat'],
         long = json['long'];
 
-  Map toJson() {
-    return {'name': name, 'datetime': datetime, 'lat':lat, 'long':long};
+  Map<String, dynamic> toJson() {
+    return {'name': name, 'datetime': datetime, 'lat': lat, 'long': long};
   }
 }
+
+
