@@ -1,4 +1,4 @@
-#Mon Oct 21 11:06:46 CEST 2024
+#Tue Oct 22 11:26:03 CEST 2024
 base.0=/home/carlo/Documenti/GitHub/where-are-you/build/app/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/home/carlo/Documenti/GitHub/where-are-you/build/app/intermediates/dex/debug/mergeLibDexDebug/0/classes.dex
 base.2=/home/carlo/Documenti/GitHub/where-are-you/build/app/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex

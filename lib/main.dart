@@ -3,6 +3,7 @@ import 'location_page.dart';
 import 'map.dart';
 import 'settings.dart';
 import 'globals.dart' as global;
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() => runApp(const MyApp());
 
@@ -32,14 +33,35 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = global.selectedIndex;
+  String name = '';
+  String apiUrl = '';
+  String apikey = '';
 
   static final List<Widget> _widgetOptions = <Widget>[
     const MyListScreenPosition(),
     const LocationPage(),
-    const settings()
+    const settings(),
   ];
 
+  @override
+  void initState() {
+    super.initState();
+    _loadPreferences(); // Carica i dati da SharedPreferences
+  }
+
+  Future<void> _loadPreferences() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      name = prefs.getString('name') ?? '';
+      apiUrl = prefs.getString('api_url') ?? '';
+      apikey = prefs.getString('apikey') ?? '';
+    });
+  }
+
   void _onItemTapped(int index) {
+    if (index == 2){
+      global.selectedIndex = 2;
+    }
     setState(() {
       _selectedIndex = index;
     });
@@ -65,52 +87,53 @@ class _MyHomePageState extends State<MyHomePage> {
         child: _widgetOptions[_selectedIndex],
       ),
       drawer: Drawer(
-        // Add a ListView to the drawer. This ensures the user can scroll
-        // through the options in the drawer if there isn't enough vertical
-        // space to fit everything.
-        child: ListView(
-          // Important: Remove any padding from the ListView.
-          padding: EdgeInsets.zero,
-          children: [
+        child: Column( // Usa Column o Row per fornire restrizioni
+          children: <Widget>[
             const DrawerHeader(
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
-              child: Text('Where are you\nOpen source location sharing software'),
+              child: Text(
+                'Where are you\nOpen source location sharing software',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
-            ListTile(
-              title: const Text('Map'),
-              selected: _selectedIndex == 0,
-              onTap: () {
-                // Update the state of the app
-                _onItemTapped(0);
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('Get data'),
-              selected: _selectedIndex == 1,
-              onTap: () {
-                // Update the state of the app
-                _onItemTapped(1);
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('Settings'),
-              selected: _selectedIndex == 2,
-              onTap: () {
-                // Update the state of the app
-                _onItemTapped(2);
-                // Then close the drawer
-                Navigator.pop(context);
-              },
+            Expanded( // Utilizza Expanded per occupare lo spazio rimanente
+              child: ListView(
+                padding: EdgeInsets.zero,
+                children: <Widget>[
+                  ListTile(
+                    title: const Text('Map'),
+                    selected: _selectedIndex == 0,
+                    onTap: () {
+                      _onItemTapped(0);
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    title: const Text('Get data'),
+                    selected: _selectedIndex == 1,
+                    onTap: () {
+                      _onItemTapped(1);
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    title: const Text('Settings'),
+                    selected: _selectedIndex == 2,
+                    onTap: () {
+                      _onItemTapped(2);
+                      Navigator.pop(context);
+                    },
+                  ),
+                ],
+              ),
             ),
           ],
         ),
       ),
+
+
     );
   }
 }

@@ -23,52 +23,38 @@ class _settingsState extends State<settings> {
     final SharedPreferences prefs = await _prefs;
   //  onoff = onoff as Bool;
     prefs.setString('name', name);
-    prefs.setString('api_url', apiUrl);
+    prefs.setString('apiUrl', apiUrl);
     prefs.setString('apikey', apikey);
    // prefs.setBool('onoff', onoff as bool);
     //prefs.clear();
   }
 
-  Future<String> _readSettings() async {
+  Future<void> _readSettings() async {
     final SharedPreferences prefs = await _prefs;
-    String name = prefs.getString('name').toString();
-    String apiUrl = prefs.getString('api_url').toString();
-    String apikey = prefs.getString('apikey').toString();
-    //String onoff = prefs.getBool('onoff').toString();
 
-    if (name=="null")
-    {
-      name = 'Insert screen name';
-    }
-    if (apiUrl=="null")
-    {
-      apiUrl = 'Insert API URL';
-    }
-    if (apikey=="null")
-    {
-      apikey = 'Insert API KEY';
-    }
+    // Usa l'operatore null-aware e fornisci un valore di fallback
+    String name = prefs.getString('name') ?? 'Insert screen name';
+    String apiUrl = prefs.getString('apiUrl') ?? 'Insert API URL';
+    String apikey = prefs.getString('apikey') ?? 'Insert API KEY';
+
     setState(() {
       global.name = name;
       global.apiUrl = apiUrl;
       global.apikey = apikey;
-     // global.onoff = onoff as bool;
     });
-/*
-    if (global.api_url != "Insert API URL")
-      {
-        //global.selectedIndex = 0;
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => const MyApp()),
-        );
-      }
-    else {
-  */
-      return name;
-    return apiUrl;
-    return apikey;
+
+    if (global.apiUrl != 'Insert API URL') {
+      global.selectedIndex = 0;
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const MyApp()),
+      );
+    } else {
+      // Restituisci un messaggio informativo se necessario
+      print('Settings not fully configured: name: $name, apiUrl: $apiUrl, apikey: $apikey');
+    }
   }
+
 
   @override
   initState() {
