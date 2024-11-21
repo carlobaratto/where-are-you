@@ -441,9 +441,9 @@
     },
     {
       "name": "url_launcher_windows",
-      "rootUri": "file:///home/carlo/.pub-cache/hosted/pub.dev/url_launcher_windows-3.1.2",
+      "rootUri": "file:///home/carlo/.pub-cache/hosted/pub.dev/url_launcher_windows-3.1.3",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.3"
     },
     {
       "name": "uuid",
@@ -488,7 +488,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2024-10-17T22:10:59.108973Z",
+  "generated": "2024-10-23T06:36:42.932501Z",
   "generator": "pub",
   "generatorVersion": "3.5.3",
   "flutterRoot": "file:///home/carlo/tools_sviluppo/flutter",

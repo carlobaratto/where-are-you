@@ -4,6 +4,7 @@ import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:http/http.dart' as http;
 import 'globals.dart' as global;
+import 'locationBatch.dart';
 
 class LocationPage extends StatefulWidget {
   const LocationPage({super.key});
@@ -30,6 +31,8 @@ Future<void> syncPosition(String lat, String long) async {
 class _LocationPageState extends State<LocationPage> {
   String? _currentAddress;
   Position? _currentPosition;
+
+
 
   Future<bool> _handleLocationPermission() async {
     bool serviceEnabled;
@@ -105,12 +108,22 @@ class _LocationPageState extends State<LocationPage> {
                 onPressed: _getCurrentPosition,
                 child: const Text("Get Current Location"),
               ),
+              const SizedBox(height: 32),
+              IconButton(
+                icon: const Icon(Icons.timeline),
+                  onPressed: () async {
+                     LocationServiceBatch().LocationService();
+                  }
+
+              ),
               IconButton(
                 icon: const Icon(Icons.sync),
               onPressed: () async{
                 syncPosition(_currentPosition!.latitude.toString(), _currentPosition!.longitude.toString());
               }
               ),
+
+
             ],
           ),
         ),

@@ -7,6 +7,7 @@ import 'globals.dart' as global;
 import 'package:latlong2/latlong.dart' as latLng;
 import 'dart:async';
 import 'settings.dart';
+import 'locationBatch.dart';
 
 class API {
   static Future<http.Response> getPosition() {
@@ -54,6 +55,7 @@ class _MyListScreenPositionState extends State<MyListScreenPosition> {
       );
     } else {
       _getPosizione();
+
     }
   }
 
@@ -64,6 +66,7 @@ class _MyListScreenPositionState extends State<MyListScreenPosition> {
           Iterable list = json.decode(response.body);
           posizioni = list.map((model) => Posizione.fromJson(model)).toList();
         });
+
       } else {
         // Gestire errore
         print('Errore: ${response.statusCode}');
@@ -101,13 +104,12 @@ class _MyListScreenPositionState extends State<MyListScreenPosition> {
                 MarkerLayer(
                   markers: [
                     for (var posizione in posizioni)
-
                       Marker(
                         point: latLng.LatLng(
                           double.parse(posizione.lat),
                           double.parse(posizione.long),
                         ),
-/*
+        /*
                         child: Text(
                             posizione.name,
                             style: TextStyle(
@@ -122,11 +124,7 @@ class _MyListScreenPositionState extends State<MyListScreenPosition> {
                           size: 30,
                         ),
                       ),
-
-
-
                   ],
-
                 ),
                 RichAttributionWidget(
                   animationConfig: const ScaleRAWA(),
