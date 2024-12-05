@@ -9,5 +9,7 @@ Remember to configure settings page and put on your self hosting the API (but ch
 - Set name on the marker
 - Reload map page
 - Create icon
+- Implementare switch per fare il get automatico delle coordinate e mandarle all'API
+- La schermata Location Page andrà rimossa una volta automatizzato il processo
 
 ## KNOWN ERRORS
