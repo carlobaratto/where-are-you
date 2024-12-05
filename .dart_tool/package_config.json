@@ -488,10 +488,10 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2024-10-23T06:36:42.932501Z",
+  "generated": "2024-12-04T10:33:58.741897Z",
   "generator": "pub",
-  "generatorVersion": "3.5.3",
+  "generatorVersion": "3.5.4",
   "flutterRoot": "file:///home/carlo/tools_sviluppo/flutter",
-  "flutterVersion": "3.24.3",
+  "flutterVersion": "3.24.5",
   "pubCache": "file:///home/carlo/.pub-cache"
 }
