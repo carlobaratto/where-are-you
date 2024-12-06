@@ -43,15 +43,13 @@ class _settingsState extends State<settings> {
       global.apikey = apikey;
     });
 
-    if (global.apiUrl != 'Insert API URL') {
+    if (global.firsRun == true && global.apiUrl != 'Insert API URL') {
+      global.firsRun = false;
       global.selectedIndex = 0;
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const MyApp()),
       );
-    } else {
-      // Restituisci un messaggio informativo se necessario
-      print('Settings not fully configured: name: $name, apiUrl: $apiUrl, apikey: $apikey');
     }
   }
 
