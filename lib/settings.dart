@@ -65,57 +65,57 @@ class _settingsState extends State<settings> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Settings'),
-        leading: IconButton(
-          icon:
-          const Icon(Icons.arrow_back_ios, color: Colors.white),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-        Expanded(child:
             const Divider(
-              height: 25, //height spacing of divider
+              //height: 25, //height spacing of divider
             ),
-        ),
-      Expanded(child:
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-              child: TextField(
-                decoration: InputDecoration(
-                  border: const UnderlineInputBorder(),
-                  labelText: global.name,
 
+      Expanded(child:
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+              child: SizedBox(
+                height: 40,
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: const UnderlineInputBorder(),
+                    labelText: global.name,
+                  ),
+                  controller: nameController,
                 ),
-                controller: nameController,
               ),
             ),
       ),
       Expanded(child:
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-              child: TextField(
-                decoration: InputDecoration(
-                  border: const UnderlineInputBorder(),
-                  labelText: global.apiUrl,
+              child: SizedBox(
+                height: 40,
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: const UnderlineInputBorder(),
+                    labelText: global.apiUrl,
+                  ),
+                  controller: api_url_Controller,
                 ),
-                controller: api_url_Controller,
               ),
             ),
       ),
       Expanded(child:
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-              child: TextField(
-                decoration: InputDecoration(
-                  border: const UnderlineInputBorder(),
-                  labelText: global.apikey,
+              child: SizedBox(
+                height: 40,
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: const UnderlineInputBorder(),
+                    labelText: global.apikey,
+                  ),
+                  controller: api_Controller,
                 ),
-                controller: api_Controller,
               ),
             ),
       ),
