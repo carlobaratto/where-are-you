@@ -7,7 +7,6 @@ import 'globals.dart' as global;
 import 'package:latlong2/latlong.dart' as latLng;
 import 'dart:async';
 import 'settings.dart';
-import 'locationBatch.dart';
 
 class API {
   static Future<http.Response> getPosition() {

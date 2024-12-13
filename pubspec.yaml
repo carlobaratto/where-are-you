@@ -41,6 +41,7 @@ dependencies:
   flutter_map: ^7.0.2
   shared_preferences: ^2.3.2
   url_launcher: ^6.3.0
+  flutter_foreground_task: ^8.17.0
 
   latlong2: any
 dev_dependencies:

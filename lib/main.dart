@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'locationService.dart';
 import 'location_page.dart';
 import 'map.dart';
 import 'settings.dart';
 import 'globals.dart' as global;
 import 'package:shared_preferences/shared_preferences.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  LocationService.instance.init();
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

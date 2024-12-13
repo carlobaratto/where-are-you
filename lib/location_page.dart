@@ -4,7 +4,6 @@ import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:http/http.dart' as http;
 import 'globals.dart' as global;
-import 'locationBatch.dart';
 
 class LocationPage extends StatefulWidget {
   const LocationPage({super.key});
@@ -112,7 +111,7 @@ class _LocationPageState extends State<LocationPage> {
               IconButton(
                 icon: const Icon(Icons.timeline),
                   onPressed: () async {
-                     LocationServiceBatch().LocationService();
+                     //LocationServiceBatch().LocationService();
                   }
 
               ),

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:where_are_you/locationService.dart';
 import 'package:where_are_you/main.dart';
 import 'package:where_are_you/map.dart';
 import 'globals.dart' as global;
@@ -74,53 +75,53 @@ class _settingsState extends State<settings> {
               //height: 25, //height spacing of divider
             ),
 
-      Expanded(child:
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-              child: SizedBox(
-                height: 40,
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: const UnderlineInputBorder(),
-                    labelText: global.name,
+            Expanded(child:
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                    child: SizedBox(
+                      height: 40,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          border: const UnderlineInputBorder(),
+                          labelText: global.name,
+                        ),
+                        controller: nameController,
+                      ),
+                    ),
                   ),
-                  controller: nameController,
-                ),
-              ),
             ),
-      ),
-      Expanded(child:
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-              child: SizedBox(
-                height: 40,
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: const UnderlineInputBorder(),
-                    labelText: global.apiUrl,
+            Expanded(child:
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                    child: SizedBox(
+                      height: 40,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          border: const UnderlineInputBorder(),
+                          labelText: global.apiUrl,
+                        ),
+                        controller: api_url_Controller,
+                      ),
+                    ),
                   ),
-                  controller: api_url_Controller,
-                ),
-              ),
             ),
-      ),
-      Expanded(child:
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-              child: SizedBox(
-                height: 40,
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: const UnderlineInputBorder(),
-                    labelText: global.apikey,
+            Expanded(child:
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                    child: SizedBox(
+                      height: 40,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          border: const UnderlineInputBorder(),
+                          labelText: global.apikey,
+                        ),
+                        controller: api_Controller,
+                      ),
+                    ),
                   ),
-                  controller: api_Controller,
-                ),
-              ),
             ),
-      ),
             const Text('Activate auto update location'),
-            /*
+
             Switch(
               // thumb color (round icon)
               activeColor: Colors.amber,
@@ -131,10 +132,17 @@ class _settingsState extends State<settings> {
               // boolean variable value
               value: global.onoff,
               // changes the state of the switch
-              onChanged: (value) => setState(() => global.onoff = value),
+              onChanged: (value) {
+                setState(() => global.onoff = value);
+                if (value) {
+                  LocationService.instance.start();
+                } else {
+                  LocationService.instance.stop();
+                }
+              },
             ),
 
-             */
+
             const SizedBox(height: 30),
             ElevatedButton(
               style: ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20)),
