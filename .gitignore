@@ -1,6 +1,8 @@
 *
-
-!/lib
+/*
+/**
+!lib
+!lib/*
 !.gitignore
 !README.md
 !pubspec.yaml
