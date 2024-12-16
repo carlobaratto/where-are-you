@@ -108,21 +108,28 @@ class _MyListScreenPositionState extends State<MyListScreenPosition> {
                           double.parse(posizione.lat),
                           double.parse(posizione.long),
                         ),
-        /*
-                        child: Text(
-                            posizione.name,
-                            style: TextStyle(
-                            color: Colors.red,
-                            fontSize: 13,
-                            fontWeight: FontWeight.bold,
+                        width: 100,
+                        height: 100,
+                        rotate: true,
+                        child : Column (
+                          children: [
+                            Text(
+                              posizione.name,
+                              style: TextStyle(
+                              color: Colors.red,
+                              fontSize: 13,
+                              fontWeight: FontWeight.bold,
+                              )
                             ),
-                        */
-                        child: const Icon(
-                          Icons.location_on,
-                          color: Colors.red,
-                          size: 30,
-                        ),
-                      ),
+                            const Icon(
+                                  Icons.location_on,
+                                  color: Colors.red,
+                                  size: 30,
+                            ),
+                          ],
+                        )
+                      )
+
                   ],
                 ),
                 RichAttributionWidget(
