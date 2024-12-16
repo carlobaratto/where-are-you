@@ -40,7 +40,7 @@ To contribute or participate in the project, write to whereareyou@carlobaratto.i
 
 
 ## TODO
-- Set name on the marker
+- Adjust the size of the markers dynamically
 - Reload map page
 - Create icon
 - La schermata Location Page andrà rimossa una volta automatizzato il processo
