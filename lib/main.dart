@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:where_are_you/credits.dart';
 import 'locationService.dart';
 import 'location_page.dart';
 import 'map.dart';
@@ -45,6 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
     const MyListScreenPosition(),
     const LocationPage(),
     const settings(),
+    credits(),
   ];
 
   @override
@@ -127,6 +129,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     selected: _selectedIndex == 2,
                     onTap: () {
                       _onItemTapped(2);
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    title: const Text('Credits'),
+                    selected: _selectedIndex == 3,
+                    onTap: () {
+                      _onItemTapped(3);
                       Navigator.pop(context);
                     },
                   ),
