@@ -45,6 +45,7 @@ class MyListScreenPosition extends StatefulWidget {
 
 class _MyListScreenPositionState extends State<MyListScreenPosition> {
   var posizioni = <Posizione>[];
+  Timer? _timer;
 
   void _checkApiUrlAndRedirect() {
     if (global.apiUrl == "Insert API URL") {
@@ -79,6 +80,16 @@ class _MyListScreenPositionState extends State<MyListScreenPosition> {
   void initState() {
     super.initState();
     _checkApiUrlAndRedirect();
+    _timer = Timer.periodic(const Duration(seconds: 10), (Timer timer) async {
+      _getPosizione();
+      print("REFRESHING");
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
   }
 
   @override
@@ -146,6 +157,18 @@ class _MyListScreenPositionState extends State<MyListScreenPosition> {
             )
           else
             const Center(child: CircularProgressIndicator()),
+
+          Align(
+            alignment: Alignment.topRight,
+            child: FloatingActionButton(
+              mini: true,
+              onPressed: () {
+                _getPosizione();
+                print("REFRESHING FROM BUTTON");
+              },
+              child: Icon(Icons.refresh),
+            ),
+          )
         ],
       ),
     );
