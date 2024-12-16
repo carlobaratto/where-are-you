@@ -109,20 +109,11 @@ class _LocationPageState extends State<LocationPage> {
               ),
               const SizedBox(height: 32),
               IconButton(
-                icon: const Icon(Icons.timeline),
-                  onPressed: () async {
-                     //LocationServiceBatch().LocationService();
-                  }
-
-              ),
-              IconButton(
                 icon: const Icon(Icons.sync),
               onPressed: () async{
                 syncPosition(_currentPosition!.latitude.toString(), _currentPosition!.longitude.toString());
               }
               ),
-
-
             ],
           ),
         ),
