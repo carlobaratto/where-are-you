@@ -52,6 +52,11 @@ class _settingsState extends State<settings> {
         MaterialPageRoute(builder: (context) => const MyApp()),
       );
     }
+
+    nameController.text = name;
+    api_url_Controller.text = apiUrl;
+    api_Controller.text = apikey;
+
   }
 
 
@@ -67,94 +72,83 @@ class _settingsState extends State<settings> {
       appBar: AppBar(
         title: const Text('Settings'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            const Divider(
-              //height: 25, //height spacing of divider
-            ),
-
-            Expanded(child:
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-                    child: SizedBox(
-                      height: 40,
-                      child: TextField(
-                        decoration: InputDecoration(
-                          border: const UnderlineInputBorder(),
-                          labelText: global.name,
-                        ),
-                        controller: nameController,
-                      ),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                child: SizedBox(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: const OutlineInputBorder(),
+                      labelText: "Your name",
                     ),
+                    controller: nameController,
                   ),
-            ),
-            Expanded(child:
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-                    child: SizedBox(
-                      height: 40,
-                      child: TextField(
-                        decoration: InputDecoration(
-                          border: const UnderlineInputBorder(),
-                          labelText: global.apiUrl,
-                        ),
-                        controller: api_url_Controller,
-                      ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                child: SizedBox(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: const OutlineInputBorder(),
+                      labelText: "API URL",
                     ),
+                    controller: api_url_Controller,
                   ),
-            ),
-            Expanded(child:
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-                    child: SizedBox(
-                      height: 40,
-                      child: TextField(
-                        decoration: InputDecoration(
-                          border: const UnderlineInputBorder(),
-                          labelText: global.apikey,
-                        ),
-                        controller: api_Controller,
-                      ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                child: SizedBox(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: const OutlineInputBorder(),
+                      labelText: "API Key",
                     ),
+                    obscureText: true,
+                    controller: api_Controller,
                   ),
-            ),
-            const Text('Activate auto update location'),
+                ),
+              ),
 
-            Switch(
-              // thumb color (round icon)
-              activeColor: Colors.amber,
-              activeTrackColor: Colors.cyan,
-              inactiveThumbColor: Colors.blueGrey.shade600,
-              inactiveTrackColor: Colors.grey.shade400,
-              splashRadius: 50.0,
-              // boolean variable value
-              value: global.onoff,
-              // changes the state of the switch
-              onChanged: (value) {
-                setState(() => global.onoff = value);
-                if (value) {
-                  LocationService.instance.start();
-                } else {
-                  LocationService.instance.stop();
-                }
-              },
-            ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20)),
+                onPressed: () {
+                  _insertSettings(nameController.text, api_url_Controller.text, api_Controller.text);
+                  setState(() {
+                    _readSettings();
+                  });
+                },
+                child: const Text('Save settings'),
+              ),
 
-
-            const SizedBox(height: 30),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20)),
-              onPressed: () {
-                _insertSettings(nameController.text, api_url_Controller.text, api_Controller.text);
-                setState(() {
-                  _readSettings();
-                });
-              },
-              child: const Text('Save settings'),
-            ),
-          ],
+              const SizedBox(height: 30),
+              const Text('Activate auto update location'),
+              Switch(
+                // thumb color (round icon)
+                activeColor: Colors.amber,
+                activeTrackColor: Colors.cyan,
+                inactiveThumbColor: Colors.blueGrey.shade600,
+                inactiveTrackColor: Colors.grey.shade400,
+                splashRadius: 50.0,
+                // boolean variable value
+                value: global.onoff,
+                // changes the state of the switch
+                onChanged: (value) {
+                  setState(() => global.onoff = value);
+                  if (value) {
+                    LocationService.instance.start();
+                  } else {
+                    LocationService.instance.stop();
+                  }
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
