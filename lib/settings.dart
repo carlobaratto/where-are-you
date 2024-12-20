@@ -59,9 +59,13 @@ class _settingsState extends State<settings> {
 
   }
 
+  Future<void> isServiceAlreadyUp() async {
+    global.onoff = await LocationService.instance.isRunningService;
+  }
 
   @override
   initState() {
+    isServiceAlreadyUp();
     _readSettings();
     super.initState();
   }
