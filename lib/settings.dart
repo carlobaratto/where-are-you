@@ -17,16 +17,15 @@ class _settingsState extends State<settings> {
   final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
   final nameController = TextEditingController();
   final api_url_Controller = TextEditingController();
-  final api_Controller = TextEditingController();
-  //final onoff_Controller = TextEditingController();
+  final user_api_Controller = TextEditingController();
+  final admin_api_Controller = TextEditingController();
 
-  Future<void> _insertSettings(name, apiUrl, apikey) async {
+  Future<void> _insertSettings(name, apiUrl, userApikey, adminApikey) async {
     final SharedPreferences prefs = await _prefs;
-  //  onoff = onoff as Bool;
     prefs.setString('name', name);
     prefs.setString('apiUrl', apiUrl);
-    prefs.setString('apikey', apikey);
-   // prefs.setBool('onoff', onoff as bool);
+    prefs.setString('userApikey', userApikey);
+    prefs.setString('adminApikey', adminApikey);
     //prefs.clear();
   }
 
@@ -36,12 +35,14 @@ class _settingsState extends State<settings> {
     // Usa l'operatore null-aware e fornisci un valore di fallback
     String name = prefs.getString('name') ?? 'Insert screen name';
     String apiUrl = prefs.getString('apiUrl') ?? 'Insert API URL';
-    String apikey = prefs.getString('apikey') ?? 'Insert API KEY';
+    String userApikey = prefs.getString('userApikey') ?? 'Insert User API KEY';
+    String adminApikey = prefs.getString('adminApikey') ?? 'Insert User API KEY';
 
     setState(() {
       global.name = name;
       global.apiUrl = apiUrl;
-      global.apikey = apikey;
+      global.userApikey = userApikey;
+      global.adminApikey = adminApikey;
     });
 
     if (global.firsRun == true && global.apiUrl != 'Insert API URL') {
@@ -55,7 +56,8 @@ class _settingsState extends State<settings> {
 
     nameController.text = name;
     api_url_Controller.text = apiUrl;
-    api_Controller.text = apikey;
+    user_api_Controller.text = userApikey;
+    admin_api_Controller.text = adminApikey;
 
   }
 
@@ -111,10 +113,23 @@ class _settingsState extends State<settings> {
                   child: TextField(
                     decoration: InputDecoration(
                       border: const OutlineInputBorder(),
-                      labelText: "API Key",
+                      labelText: "User API Key",
                     ),
                     obscureText: true,
-                    controller: api_Controller,
+                    controller: user_api_Controller,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                child: SizedBox(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: const OutlineInputBorder(),
+                      labelText: "Admin API Key (if available)",
+                    ),
+                    obscureText: true,
+                    controller: admin_api_Controller,
                   ),
                 ),
               ),
@@ -122,34 +137,12 @@ class _settingsState extends State<settings> {
               ElevatedButton(
                 style: ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20)),
                 onPressed: () {
-                  _insertSettings(nameController.text, api_url_Controller.text, api_Controller.text);
+                  _insertSettings(nameController.text, api_url_Controller.text, user_api_Controller.text, admin_api_Controller.text);
                   setState(() {
                     _readSettings();
                   });
                 },
                 child: const Text('Save settings'),
-              ),
-
-              const SizedBox(height: 30),
-              const Text('Activate auto update location'),
-              Switch(
-                // thumb color (round icon)
-                activeColor: Colors.amber,
-                activeTrackColor: Colors.cyan,
-                inactiveThumbColor: Colors.blueGrey.shade600,
-                inactiveTrackColor: Colors.grey.shade400,
-                splashRadius: 50.0,
-                // boolean variable value
-                value: global.onoff,
-                // changes the state of the switch
-                onChanged: (value) {
-                  setState(() => global.onoff = value);
-                  if (value) {
-                    LocationService.instance.start();
-                  } else {
-                    LocationService.instance.stop();
-                  }
-                },
               ),
             ],
           ),

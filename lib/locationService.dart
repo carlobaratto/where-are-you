@@ -110,7 +110,7 @@ class LocationService {
     final response = await http.post(
       Uri.parse(global.apiUrl),
       body: {
-        'apikey': global.apikey,
+        'apikey': global.userApikey,
         'getset': 'set',
         'name': global.name,
         'lat': lat,

@@ -4,6 +4,7 @@ import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:http/http.dart' as http;
 import 'globals.dart' as global;
+import 'locationService.dart';
 
 class LocationPage extends StatefulWidget {
   const LocationPage({super.key});
@@ -18,7 +19,7 @@ Future<void> syncPosition(String lat, String long) async {
     Uri.parse(global.apiUrl),
 
     body: {
-      'apikey': global.apikey,
+      'apikey': global.userApikey,
       'getset' : 'set',
       'name': global.name,
       'lat': lat,
@@ -108,11 +109,32 @@ class _LocationPageState extends State<LocationPage> {
                 child: const Text("Get Current Location"),
               ),
               const SizedBox(height: 32),
-              IconButton(
-                icon: const Icon(Icons.sync),
-              onPressed: () async{
-                syncPosition(_currentPosition!.latitude.toString(), _currentPosition!.longitude.toString());
-              }
+              ElevatedButton(
+                onPressed: () async{
+              syncPosition(_currentPosition!.latitude.toString(), _currentPosition!.longitude.toString());
+              },
+                child: const Text("Single shot localization"),
+              ),
+              const SizedBox(height: 30),
+              const Text('Activate auto update location'),
+              Switch(
+                // thumb color (round icon)
+                activeColor: Colors.amber,
+                activeTrackColor: Colors.cyan,
+                inactiveThumbColor: Colors.blueGrey.shade600,
+                inactiveTrackColor: Colors.grey.shade400,
+                splashRadius: 50.0,
+                // boolean variable value
+                value: global.onoff,
+                // changes the state of the switch
+                onChanged: (value) {
+                  setState(() => global.onoff = value);
+                  if (value) {
+                    LocationService.instance.start();
+                  } else {
+                    LocationService.instance.stop();
+                  }
+                },
               ),
             ],
           ),

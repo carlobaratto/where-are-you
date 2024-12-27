@@ -13,7 +13,7 @@ class API {
     return http.post(
       Uri.parse(global.apiUrl),
       body: {
-        'apikey': global.apikey,
+        'apikey': global.userApikey,
         'getset': 'get',
       },
     );
