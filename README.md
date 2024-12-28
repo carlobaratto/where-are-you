@@ -41,10 +41,9 @@ To contribute or participate in the project, write to whereareyou@carlobaratto.i
 
 ## TODO
 - Adjust the size of the markers dynamically
-- Fix manual refresh button (or remove)
 - Add settings for the frequency of the map refresh and location update
 - Change the marker's color if the location has not been updated within the last 5 minutes
 - Create icon
-- La schermata Location Page andrà rimossa una volta automatizzato il processo
+- Location Page will be removed
 
 ## KNOWN ERRORS
