@@ -47,3 +47,6 @@ To contribute or participate in the project, write to whereareyou@carlobaratto.i
 - Location Page will be removed
 
 ## KNOWN ERRORS
+
+## LICENSE
+EUPL
