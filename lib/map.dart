@@ -48,7 +48,7 @@ class _MyListScreenPositionState extends State<MyListScreenPosition> {
   Timer? _timer;
 
   void _checkApiUrlAndRedirect() {
-    if (global.apiUrl == "Insert API URL") {
+    if (global.apiUrl == "") {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => const settings()),

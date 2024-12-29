@@ -33,10 +33,10 @@ class _settingsState extends State<settings> {
     final SharedPreferences prefs = await _prefs;
 
     // Usa l'operatore null-aware e fornisci un valore di fallback
-    String name = prefs.getString('name') ?? 'Insert screen name';
-    String apiUrl = prefs.getString('apiUrl') ?? 'Insert API URL';
-    String userApikey = prefs.getString('userApikey') ?? 'Insert User API KEY';
-    String adminApikey = prefs.getString('adminApikey') ?? 'Insert User API KEY';
+    String name = prefs.getString('name') ?? '';
+    String apiUrl = prefs.getString('apiUrl') ?? '';
+    String userApikey = prefs.getString('userApikey') ?? '';
+    String adminApikey = prefs.getString('adminApikey') ?? '';
 
     setState(() {
       global.name = name;
@@ -45,7 +45,7 @@ class _settingsState extends State<settings> {
       global.adminApikey = adminApikey;
     });
 
-    if (global.firsRun == true && global.apiUrl != 'Insert API URL') {
+    if (global.firsRun == true && global.apiUrl != '') {
       global.firsRun = false;
       global.selectedIndex = 0;
       Navigator.push(
