@@ -23,7 +23,7 @@ you don't have to register an account to use WhereAreYou. You can simply downloa
 
 ## How it works
 1. Download and install WhereAreYou on your phone.
-2. Configure self-hosted software on your machine, just upload the api_position.php file taking care to edit the KEY API (default is IDDKFA).
+2. Configure self-hosted software on your machine, just upload the api_position.php (located at /lib/PHPAPI directory) file taking care to edit the KEY API (default is IDDKFA).
 3. Set up the app in your mobile by entering the API URL, your nickname and the KEY API set first.
 4. Start sharing your location with anyone have the API_URL and API_KEY.
 5. Use the control panel to control your location and turn on/off sharing.
