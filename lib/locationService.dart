@@ -75,6 +75,12 @@ class LocationService {
     final ServiceRequestResult result = await FlutterForegroundTask.startService(
       notificationTitle: 'Sharing your location...',
       notificationText: 'You are currently sharing your location',
+      notificationButtons: [
+        NotificationButton(
+          id: "stopsharing",
+          text: "Stop Sharing",
+        )
+      ],
       callback: startLocationService,
     );
 
@@ -85,7 +91,6 @@ class LocationService {
 
   Future<void> stop() async {
     final ServiceRequestResult result = await FlutterForegroundTask.stopService();
-
     if (result is ServiceRequestFailure) {
       throw result.error;
     }

@@ -5,6 +5,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:http/http.dart' as http;
 import 'globals.dart' as global;
 import 'locationService.dart';
+import 'locationServiceHandler.dart';
 
 class LocationPage extends StatefulWidget {
   const LocationPage({super.key});
@@ -31,8 +32,6 @@ Future<void> syncPosition(String lat, String long) async {
 class _LocationPageState extends State<LocationPage> {
   String? _currentAddress;
   Position? _currentPosition;
-
-
 
   Future<bool> _handleLocationPermission() async {
     bool serviceEnabled;
@@ -89,6 +88,16 @@ class _LocationPageState extends State<LocationPage> {
       debugPrint(e);
     });
 
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    LocationServiceHandler.serviceStoppedStream.listen((_) {
+      setState(() {
+        global.onoff = false;
+      });
+    });
   }
 
   @override
