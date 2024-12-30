@@ -7,3 +7,4 @@
 !pubspec.yaml
 .DS_Store
 /ios/
+/android/
