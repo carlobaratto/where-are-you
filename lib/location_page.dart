@@ -122,6 +122,8 @@ class _LocationPageState extends State<LocationPage> {
               ElevatedButton(
                 onPressed: () async{
               syncPosition(_currentPosition!.latitude.toString(), _currentPosition!.longitude.toString());
+              ScaffoldMessenger.of(context)
+                  .showSnackBar(SnackBar(content: Text("Location shared one time")));
               },
                 child: const Text("Single shot localization"),
               ),
@@ -141,8 +143,12 @@ class _LocationPageState extends State<LocationPage> {
                   setState(() => global.onoff = value);
                   if (value) {
                     LocationService.instance.start();
+                    ScaffoldMessenger.of(context)
+                        .showSnackBar(SnackBar(content: Text("Perpetual sharing started")));
                   } else {
                     LocationService.instance.stop();
+                    ScaffoldMessenger.of(context)
+                        .showSnackBar(SnackBar(content: Text("Perpetual sharing stopped")));
                   }
                 },
               ),
