@@ -1,41 +1,43 @@
 <?php
-$key=$_POST['apikey'];
-$getset=$_POST['getset'];
 
-if ($key=='IDDKFA'){
-    if ($getset == 'set'){
-        $name=$_POST['name'];
-        $datetime=date("Y-m-d H:i:s");
-        $lat=$_POST['lat'];
-        $long=$_POST['long'];
+include 'config.inc.php';
+
+$key = $_POST['apikey'];
+$getset = $_POST['getset'];
+
+if ($key == $api_key) {
+    if ($getset == 'set') {
+        // Sanitize user name
+        $name = mb_ereg_replace("([^\w\s\d\-_~,;\[\]\(\).])", '', $_POST['name']);
+        $datetime = date("Y-m-d H:i:s");
+        $lat = $_POST['lat'];
+        $long = $_POST['long'];
 
         $postdata = file_get_contents("php://input");
 
-        unlink($name.".json");
-        $myfile = fopen($name.".json", "w") or die("Unable to open file!");
+        unlink($name . ".json");
+        $myfile = fopen($name . ".json", "w") or die("Unable to open file!");
 
 
         $ParsedAry = [
-                
-                    "name" => $name, 
-                    "datetime" => $datetime, 
-                    'lat' => $lat, 
-                    'long' => $long
-                
-        ]; 
+            "name" => $name,
+            "datetime" => $datetime,
+            'lat' => $lat,
+            'long' => $long
+        ];
 
         $txt = json_encode($ParsedAry);
         fwrite($myfile, $txt);
         fclose($myfile);
     }
 
-    if ($getset == 'get'){
-        $i=0;
-        $today=date("Y-m-d H:i:s");
+    if ($getset == 'get') {
+        $i = 0;
+        $today = date("Y-m-d H:i:s");
         $response = [];
         foreach (glob("*.json") as $fileinfo) {
 
-            $json = file_get_contents($fileinfo); 
+            $json = file_get_contents($fileinfo);
 
             if ($json === false) {
                 die('Error reading the JSON file');
@@ -49,19 +51,13 @@ if ($key=='IDDKFA'){
 
             $response[$i] = $obj;
             $i++;
-
+        }
+        echo json_encode($response);
     }
-    echo json_encode($response);
-    }
-}
-elseif ($key=='LMFAO'){
+} elseif ($key == 'LMFAO') {
     foreach (glob("*.json") as $filename) {
-       unlink($filename);
+        unlink($filename);
     }
+} else {
+    echo "Wrong api key";
 }
-else {
-        echo "Wrong api key";
-     }
-
-?>
-
