@@ -43,10 +43,10 @@ dependencies:
   url_launcher: ^6.3.0
   flutter_foreground_task: ^8.17.0
   latlong2: any
-  flutter_launcher_icons: ^0.14.2
+  flutter_launcher_icons: ^0.13.1
 
 flutter_launcher_icons:
-  image_path: 'lib/assets/icon.webp'
+  image_path: 'lib/assets/icon.jpg'
   android: true
   ios: true
 
