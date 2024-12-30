@@ -25,7 +25,17 @@ Future<void> syncPosition(String lat, String long) async {
       'lat': lat,
       'long': long,
     });
-  print(response);
+}
+
+Future<void>removePosition() async {
+
+  final response = await http.post(
+      Uri.parse(global.apiUrl),
+
+      body: {
+        'apikey': global.adminApikey,
+        'getset' : 'set',
+      });
 }
 
 class _LocationPageState extends State<LocationPage> {
@@ -135,6 +145,13 @@ class _LocationPageState extends State<LocationPage> {
                     LocationService.instance.stop();
                   }
                 },
+              ),
+              const SizedBox(height: 30),
+              ElevatedButton(
+                onPressed: () async{
+                  removePosition();
+                },
+                child: const Text("Delete existing positions"),
               ),
             ],
           ),

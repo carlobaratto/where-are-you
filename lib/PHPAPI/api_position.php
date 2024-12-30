@@ -23,52 +23,40 @@ if ($key=='IDDKFA'){
                     'long' => $long
                 
         ]; 
- 
- 
-/*
-        $position = array(
-            'datetime' => $datetime, 
-            'lat' => $lat, 
-            'long' => $long
-        );
 
-            $name = array(
-                'name' => $name,
-                'position' => $position
-            );
-*/
         $txt = json_encode($ParsedAry);
         fwrite($myfile, $txt);
         fclose($myfile);
-        echo "Chiamata riuscita";
     }
 
     if ($getset == 'get'){
         $i=0;
         $response = [];
-        foreach (glob("*.json") as $fileinfo) {  //fileinfo contiene il filename
+        foreach (glob("*.json") as $fileinfo) {
 
             $json = file_get_contents($fileinfo); 
 
-            // Check if the file was read successfully
             if ($json === false) {
                 die('Error reading the JSON file');
             }
 
             $obj = json_decode($json, TRUE);
 
-            // Check if the JSON was decoded successfully
             if ($obj === null) {
                 die('Error decoding the JSON file');
             }
 
             $response[$i] = $obj;
             $i++;
-        // Display data
     }
     echo json_encode($response);
 //echo $response;
 //print_r($response);
+    }
+}
+if ($key=='LMFAO'){
+    foreach (glob("*.json") as $filename) {
+       unlink($filename);
     }
 }
 else {
