@@ -47,7 +47,6 @@ To contribute or participate in the project, write to whereareyou@carlobaratto.i
 - Adjust the size of the markers dynamically
 - Add settings for the frequency of the map refresh and location update
 - Change the marker's color if the location has not been updated within the last 5 minutes
-- Create icon
 
 ## KNOWN ERRORS
 Nothing to report yet
