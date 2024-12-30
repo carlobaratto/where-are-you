@@ -52,4 +52,4 @@ To contribute or participate in the project, write to whereareyou@carlobaratto.i
 Nothing to report yet
 
 ## LICENSE
-EUPL
+GPL v3.0
