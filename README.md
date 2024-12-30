@@ -2,6 +2,10 @@
 Each of us has already used apps like Google Maps or WhatsApp to share their location with friends and family. However, not all these apps are designed for respectful sharing of your data and privacy.
 WhereAreYou is a free software that allows you to share your location with others without having to pay a fee and keeps the data in your machine thanks to databaseless self hosting.
 
+![alt text](https://blog.carlobaratto.it/wp-content/uploads/2024/12/Schermata-del-2024-12-05-09-30-25.png)
+![alt text](https://blog.carlobaratto.it/wp-content/uploads/2024/12/Screenshot_20241229_230914-461x1024.png)
+![alt text](https://blog.carlobaratto.it/wp-content/uploads/2024/12/Schermata-del-2024-12-29-23-08-08.png)
+
 ## Main Features
 **Location sharing:**
 you can share your location with friends and family directly from your phone. You can choose whether to share the location at a given time or permanently.
