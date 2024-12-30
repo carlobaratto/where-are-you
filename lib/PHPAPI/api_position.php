@@ -31,6 +31,7 @@ if ($key=='IDDKFA'){
 
     if ($getset == 'get'){
         $i=0;
+        $today=date("Y-m-d H:i:s");
         $response = [];
         foreach (glob("*.json") as $fileinfo) {
 
@@ -48,6 +49,7 @@ if ($key=='IDDKFA'){
 
             $response[$i] = $obj;
             $i++;
+
     }
     echo json_encode($response);
     }

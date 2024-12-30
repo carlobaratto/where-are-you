@@ -128,9 +128,17 @@ class _MyListScreenPositionState extends State<MyListScreenPosition> {
                               posizione.name,
                               style: TextStyle(
                               color: Colors.red,
-                              fontSize: 13,
+                              fontSize: 16,
                               fontWeight: FontWeight.bold,
                               )
+                            ),
+                            Text(
+                                posizione.datetime,
+                                style: TextStyle(
+                                  color: Colors.red,
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.bold,
+                                )
                             ),
                             const Icon(
                                   Icons.location_on,
@@ -140,7 +148,6 @@ class _MyListScreenPositionState extends State<MyListScreenPosition> {
                           ],
                         )
                       )
-
                   ],
                 ),
                 RichAttributionWidget(
