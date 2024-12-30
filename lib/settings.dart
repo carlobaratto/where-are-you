@@ -141,6 +141,8 @@ class _settingsState extends State<settings> {
                   setState(() {
                     _readSettings();
                   });
+                  ScaffoldMessenger.of(context)
+                      .showSnackBar(SnackBar(content: Text("Settings saved")));
                 },
                 child: const Text('Save settings'),
               ),
