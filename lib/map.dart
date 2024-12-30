@@ -156,8 +156,9 @@ class _MyListScreenPositionState extends State<MyListScreenPosition> {
               ],
             )
           else
-            const Center(child: CircularProgressIndicator()),
-
+            const Center(child:
+              Text("No location shared yet" )
+            ),
           Align(
             alignment: Alignment.topRight,
             child: FloatingActionButton(
