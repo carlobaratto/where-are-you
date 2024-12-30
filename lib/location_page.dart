@@ -147,12 +147,13 @@ class _LocationPageState extends State<LocationPage> {
                 },
               ),
               const SizedBox(height: 30),
-              ElevatedButton(
-                onPressed: () async{
-                  removePosition();
-                },
-                child: const Text("Delete existing positions"),
-              ),
+              if (global.adminApikey != '')
+                ElevatedButton(
+                  onPressed: () async {
+                    removePosition();
+                  },
+                  child: const Text("Delete existing positions"),
+                ),
             ],
           ),
         ),
