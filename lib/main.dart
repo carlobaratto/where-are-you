@@ -117,7 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                   ),
                   ListTile(
-                    title: const Text('Get data'),
+                    title: const Text('Location tools'),
                     selected: _selectedIndex == 1,
                     onTap: () {
                       _onItemTapped(1);

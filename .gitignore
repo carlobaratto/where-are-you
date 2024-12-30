@@ -8,3 +8,5 @@
 !pubspec.yaml
 .DS_Store
 !android/app/src/main/AndroidManifest.xml
+/android/
+/ios/

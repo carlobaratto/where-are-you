@@ -26,7 +26,17 @@ Future<void> syncPosition(String lat, String long) async {
       'lat': lat,
       'long': long,
     });
-  print(response);
+}
+
+Future<void>removePosition() async {
+
+  final response = await http.post(
+      Uri.parse(global.apiUrl),
+
+      body: {
+        'apikey': global.adminApikey,
+        'getset' : 'set',
+      });
 }
 
 class _LocationPageState extends State<LocationPage> {
@@ -121,6 +131,8 @@ class _LocationPageState extends State<LocationPage> {
               ElevatedButton(
                 onPressed: () async{
               syncPosition(_currentPosition!.latitude.toString(), _currentPosition!.longitude.toString());
+              ScaffoldMessenger.of(context)
+                  .showSnackBar(SnackBar(content: Text("Location shared one time")));
               },
                 child: const Text("Single shot localization"),
               ),
@@ -140,11 +152,25 @@ class _LocationPageState extends State<LocationPage> {
                   setState(() => global.onoff = value);
                   if (value) {
                     LocationService.instance.start();
+                    ScaffoldMessenger.of(context)
+                        .showSnackBar(SnackBar(content: Text("Perpetual sharing started")));
                   } else {
                     LocationService.instance.stop();
+                    ScaffoldMessenger.of(context)
+                        .showSnackBar(SnackBar(content: Text("Perpetual sharing stopped")));
                   }
                 },
               ),
+              const SizedBox(height: 30),
+              if (global.adminApikey != '')
+                ElevatedButton(
+                  onPressed: () async {
+                    removePosition();
+                    ScaffoldMessenger.of(context)
+                        .showSnackBar(SnackBar(content: Text("All location deleted")));
+                  },
+                  child: const Text("Delete existing positions"),
+                ),
             ],
           ),
         ),
