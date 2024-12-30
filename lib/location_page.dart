@@ -151,6 +151,8 @@ class _LocationPageState extends State<LocationPage> {
                 ElevatedButton(
                   onPressed: () async {
                     removePosition();
+                    ScaffoldMessenger.of(context)
+                        .showSnackBar(SnackBar(content: Text("All location deleted")));
                   },
                   child: const Text("Delete existing positions"),
                 ),

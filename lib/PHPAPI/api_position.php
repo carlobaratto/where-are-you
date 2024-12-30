@@ -50,11 +50,9 @@ if ($key=='IDDKFA'){
             $i++;
     }
     echo json_encode($response);
-//echo $response;
-//print_r($response);
     }
 }
-if ($key=='LMFAO'){
+elseif ($key=='LMFAO'){
     foreach (glob("*.json") as $filename) {
        unlink($filename);
     }
