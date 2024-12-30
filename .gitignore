@@ -1,10 +1,4 @@
-*
-/*
-/**
-!lib
-!lib/*
-!.gitignore
-!pubspec.yaml
 .DS_Store
 /ios/
 /android/
+lib/PHPAPI/config.inc.php
