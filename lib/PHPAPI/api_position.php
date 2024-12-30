@@ -5,7 +5,7 @@ include 'config.inc.php';
 $key = $_POST['apikey'];
 $getset = $_POST['getset'];
 
-if ($key == $api_key) {
+if ($key == $user_api_key) {
     if ($getset == 'set') {
         // Sanitize user name
         $name = mb_ereg_replace("([^\w\s\d\-_~,;\[\]\(\).])", '', $_POST['name']);
@@ -54,7 +54,7 @@ if ($key == $api_key) {
         }
         echo json_encode($response);
     }
-} elseif ($key == 'LMFAO') {
+} elseif ($key == $admin_api_key) {
     foreach (glob("*.json") as $filename) {
         unlink($filename);
     }

@@ -1,4 +1,7 @@
 <?php
 
-// Your API KEY
-$api_key = 'IDDKFA';
+// User API key
+$user_api_key = 'IDDKFA';
+
+// Admin API key
+$admin_api_key = 'LMFAO';
