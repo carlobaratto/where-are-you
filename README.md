@@ -30,9 +30,10 @@ you don't have to register an account to use WhereAreYou. You can simply downloa
 ## How it works
 1. Download and install **WhereAreYou** on your phone.
 2. From the directory `/lib/PHPAPI/`, copy `config.sample.php` to `config.inc.php`, taking care to edit `$user_api_key` and `$admin_api_key`. User API key should be shared ONLY to people you want to share position with.
-3. Set up the app on your mobile phone by entering your nickname, API URL and the user API key set. Admin API key is optional.
-4. Start sharing your location with anyone have the same API URL and user API key.
-5. Use the control panel to control your location and turn on/off sharing.
+3. Upload both on your server.
+4. Set up the app on your mobile phone by entering your nickname, API URL and the user API key set. Admin API key is optional.
+5. Start sharing your location with anyone have the same API URL and user API key.
+6. Use the control panel to control your location and turn on/off sharing.
 
 WhereAreYou is a free and secure software that allows you to share your location with friends and family in real time. You will not have to pay a monthly or annual fee to use the app, and it is easy to use, it requires only a few steps to start sharing your location.
 
