@@ -2,7 +2,7 @@
 Each of us has already used apps like Google Maps or WhatsApp to share their location with friends and family. However, not all these apps are designed for respectful sharing of your data and privacy.
 WhereAreYou is a free software that allows you to share your location with others without having to pay a fee and keeps the data in your machine thanks to databaseless self hosting.
 
-![Map](https://blog.carlobaratto.it/wp-content/uploads/2024/12/Schermata-del-2024-12-05-09-30-25.png)
+![Map](https://blog.carlobaratto.it/wp-content/uploads/2025/01/SC1-461x1024.jpg)
 
 ![Settings](https://blog.carlobaratto.it/wp-content/uploads/2024/12/Screenshot_20241229_230914-461x1024.png)
 
@@ -47,7 +47,6 @@ To contribute or participate in the project, write to whereareyou@carlobaratto.i
 ## TODO
 - [ ] Adjust the size of the markers dynamically
 - [ ] Add settings for the frequency of the map refresh and location update
-- [ ] Change the marker's color if the location has not been updated within the last 5 minutes
 
 ## KNOWN ISSUES
 Nothing to report yet.
