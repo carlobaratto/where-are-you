@@ -133,18 +133,31 @@ class _MyListScreenPositionState extends State<MyListScreenPosition> {
                               )
                             ),
                             Text(
-                                posizione.datetime,
+                                '${posizione.minutes} minutes ago',
                                 style: TextStyle(
                                   color: Colors.red,
                                   fontSize: 13,
                                   fontWeight: FontWeight.bold,
                                 )
                             ),
+                            if(posizione.color == 'grey')
                             const Icon(
                                   Icons.location_on,
-                                  color: Colors.red,
+                                  color: Colors.grey,
                                   size: 30,
                             ),
+                            if(posizione.color == 'orange')
+                              const Icon(
+                                Icons.location_on,
+                                color: Colors.orange,
+                                size: 30,
+                              ),
+                            if(posizione.color == 'green')
+                              const Icon(
+                                Icons.location_on,
+                                color: Colors.green,
+                                size: 30,
+                              ),
                           ],
                         )
                       )
@@ -188,15 +201,19 @@ class Posizione {
   final String datetime;
   final String lat;
   final String long;
+  final String color;
+  final int minutes;
 
   Posizione.fromJson(Map<String, dynamic> json)
       : name = json['name'],
         datetime = json['datetime'],
         lat = json['lat'],
-        long = json['long'];
+        long = json['long'],
+        minutes = json['minutes'],
+        color = json['color'];
 
   Map<String, dynamic> toJson() {
-    return {'name': name, 'datetime': datetime, 'lat': lat, 'long': long};
+    return {'name': name, 'datetime': datetime, 'lat': lat, 'long': long, 'minutes': minutes, 'color': color};
   }
 }
 

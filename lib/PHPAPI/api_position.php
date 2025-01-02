@@ -33,7 +33,6 @@ if ($key == $user_api_key) {
 
     if ($getset == 'get') {
         $i = 0;
-        $today = date("Y-m-d H:i:s");
         $response = [];
         foreach (glob("*.json") as $fileinfo) {
 
@@ -49,7 +48,29 @@ if ($key == $user_api_key) {
                 die('Error decoding the JSON file');
             }
 
+            $lastseen = $obj['datetime'];
+            $diff = date_diff(date(), strtotime($lastseen));
+
+            $d1= new DateTime($obj['datetime']); // lasteseen
+            $d2= new DateTime(); // today
+            $interval = $d2->diff($d1);
+            $minutes = ($interval->days * 24 * 60) + ($interval->h * 60) + $interval->i;
+            $obj['minutes']= $minutes;
+
+            if ($minutes<10) {
+                $obj['color']= 'green';
+            }
+
+            if ($minutes>=10) {
+                $obj['color']= 'orange';
+            }
+
+            if ($minutes>60) {
+                $obj['color']= 'grey';
+            }
+
             $response[$i] = $obj;
+
             $i++;
         }
         echo json_encode($response);
