@@ -69,6 +69,10 @@ if ($key == $user_api_key) {
                 $obj['color']= 'grey';
             }
 
+            if ($minutes>120) {
+                unlink($obj['name'] . ".json");
+            }
+
             $response[$i] = $obj;
 
             $i++;
