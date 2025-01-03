@@ -22,6 +22,7 @@ You can view your control panel to control your location and activate/disable sh
 
 **Advanced features:**
 - **3 visual indicator:**
+
 Green: user seen less than 10 minutes ago,
 
 Orange: user seen between 11 and 60 minutes ago,
