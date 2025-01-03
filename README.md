@@ -21,6 +21,11 @@ You can view your control panel to control your location and activate/disable sh
 - **Easy to use:** the app is easy to use and requires only a few steps to start sharing your location.
 
 **Advanced features:**
+- **3 visual indicator:**
+Green: user seen less than 10 minutes ago,
+Orange: user seen between 11 and 60 minutes ago,
+Grey: user seen more than 60 minutes ago,
+After 120 minutes the marker will disappear.
 
 - **Self-hosting:**
 WhereAreYou is a self-hosted software, which means you can host data on your machine. This guarantees you complete control of your data and prevents the collection of personal data from third parties.
