@@ -2,3 +2,7 @@
 /ios/
 /android/
 lib/PHPAPI/config.inc.php
+lib/PHPAPI/db.sqlite
+vendor
+composer.lock
+composer.phar
