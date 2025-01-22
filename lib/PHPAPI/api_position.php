@@ -1,88 +1,106 @@
 <?php
 
+require 'vendor/autoload.php';
+
 include 'config.inc.php';
 
-$key = $_POST['apikey'];
+use Doctrine\DBAL\DriverManager;
+use Doctrine\DBAL\Exception;
+
+try{
+    $config = DriverManager::getConnection([
+        'driver' => 'pdo_sqlite',
+        'path' => $db_file
+    ]);
+} catch (Exception $e) {
+    die("Could not connect to database: " . $e->getMessage());
+}
+
+$key    = $_POST['apikey'];
 $getset = $_POST['getset'];
 
-if ($key == $user_api_key) {
-    if ($getset == 'set') {
-        // Sanitize user name
-        $name = mb_ereg_replace("([^\w\s\d\-_~,;\[\]\(\).])", '', $_POST['name']);
-        $datetime = date("Y-m-d H:i:s");
-        $lat = $_POST['lat'];
-        $long = $_POST['long'];
+$group  = $_POST['group'];
+$name   = $_POST['name'];
+$lat    = $_POST['lat'];
+$lon    = $_POST['lon'];
 
-        $postdata = file_get_contents("php://input");
+if ($key != $user_api_key) {
+    die( json_encode([
+        'status' => 401,
+        'message' => 'Invalid user API key'
+    ]) );
+}
 
-        unlink($name . ".json");
-        $myfile = fopen($name . ".json", "w") or die("Unable to open file!");
+// Creazione della tabella se non esiste
+try {
+    $config->executeQuery("CREATE TABLE IF NOT EXISTS user_locations (
+        `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+        `group` TEXT NULL,
+        `name` TEXT NULL,
+        `datetime` TEXT NOT NULL,
+        `lat` REAL NOT NULL,
+        `lon` REAL NOT NULL
+    )");
+} catch (Exception $e) {
+    die("Could not create table: " . $e->getMessage());
+}
 
+if ($getset == 'set') {
+    // Sanitize user name
+    $name = mb_ereg_replace("([^\w\s\d\-_~,;$$$$$$.])", '', $name);
+    $datetime = date("Y-m-d H:i:s");
 
-        $ParsedAry = [
-            "name" => $name,
-            "datetime" => $datetime,
+    // Inserimento dei dati nel database
+    try{
+        $config->insert('user_locations', [
+            '`group`' => $group,
+            'name' => $name,
+            'datetime' => $datetime,
             'lat' => $lat,
-            'long' => $long
-        ];
+            'lon' => $lon
+        ]);
 
-        $txt = json_encode($ParsedAry);
-        fwrite($myfile, $txt);
-        fclose($myfile);
+        echo json_encode([
+            'status' => 200
+        ]);
+    } catch (Exception $e) {
+        echo json_encode([
+            'status' => 500,
+            'message' => 'Could not insert data: ' . $e->getMessage()
+        ]);
     }
+}
 
-    if ($getset == 'get') {
-        $i = 0;
-        $response = [];
-        foreach (glob("*.json") as $fileinfo) {
+elseif ($getset == 'get') {
+    $response = [];
+    $stmt = $config->executeQuery("SELECT * FROM user_locations WHERE `group` = ?", [$group]);
+    while ($row = $stmt->fetchAssociative()) {
+        $lastseen = $row['datetime'];
+        $d1 = new DateTime($lastseen);
+        $d2 = new DateTime();
+        $interval = $d2->diff($d1);
+        $minutes = ($interval->days * 24 * 60) + ($interval->h * 60) + $interval->i;
+        $row['minutes'] = $minutes;
 
-            $json = file_get_contents($fileinfo);
-
-            if ($json === false) {
-                die('Error reading the JSON file');
-            }
-
-            $obj = json_decode($json, TRUE);
-
-            if ($obj === null) {
-                die('Error decoding the JSON file');
-            }
-
-            $lastseen = $obj['datetime'];
-            $diff = date_diff(date(), strtotime($lastseen));
-
-            $d1= new DateTime($obj['datetime']); // lasteseen
-            $d2= new DateTime(); // today
-            $interval = $d2->diff($d1);
-            $minutes = ($interval->days * 24 * 60) + ($interval->h * 60) + $interval->i;
-            $obj['minutes']= $minutes;
-
-            if ($minutes<10) {
-                $obj['color']= 'green';
-            }
-
-            if ($minutes>=10) {
-                $obj['color']= 'orange';
-            }
-
-            if ($minutes>60) {
-                $obj['color']= 'grey';
-            }
-
-            if ($minutes>120) {
-                unlink($obj['name'] . ".json");
-            }
-
-            $response[$i] = $obj;
-
-            $i++;
+        if ($minutes < 10) {
+            $row['color'] = 'green';
+        } elseif ($minutes >= 10 && $minutes <= 60) {
+            $row['color'] = 'orange';
+        } else {
+            $row['color'] = 'grey';
         }
-        echo json_encode($response);
+
+        // Rimozione dei dati di geolocalizzazione dopo N minuti
+        if ($minutes > $max_minutes_to_keep) {
+            $config->delete('user_locations', ['id' => $row['id']]);
+        }
+
+        $response[] = $row;
     }
-} elseif ($key == $admin_api_key) {
-    foreach (glob("*.json") as $filename) {
-        unlink($filename);
-    }
+    echo json_encode($response);
 } else {
-    echo "Wrong api key";
+    echo json_encode([
+        'status' => 400,
+        'message' => 'Invalid request'
+    ]);
 }

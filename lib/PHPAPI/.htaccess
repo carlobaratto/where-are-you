@@ -1,0 +1,3 @@
+<FilesMatch "\.sqlite$">
+    Deny from all
+</FilesMatch>
