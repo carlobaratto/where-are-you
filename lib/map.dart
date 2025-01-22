@@ -15,6 +15,7 @@ class API {
       body: {
         'apikey': global.userApikey,
         'getset': 'get',
+        'group': global.userApikey,
       },
     );
   }
@@ -211,7 +212,6 @@ class Posizione {
         long = json['long'],
         minutes = json['minutes'],
         color = json['color'];
-
   Map<String, dynamic> toJson() {
     return {'name': name, 'datetime': datetime, 'lat': lat, 'long': long, 'minutes': minutes, 'color': color};
   }

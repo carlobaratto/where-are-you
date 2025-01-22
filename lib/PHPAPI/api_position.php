@@ -10,7 +10,7 @@ use Doctrine\DBAL\Exception;
 try{
     $config = DriverManager::getConnection([
         'driver' => 'pdo_sqlite',
-        'path' => $db_file
+        'path' => $dbFile
     ]);
 } catch (Exception $e) {
     die("Could not connect to database: " . $e->getMessage());
@@ -22,7 +22,7 @@ $getset = $_POST['getset'];
 $group  = $_POST['group'];
 $name   = $_POST['name'];
 $lat    = $_POST['lat'];
-$lon    = $_POST['lon'];
+$lon    = $_POST['long'];
 
 if ($key != $user_api_key) {
     die( json_encode([
@@ -53,7 +53,7 @@ if ($getset == 'set') {
     // Inserimento dei dati nel database
     try{
         $config->insert('user_locations', [
-            '`group`' => $group,
+            'group' => $group,
             'name' => $name,
             'datetime' => $datetime,
             'lat' => $lat,
@@ -98,6 +98,7 @@ elseif ($getset == 'get') {
         $response[] = $row;
     }
     echo json_encode($response);
+
 } else {
     echo json_encode([
         'status' => 400,

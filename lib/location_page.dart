@@ -25,6 +25,7 @@ Future<void> syncPosition(String lat, String long) async {
       'name': global.name,
       'lat': lat,
       'long': long,
+      'group': global.userApikey,
     });
 }
 

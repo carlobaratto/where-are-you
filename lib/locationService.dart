@@ -120,6 +120,7 @@ class LocationService {
         'name': global.name,
         'lat': lat,
         'long': long,
+        'group': global.userApikey,
       },
     );
     print(response);
