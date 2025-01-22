@@ -102,8 +102,8 @@ class _MyListScreenPositionState extends State<MyListScreenPosition> {
             FlutterMap(
               options: MapOptions(
                 initialCenter: latLng.LatLng(
-                  double.parse(posizioni[0].lat),
-                  double.parse(posizioni[0].long),
+                  posizioni[0].lat,
+                  posizioni[0].long,
                 ),
                 initialZoom: 15,
               ),
@@ -117,8 +117,8 @@ class _MyListScreenPositionState extends State<MyListScreenPosition> {
                     for (var posizione in posizioni)
                       Marker(
                         point: latLng.LatLng(
-                          double.parse(posizione.lat),
-                          double.parse(posizione.long),
+                          posizione.lat,
+                          posizione.long,
                         ),
                         width: 100,
                         height: 100,
@@ -200,8 +200,8 @@ class _MyListScreenPositionState extends State<MyListScreenPosition> {
 class Posizione {
   final String name;
   final String datetime;
-  final String lat;
-  final String long;
+  final double lat;
+  final double long;
   final String color;
   final int minutes;
 
@@ -209,7 +209,7 @@ class Posizione {
       : name = json['name'],
         datetime = json['datetime'],
         lat = json['lat'],
-        long = json['long'],
+        long = json['lon'],
         minutes = json['minutes'],
         color = json['color'];
   Map<String, dynamic> toJson() {

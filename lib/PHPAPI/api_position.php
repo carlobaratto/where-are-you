@@ -53,7 +53,7 @@ if ($getset == 'set') {
     // Inserimento dei dati nel database
     try{
         $config->insert('user_locations', [
-            'group' => $group,
+            '`group`' => $group,
             'name' => $name,
             'datetime' => $datetime,
             'lat' => $lat,
