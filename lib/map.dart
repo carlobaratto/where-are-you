@@ -15,7 +15,7 @@ class API {
       body: {
         'apikey': global.userApikey,
         'getset': 'get',
-        'group': global.userApikey,
+        'group': global.group,
       },
     );
   }

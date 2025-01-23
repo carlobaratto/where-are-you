@@ -18,14 +18,14 @@ class _settingsState extends State<settings> {
   final nameController = TextEditingController();
   final api_url_Controller = TextEditingController();
   final user_api_Controller = TextEditingController();
-  final admin_api_Controller = TextEditingController();
+  final group_Controller = TextEditingController();
 
-  Future<void> _insertSettings(name, apiUrl, userApikey, adminApikey) async {
+  Future<void> _insertSettings(name, apiUrl, userApikey, group) async {
     final SharedPreferences prefs = await _prefs;
     prefs.setString('name', name);
     prefs.setString('apiUrl', apiUrl);
     prefs.setString('userApikey', userApikey);
-    prefs.setString('adminApikey', adminApikey);
+    prefs.setString('group', group);
     //prefs.clear();
   }
 
@@ -36,13 +36,13 @@ class _settingsState extends State<settings> {
     String name = prefs.getString('name') ?? '';
     String apiUrl = prefs.getString('apiUrl') ?? '';
     String userApikey = prefs.getString('userApikey') ?? '';
-    String adminApikey = prefs.getString('adminApikey') ?? '';
+    String group = prefs.getString('group') ?? '';
 
     setState(() {
       global.name = name;
       global.apiUrl = apiUrl;
       global.userApikey = userApikey;
-      global.adminApikey = adminApikey;
+      global.group = group;
     });
 
     if (global.firsRun == true && global.apiUrl != '') {
@@ -57,7 +57,7 @@ class _settingsState extends State<settings> {
     nameController.text = name;
     api_url_Controller.text = apiUrl;
     user_api_Controller.text = userApikey;
-    admin_api_Controller.text = adminApikey;
+    group_Controller.text = group;
 
   }
 
@@ -126,10 +126,10 @@ class _settingsState extends State<settings> {
                   child: TextField(
                     decoration: InputDecoration(
                       border: const OutlineInputBorder(),
-                      labelText: "Admin API Key (if available)",
+                      labelText: "Group",
                     ),
                     obscureText: true,
-                    controller: admin_api_Controller,
+                    controller: group_Controller,
                   ),
                 ),
               ),
@@ -137,7 +137,7 @@ class _settingsState extends State<settings> {
               ElevatedButton(
                 style: ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20)),
                 onPressed: () {
-                  _insertSettings(nameController.text, api_url_Controller.text, user_api_Controller.text, admin_api_Controller.text);
+                  _insertSettings(nameController.text, api_url_Controller.text, user_api_Controller.text, group_Controller.text);
                   setState(() {
                     _readSettings();
                   });

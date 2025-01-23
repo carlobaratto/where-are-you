@@ -7,6 +7,8 @@ import 'globals.dart' as global;
 import 'locationService.dart';
 import 'locationServiceHandler.dart';
 
+const List<String> list = <String>['One', 'Two', 'Three', 'Four']; //TODO Prendere i valori da colonna "group" del db
+
 class LocationPage extends StatefulWidget {
   const LocationPage({super.key});
 
@@ -25,19 +27,8 @@ Future<void> syncPosition(String lat, String long) async {
       'name': global.name,
       'lat': lat,
       'long': long,
-      'group': global.userApikey,
+      'group': global.group,
     });
-}
-
-Future<void>removePosition() async {
-
-  final response = await http.post(
-      Uri.parse(global.apiUrl),
-
-      body: {
-        'apikey': global.adminApikey,
-        'getset' : 'set',
-      });
 }
 
 class _LocationPageState extends State<LocationPage> {
@@ -163,19 +154,56 @@ class _LocationPageState extends State<LocationPage> {
                 },
               ),
               const SizedBox(height: 30),
-              if (global.adminApikey != '')
-                ElevatedButton(
+              Text('Group selection'), //TODO Spostare il selettori gruppo su mappa
+              ElevatedButton(
                   onPressed: () async {
-                    removePosition();
                     ScaffoldMessenger.of(context)
                         .showSnackBar(SnackBar(content: Text("All location deleted")));
                   },
-                  child: const Text("Delete existing positions"),
+                  child: DropdownButtonExample(),
                 ),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class DropdownButtonExample extends StatefulWidget {
+  const DropdownButtonExample({super.key});
+
+  @override
+  State<DropdownButtonExample> createState() => _DropdownButtonExampleState();
+}
+
+class _DropdownButtonExampleState extends State<DropdownButtonExample> {
+
+  String dropdownValue = list.first;
+
+  @override
+  Widget build(BuildContext context) {
+    return DropdownButton<String>(
+      value: dropdownValue,
+      icon: const Icon(Icons.arrow_downward),
+      elevation: 16,
+      style: const TextStyle(color: Colors.deepPurple),
+      underline: Container(
+        height: 2,
+        color: Colors.deepPurpleAccent,
+      ),
+      onChanged: (String? value) {
+        // This is called when the user selects an item.
+        setState(() {
+          dropdownValue = value!;
+        });
+      },
+      items: list.map<DropdownMenuItem<String>>((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value),
+        );
+      }).toList(),
     );
   }
 }
