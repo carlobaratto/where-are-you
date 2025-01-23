@@ -24,11 +24,8 @@ You can view your control panel to control your location and activate/disable sh
 - **3 visual indicator:**
 
 Green: user seen less than 10 minutes ago,
-
 Orange: user seen between 11 and 60 minutes ago,
-
 Grey: user seen more than 60 minutes ago,
-
 After 120 minutes the marker will disappear.
 
 - **Self-hosting:**
