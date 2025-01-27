@@ -2,6 +2,16 @@
 
 Questa API permette di scrivere e leggere le posizioni degli utenti. E' possibile eseguire chiamate HTTP per inserire nuove posizioni (set) e recuperare le posizioni esistenti (get).
 
+
+## Configurazione
+
+Prima di eseguire i test sulle API, devi duplicare il file `config.sample.php` e rinominarlo in `config.inc.php`, definendo:
+ - `$dbFile`: percorso del file di database (default: ./db.sqlite)
+ - `$max_minutes_to_keep`: per quanti minuti mantenere la geolocalizzazione salvata a database (default: 5)
+ - `$user_api_key`: chiave con la quale eseguire le chiamate alle API
+ - `$admin_api_key`: chiave con la quale eseguire chiamate API speciali come amministratore
+
+
 ## Esempi di chiamate HTTP
 
 ### Set
