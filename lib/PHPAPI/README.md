@@ -1,57 +1,66 @@
 # API Position
 
-Questa API permette di scrivere e leggere le posizioni degli utenti. E' possibile eseguire chiamate HTTP per inserire nuove posizioni (set) e recuperare le posizioni esistenti (get).
+This API allows you to write and read user locations. You can make HTTP calls to insert new locations (set) and retrieve existing locations (get).
 
-## Esempi di chiamate HTTP
+## Configuration
+
+Before testing the APIs, you need to duplicate the file `config.sample.php` and rename it to `config.inc.php`, defining:
+ - `$dbFile`: path to the database file (default: ./db.sqlite)
+ - `$max_minutes_to_keep`: how many minutes to keep the geolocation saved in the database (default: 5)
+ - `$user_api_key`: key to make API calls
+ - `$admin_api_key`: key to make special API calls as an administrator
+
+## Examples of HTTP Calls
 
 ### Set
 
-Per inserire una nuova posizione, è possibile eseguire una chiamata HTTP POST al seguente indirizzo:
+To insert a new location, you can make an HTTP POST call to the following address:
 ```
-http://indirizzo-tuo-server/lib/PHPAPI/api_position.php
+http://your-server-address/lib/PHPAPI/api_position.php
 ```
-con i seguenti parametri:
+with the following parameters:
 
-* `apikey`: la chiave API dell'utente (da `config.inc.php`)
-* `getset`: deve essere impostato su "set"
-* `group`: il gruppo di appartenenza scelto dell'utente
-* `name`: il nome dell'utente
-* `lat`: la latitudine della posizione
-* `lon`: la longitudine della posizione
+* `apikey`: the user's API key (from `config.inc.php`)
+* `getset`: must be set to "set"
+* `group`: the chosen user group
+* `name`: the user's name
+* `lat`: the latitude of the location
+* `lon`: the longitude of the location
 
-Esempio di chiamata HTTP:
+Example of an HTTP call:
 ```bash
 curl -X POST \
-  http://indirizzo-tuo-server/lib/PHPAPI/api_position.php \
+  http://your-server-address/lib/PHPAPI/api_position.php \
   -H 'Content-Type: application/x-www-form-urlencoded' \
-  -d 'apikey=IDDKFA&getset=set&group=Amici&name=Mario&lat=45.123456&lon=9.123456'
+  -d 'apikey=IDDKFA&getset=set&group=Friends&name=Mario&lat=45.123456&lon=9.123456'
 ```
+
 ### Get
 
-Per recuperare le posizioni esistenti, è possibile eseguire una chiamata HTTP POST al seguente indirizzo:
+To retrieve existing locations, you can make an HTTP POST call to the following address:
 ```
-http://indirizzo-tuo-server/lib/PHPAPI/api_position.php
+http://your-server-address/lib/PHPAPI/api_position.php
 ```
-con i seguenti parametri:
+with the following parameters:
 
-* `apikey`: la chiave API dell'utente (da `config.inc.php`)
-* `getset`: deve essere impostato su "get"
-* `group`: il gruppo di appartenenza scelto dall'utente
+* `apikey`: the user's API key (from `config.inc.php`)
+* `getset`: must be set to "get"
+* `group`: the chosen user group
 
-Esempio di chiamata HTTP:
+Example of an HTTP call:
 ```bash
 curl -X POST \
-  http://indirizzo-tuo-server/lib/PHPAPI/api_position.php \
+  http://your-server-address/lib/PHPAPI/api_position.php \
   -H 'Content-Type: application/x-www-form-urlencoded' \
-  -d 'apikey=IDDKFA&getset=get&group=Amici'
+  -d 'apikey=IDDKFA&getset=get&group=Friends'
 ```
-La risposta sarà un JSON contenente le posizioni esistenti nel gruppo specificato:
+The response will be a JSON containing the existing locations in the specified group:
 
 ```json
 [
   {
     "id": 4,
-    "group": "Amici",
+    "group": "Friends",
     "name": "Mario",
     "datetime": "2025-01-21 22:33:12",
     "lat": 45.123456,
@@ -61,8 +70,8 @@ La risposta sarà un JSON contenente le posizioni esistenti nel gruppo specifica
 ]
 ```
 
-## Note
+## Notes
 
-* La chiave API dell'utente deve essere valida e corrispondente al gruppo di appartenenza.
-* Le posizioni vengono eliminate automaticamente dopo un certo numero di minuti (specificato nella variabile `$max_minutes_to_keep` nel file `config.inc.php`).
-* La risposta della chiamata HTTP get contiene anche un campo `minutes` che indica il numero di minuti trascorsi dall'ultima volta che l'utente è stato visto.
+* The user's API key must be valid and correspond to the chosen group.
+* Locations are automatically deleted after a certain number of minutes (specified in the `$max_minutes_to_keep` variable in the `config.inc.php` file).
+* The response of the get HTTP call also contains a `minutes` field indicating the number of minutes since the user was last seen.
