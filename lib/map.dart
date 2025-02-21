@@ -190,7 +190,7 @@ class _MyListScreenPositionState extends State<MyListScreenPosition> {
               },
               child: Icon(Icons.refresh),
             ),
-          )
+          ),
         ],
       ),
     );
