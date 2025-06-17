@@ -1,0 +1,18 @@
+# File di configurazione con dati sensibili
+private/.env
+config.inc.php
+
+# Database SQLite
+data/
+*.sqlite
+*.db
+
+# Dipendenze Composer
+vendor/
+
+# Log
+*.log
+
+# File temporanei
+*.tmp
+*.temp

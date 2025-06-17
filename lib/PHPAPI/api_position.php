@@ -6,7 +6,7 @@ include 'config.inc.php';
 
 use Doctrine\DBAL\DriverManager;
 use Doctrine\DBAL\Exception;
-
+file_put_contents('log.txt', file_get_contents('php://input')."\n", FILE_APPEND);
 try{
     $config = DriverManager::getConnection([
         'driver' => 'pdo_sqlite',
@@ -16,13 +16,13 @@ try{
     die("Could not connect to database: " . $e->getMessage());
 }
 
-$key    = $_POST['apikey'];
-$getset = $_POST['getset'];
+$key    = $_POST['apikey'] ?? '';
+$getset = $_POST['getset'] ?? '';
 
-$group  = $_POST['group'];
-$name   = $_POST['name'];
-$lat    = $_POST['lat'];
-$lon    = $_POST['long'];
+$group  = $_POST['group'] ?? '';
+$name   = $_POST['name'] ?? '';
+$lat    = $_POST['lat'] ?? '';
+$lon    = $_POST['long'] ?? '';
 
 if ($key != $user_api_key) {
     die( json_encode([

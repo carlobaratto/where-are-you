@@ -2,13 +2,48 @@
 
 This API allows you to write and read user locations. You can make HTTP calls to insert new locations (set) and retrieve existing locations (get).
 
-## Configuration
+## 🐳 Quick Start with Docker
 
-Before testing the APIs, you need to duplicate the file `config.sample.php` and rename it to `config.inc.php`, defining:
+For the easiest setup, use Docker:
+
+```bash
+# 1. Copy environment variables template
+cp .env.example .env
+
+# 2. Edit .env with your configuration
+nano .env
+
+# 3. Generate PHP configuration file
+./generate-config.sh
+
+# 4. Start the services
+docker compose up -d --build
+```
+
+The API will be available at `http://localhost:8080`
+
+📖 **For detailed Docker instructions, see [README.docker.md](README.docker.md)**
+🔒 **For security configuration details, see [README-SECURITY.md](README-SECURITY.md)**
+
+## Manual Configuration (Traditional Setup)
+
+If you prefer not to use Docker, you need to duplicate the file `private/config.sample.php` and rename it to `config.inc.php`, defining:
  - `$dbFile`: path to the database file (default: ./db.sqlite)
  - `$max_minutes_to_keep`: how many minutes to keep the geolocation saved in the database (default: 5)
  - `$user_api_key`: key to make API calls
  - `$admin_api_key`: key to make special API calls as an administrator
+
+### Environment Variables for Docker
+
+When using Docker, you can configure the application using environment variables in the `.env` file:
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `API_PORT` | Port to expose the API | `8080` |
+| `DB_FILE` | SQLite database file path | `./data/db.sqlite` |
+| `MAX_MINUTES_TO_KEEP` | Minutes to keep geolocation | `5` |
+| `USER_API_KEY` | API key for normal users | `IDDKFA` |
+| `ADMIN_API_KEY` | API key for administrators | `LMFAO` |
 
 ## Examples of HTTP Calls
 

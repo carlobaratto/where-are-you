@@ -1,0 +1,23 @@
+# Ignora file di documentazione
+README*.md
+
+# Ignora file Docker (non necessari nell'immagine)
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Ignora file di configurazione ambiente (verranno gestiti tramite variabili d'ambiente)
+.env
+.env.example
+
+# Ignora script di test e utilità (non necessari nell'immagine)
+private/*
+!private/docker-entrypoint.sh
+
+# Ignora file Git
+.git
+.gitignore
+
+# Ignora file temporanei
+*.tmp
+*.log
