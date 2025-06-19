@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter_foreground_task/flutter_foreground_task.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
-import 'globals.dart' as global;
 import 'locationService.dart';
 
 
@@ -63,7 +62,14 @@ class LocationServiceHandler extends TaskHandler {
   }
 
   @override
+  Future<void> onDestroy(DateTime timestamp, bool isTimeout) {
+    // TODO: implement onDestroy
+    throw UnimplementedError();
+  }
+/*
+  @override
   Future<void> onDestroy(DateTime timestamp) async {
     _timer?.cancel;
   }
+ */
 }

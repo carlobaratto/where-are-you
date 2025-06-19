@@ -3,17 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:where_are_you/locationService.dart';
 import 'package:where_are_you/main.dart';
-import 'package:where_are_you/map.dart';
 import 'globals.dart' as global;
 
 class settings extends StatefulWidget {
   const settings({super.key});
 
   @override
-  _settingsState createState() => _settingsState();
+  _SettingsState createState() => _SettingsState();
 }
 
-class _settingsState extends State<settings> {
+class _SettingsState extends State<settings> {
   final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
   final nameController = TextEditingController();
   final api_url_Controller = TextEditingController();
