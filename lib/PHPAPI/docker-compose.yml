@@ -1,0 +1,37 @@
+services:
+  phpapi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: where-are-you-phpapi
+    ports:
+      - "${API_PORT:-8080}:80"
+    volumes:
+      # Volume persistente per il database SQLite
+      - ./data:/var/www/html/data
+    environment:
+      # Variabili d'ambiente per PHP
+      - APACHE_DOCUMENT_ROOT=/var/www/html
+      - APACHE_LOG_DIR=/var/log/apache2
+      # Configurazione API
+      - DB_FILE=./data/db.sqlite
+      - MAX_MINUTES_TO_KEEP=${MAX_MINUTES_TO_KEEP:-5}
+      - USER_API_KEY=${USER_API_KEY:-IDDKFA}
+      - ADMIN_API_KEY=${ADMIN_API_KEY:-LMFAO}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/api_position.php"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - phpapi-network
+
+networks:
+  phpapi-network:
+    driver: bridge
+
+volumes:
+  phpapi-data:
+    driver: local

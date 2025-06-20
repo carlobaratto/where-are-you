@@ -1,3 +1,108 @@
-<FilesMatch "\.sqlite$">
-    Deny from all
+# ========================================
+# CONFIGURAZIONE SICUREZZA - WHERE ARE YOU API
+# ========================================
+# Blocca l'accesso a tutto tranne api_position.php
+
+# Disabilita completamente il directory listing e funzionalità pericolose
+# Manteniamo FollowSymLinks per permettere RewriteRule ma disabilitiamo tutto il resto
+Options -Indexes +FollowSymLinks -ExecCGI -Includes -MultiViews
+
+# Blocca l'accesso a tutti i file per default
+<Files "*">
+    Require all denied
+</Files>
+
+# Permetti l'accesso solo a api_position.php
+<Files "api_position.php">
+    Require all granted
+</Files>
+
+# ========================================
+# BLOCCO FILE SENSIBILI SPECIFICI
+# ========================================
+
+# Blocca file di configurazione
+<FilesMatch "\.(inc|conf|config)\.php$">
+    Require all denied
 </FilesMatch>
+
+# Blocca file di ambiente e configurazione
+<FilesMatch "^(\.env|\.env\..*|config\..*|composer\..*)$">
+    Require all denied
+</FilesMatch>
+
+# Blocca file di documentazione
+<FilesMatch "\.(md|txt|log)$">
+    Require all denied
+</FilesMatch>
+
+# Blocca script shell
+<FilesMatch "\.(sh|bash)$">
+    Require all denied
+</FilesMatch>
+
+# Blocca file Docker
+<FilesMatch "^(Dockerfile|docker-compose\.yml|\.dockerignore)$">
+    Require all denied
+</FilesMatch>
+
+# Blocca file di database
+<FilesMatch "\.(sqlite|db|sql)$">
+    Require all denied
+</FilesMatch>
+
+# ========================================
+# BLOCCO CARTELLE SENSIBILI
+# ========================================
+
+# Blocca accesso alle cartelle sensibili tramite RewriteRule
+RewriteEngine On
+
+# Blocca accesso alla cartella private
+RewriteRule ^private/ - [F,L]
+
+# Blocca accesso alla cartella data
+RewriteRule ^data/ - [F,L]
+
+# Blocca accesso alla cartella vendor (se presente)
+RewriteRule ^vendor/ - [F,L]
+
+# ========================================
+# SICUREZZA AGGIUNTIVA
+# ========================================
+
+# Previene l'accesso tramite metodi HTTP non standard
+<LimitExcept GET POST>
+    Require all denied
+</LimitExcept>
+
+# Blocca l'accesso a file nascosti (che iniziano con .)
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+# Blocca tentativi di accesso a file di backup
+<FilesMatch "\.(bak|backup|old|orig|save|swp|tmp)$">
+    Require all denied
+</FilesMatch>
+
+# Blocca file potenzialmente pericolosi
+<FilesMatch "\.(php~|php\.bak|php\.old|php\.orig)$">
+    Require all denied
+</FilesMatch>
+
+# Protezione contro attacchi di directory traversal
+RewriteCond %{THE_REQUEST} \s/+[^\s]*\.\./ [NC]
+RewriteRule ^ - [F,L]
+
+# Blocca User-Agent sospetti (solo per file diversi da api_position.php)
+# Escludi curl per permettere test e monitoraggio
+RewriteCond %{HTTP_USER_AGENT} ^$ [OR]
+RewriteCond %{HTTP_USER_AGENT} (bot|crawler|spider|scraper) [NC]
+RewriteCond %{HTTP_USER_AGENT} !curl [NC]
+RewriteRule ^(?!api_position\.php$) - [F,L]
+
+# Messaggio di errore personalizzato (senza rivelare informazioni)
+ErrorDocument 403 "Accesso negato"
+ErrorDocument 404 "Non trovato"
+ErrorDocument 500 "Errore interno"
