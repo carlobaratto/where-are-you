@@ -1,8 +1,12 @@
 .DS_Store
-/ios/
-/android/
+ios/
+android/
 lib/PHPAPI/config.inc.php
 lib/PHPAPI/db.sqlite
 vendor
 composer.lock
 composer.phar
+build/
+.dart_tool/
+.idea/
+.flutter-plugins-dependencies
