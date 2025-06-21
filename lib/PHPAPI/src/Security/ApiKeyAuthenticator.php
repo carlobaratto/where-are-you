@@ -21,13 +21,12 @@ class ApiKeyAuthenticator extends AbstractAuthenticator
      */
     public function supports(Request $request): ?bool
     {
-        // "auth-token" is an example of a custom, non-standard HTTP header used in this application
-        return $request->headers->has('auth-token');
+        return true;
     }
 
     public function authenticate(Request $request): Passport
     {
-        $apiToken = $request->headers->get('auth-token');
+        $apiToken = $request->headers->get('X-AUTH-TOKEN');
         if (null === $apiToken) {
             // The token header was empty, authentication fails with HTTP Status
             // Code 401 "Unauthorized"

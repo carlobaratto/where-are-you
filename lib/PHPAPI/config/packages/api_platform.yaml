@@ -6,3 +6,8 @@ api_platform:
         cache_headers:
             vary: ['Content-Type', 'Authorization', 'Origin']
     use_symfony_listeners: true
+    swagger:
+        api_keys: 
+            AUTH:
+                name: X-AUTH-TOKEN
+                type: header

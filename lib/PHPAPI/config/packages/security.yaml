@@ -1,19 +1,28 @@
 security:
+    expose_security_errors: 'all'
     # https://symfony.com/doc/current/security.html#registering-the-user-hashing-passwords
     password_hashers:
         Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
     # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
     providers:
         users_in_memory: { memory: null }
+        app_user_provider:
+            id: App\Security\UserProvider
     firewalls:            
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
+        api:
+            lazy: true
+            provider: app_user_provider
+            pattern: ^/api/
+            custom_authenticators:
+                - App\Security\ApiKeyAuthenticator
+            stateless: true
         main:
             lazy: true
             provider: users_in_memory
-            custom_authenticators:
-                - App\Security\ApiKeyAuthenticator
+
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
 
