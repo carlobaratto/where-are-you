@@ -4,14 +4,12 @@ This API allows you to write and read user locations. You can make HTTP calls to
 
 ## 🐳 Quick Start with Docker
 
-For the easiest setup, use Docker:
+For the easiest setup, use Docker after updating the configuration of `.env.docker`:
 
 ```bash
-# 1. Copy environment variables template
-symfony console doctrine:database:create
-symfony console doctrine:schema:create
-
-# 4. Start the services
+# Build
+docker compose build --no-cache
+# Start
 docker compose up -d --build
 ```
 
@@ -20,6 +18,9 @@ The API will be available at `http://localhost:8080`.
 You can also start the API `http://127.0.0.1:8080` via:
 
 ```bash
+symfony console doctrine:database:create
+symfony console doctrine:schema:create
+
 symfony serve
 # To stop:
 symfony server:stop
