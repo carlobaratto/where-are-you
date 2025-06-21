@@ -8,19 +8,22 @@ For the easiest setup, use Docker:
 
 ```bash
 # 1. Copy environment variables template
-cp .env.example .env
-
-# 2. Edit .env with your configuration
-nano .env
-
-# 3. Generate PHP configuration file
-./generate-config.sh
+symfony console doctrine:database:create
+symfony console doctrine:schema:create
 
 # 4. Start the services
 docker compose up -d --build
 ```
 
-The API will be available at `http://localhost:8080`
+The API will be available at `http://localhost:8080`.
+
+You can also start the API `http://127.0.0.1:8080` via:
+
+```bash
+symfony serve
+# To stop:
+symfony server:stop
+```
 
 📖 **For detailed Docker instructions, see [README.docker.md](README.docker.md)**
 🔒 **For security configuration details, see [README-SECURITY.md](README-SECURITY.md)**
