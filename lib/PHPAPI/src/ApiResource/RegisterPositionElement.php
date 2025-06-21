@@ -9,7 +9,7 @@ class RegisterPositionElement
 {
     public string $name = '';
 
-    public int $lat = 0;
+    public float $lat = 0.0;
 
-    public int $lon = 0;
+    public float $lon = 0.0;
 }
