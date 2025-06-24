@@ -39,7 +39,7 @@ class _SettingsState extends State<settings> {
 
     setState(() {
       global.name = name;
-      global.apiUrl = apiUrl;
+      global.apiUrl = apiUrl.replaceAll(RegExp(r'/+$'), '');
       global.userApikey = userApikey;
       global.group = group;
     });

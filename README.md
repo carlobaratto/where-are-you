@@ -35,8 +35,8 @@ you don't have to register an account to use WhereAreYou. You can simply downloa
 
 ## How it works
 1. Download and install **WhereAreYou** on your phone.
-2. From the directory `/lib/PHPAPI/`, copy `config.sample.php` to `config.inc.php`, taking care to edit `$user_api_key` and `$admin_api_key`. User API key should be shared ONLY to people you want to share position with.
-3. Upload both on your server.
+2. From the directory `/lib/PHPAPI/`, follow instructions for the setup. User API key should be shared ONLY to people you want to share position with.
+3. Upload `/lib/PHPAPI/` on your server.
 4. Set up the app on your mobile phone by entering your nickname, API URL and the user API key set. Admin API key is optional.
 5. Start sharing your location with anyone have the same API URL and user API key.
 6. Use the control panel to control your location and turn on/off sharing.
@@ -50,6 +50,9 @@ The tests are carried out by the **[ILS Este Group](https://este.linux.it/)**.
 
 To contribute or participate in the project, write to whereareyou@carlobaratto.it
 
+To update the OpenAPI models:
+- Generate the JSON file from `/lib/PHPAPI/`
+- Run `npx @openapitools/openapi-generator-cli generate -i PHPAPI/open-api.json -g dart -o generated_full && mv generated_full/lib generated && rm -rf generated_full`
 
 ## TODO
 - [ ] Adjust the size of the markers dynamically

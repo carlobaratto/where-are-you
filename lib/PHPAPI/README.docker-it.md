@@ -11,20 +11,11 @@ Questa guida spiega come eseguire l'API PHP "Where Are You" utilizzando Docker e
 
 ### 1. Preparazione delle variabili d'ambiente
 
-Copia il file di esempio delle variabili d'ambiente:
+Modifica il file `.env.docker` con le tue configurazioni:
 
 ```bash
-cp .env.example .env
-```
-
-Modifica il file `.env` con le tue configurazioni:
-
-```bash
-# Porta su cui esporre l'API (default: 8080)
-API_PORT=8080
-
-# Percorso del file database SQLite (relativo al container)
-DB_FILE=./data/db.sqlite
+APP_ENV=prod
+APP_SECRET=
 
 # Numero massimo di minuti per mantenere la geolocalizzazione
 MAX_MINUTES_TO_KEEP=5
@@ -36,17 +27,7 @@ USER_API_KEY=la_tua_chiave_utente
 ADMIN_API_KEY=la_tua_chiave_admin
 ```
 
-### 2. Generazione del file di configurazione PHP
-
-Esegui lo script per generare il file `config.inc.php`:
-
-```bash
-./generate-config.sh
-```
-
-Questo script leggerà le variabili dal file `.env` e creerà automaticamente il file `config.inc.php` necessario all'applicazione PHP.
-
-### 3. Avvio dei servizi
+### 2. Avvio dei servizi
 
 Costruisci e avvia i container:
 
@@ -97,37 +78,14 @@ docker compose up -d
 
 | Variabile | Descrizione | Default |
 |-----------|-------------|---------|
-| `API_PORT` | Porta su cui esporre l'API | `8080` |
-| `DB_FILE` | Percorso del database SQLite | `./data/db.sqlite` |
 | `MAX_MINUTES_TO_KEEP` | Minuti per mantenere la geolocalizzazione | `5` |
 | `USER_API_KEY` | Chiave API per utenti normali | `IDDKFA` |
 | `ADMIN_API_KEY` | Chiave API per amministratori | `LMFAO` |
 
-## Test dell'API
-
-Una volta avviati i servizi, puoi testare l'API:
-
-### Inserimento di una posizione (SET)
-
-```bash
-curl -X POST \
-  http://localhost:8080/api_position.php \
-  -H 'Content-Type: application/x-www-form-urlencoded' \
-  -d 'apikey=la_tua_chiave_utente&getset=set&group=Amici&name=Mario&lat=45.123456&lon=9.123456'
-```
-
-### Recupero delle posizioni (GET)
-
-```bash
-curl -X POST \
-  http://localhost:8080/api_position.php \
-  -H 'Content-Type: application/x-www-form-urlencoded' \
-  -d 'apikey=la_tua_chiave_utente&getset=get&group=Amici'
-```
 
 ## Persistenza dei dati
 
-Il database SQLite è memorizzato nella directory `./data/` che viene montata come volume Docker. I dati persisteranno anche dopo il riavvio dei container.
+Il database SQLite è memorizzato nella directory `./var/` che viene montata come volume Docker. I dati persisteranno anche dopo il riavvio dei container.
 
 ## Risoluzione dei problemi
 
@@ -152,7 +110,7 @@ Se riscontri errori di permessi sul file SQLite:
 docker compose down
 
 # Correggi i permessi
-sudo chown -R $USER:$USER ./data/
+sudo chown -R $USER:$USER ./var/
 
 # Riavvia i servizi
 docker compose up -d
@@ -160,11 +118,11 @@ docker compose up -d
 
 ### Modificare la configurazione
 
-Dopo aver modificato il file `.env`:
+Dopo aver modificato il file `.env.docker`:
 
-1. Rigenera il file di configurazione:
+1. Rigenera l'immagine Docker:
    ```bash
-   ./generate-config.sh
+   docker compose build --no-cache
    ```
 
 2. Riavvia i servizi:

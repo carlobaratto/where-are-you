@@ -7,17 +7,30 @@ import 'globals.dart' as global;
 import 'package:latlong2/latlong.dart' as latLng;
 import 'dart:async';
 import 'settings.dart';
+import 'generated/api.dart';
+import 'apiKeyCustomAuth.dart';
 
 class API {
-  static Future<http.Response> getPosition() {
-    return http.post(
-      Uri.parse(global.apiUrl),
-      body: {
-        'apikey': global.userApikey,
-        'getset': 'get',
-        'group': global.group,
-      },
+  static Future<PositionsJsonld?> getPosition() {
+    final auth = ApiKeyCustomAuth(apiToken: global.userApikey);
+    final api_instance = ApiClient(
+      basePath: global.apiUrl,
+      authentication: auth,
     );
+    final positions_api = PositionsApi(api_instance);
+
+    try {
+        final result = positions_api.apiPositionsGroupNameGet(global.group);
+        print(result);
+
+        return result;
+    } catch (e) {
+        print('Exception when calling PositionsApi->apiPositionsGroupNameGet: $e\n');
+    }
+
+    return (() async {
+      return PositionsJsonld();
+    })();
   }
 }
 
@@ -45,7 +58,7 @@ class MyListScreenPosition extends StatefulWidget {
 }
 
 class _MyListScreenPositionState extends State<MyListScreenPosition> {
-  var posizioni = <Posizione>[];
+  var posizioni = <PositionRecordResponseJsonld>[];
   Timer? _timer;
 
   void _checkApiUrlAndRedirect() {
@@ -62,15 +75,12 @@ class _MyListScreenPositionState extends State<MyListScreenPosition> {
 
   void _getPosizione() {
     API.getPosition().then((response) {
-      if (response.statusCode == 200) {
+      if (response != null && response.positions.isNotEmpty) {
         setState(() {
-          Iterable list = json.decode(response.body);
-          posizioni = list.map((model) => Posizione.fromJson(model)).toList();
+          posizioni = response.positions;
         });
-
       } else {
-        // Gestire errore
-        print('Errore: ${response.statusCode}');
+        print('Errore: nessuna posizione trovata');
       }
     }).catchError((error) {
       print('Errore di rete: $error');
@@ -102,8 +112,8 @@ class _MyListScreenPositionState extends State<MyListScreenPosition> {
             FlutterMap(
               options: MapOptions(
                 initialCenter: latLng.LatLng(
-                  posizioni[0].lat,
-                  posizioni[0].long,
+                  double.parse(posizioni[0].lat),
+                  double.parse(posizioni[0].lon),
                 ),
                 initialZoom: 15,
               ),
@@ -117,8 +127,8 @@ class _MyListScreenPositionState extends State<MyListScreenPosition> {
                     for (var posizione in posizioni)
                       Marker(
                         point: latLng.LatLng(
-                          posizione.lat,
-                          posizione.long,
+                          double.parse(posizione.lat),
+                          double.parse(posizione.lon),
                         ),
                         width: 100,
                         height: 100,
@@ -196,25 +206,3 @@ class _MyListScreenPositionState extends State<MyListScreenPosition> {
     );
   }
 }
-
-class Posizione {
-  final String name;
-  final String datetime;
-  final double lat;
-  final double long;
-  final String color;
-  final int minutes;
-
-  Posizione.fromJson(Map<String, dynamic> json)
-      : name = json['name'],
-        datetime = json['datetime'],
-        lat = json['lat'],
-        long = json['lon'],
-        minutes = json['minutes'],
-        color = json['color'];
-  Map<String, dynamic> toJson() {
-    return {'name': name, 'datetime': datetime, 'lat': lat, 'long': long, 'minutes': minutes, 'color': color};
-  }
-}
-
-

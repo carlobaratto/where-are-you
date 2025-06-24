@@ -1,0 +1,13 @@
+api_platform:
+    title: Where Are You?
+    version: 1.0.0
+    defaults:
+        stateless: true
+        cache_headers:
+            vary: ['Content-Type', 'Authorization', 'Origin']
+    use_symfony_listeners: true
+    swagger:
+        api_keys: 
+            AUTH:
+                name: X-AUTH-TOKEN
+                type: header

@@ -6,6 +6,8 @@ import 'package:http/http.dart' as http;
 import 'globals.dart' as global;
 import 'locationService.dart';
 import 'locationServiceHandler.dart';
+import 'generated/api.dart';
+import 'apiKeyCustomAuth.dart';
 
 const List<String> list = <String>['One', 'Two', 'Three', 'Four']; //TODO Prendere i valori da colonna "group" del db
 
@@ -17,6 +19,25 @@ class LocationPage extends StatefulWidget {
 }
 
 Future<void> syncPosition(String lat, String long) async {
+  final auth = ApiKeyCustomAuth(apiToken: global.userApikey);
+  final api_instance = ApiClient(
+    basePath: global.apiUrl,
+    authentication: auth,
+  );
+  final positions_api = RegisterPositionApi(api_instance);
+
+  try {
+    positions_api.apiPositionsregisterGroupNamePost(global.group, 
+      RegisterPositionJsonld(
+        position: RegisterPositionElementJsonld(
+          name: global.name,
+          lat: lat,
+          lon: long,
+        ),
+      ));
+  } catch (e) {
+      print('Exception when calling PositionsApi->apiPositionsGroupNameGet: $e\n');
+  }
 
   final response = await http.post(
     Uri.parse(global.apiUrl),

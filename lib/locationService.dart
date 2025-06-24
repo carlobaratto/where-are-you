@@ -3,6 +3,8 @@ import 'package:geolocator/geolocator.dart';
 import 'locationServiceHandler.dart';
 import 'globals.dart' as global;
 import 'package:http/http.dart' as http;
+import 'generated/api.dart';
+import 'apiKeyCustomAuth.dart';
 
 class LocationService {
   LocationService._();
@@ -107,22 +109,27 @@ class LocationService {
     final location = data.split("|");
 
     syncPosition(location[0], location[1]);
-
   }
 
   Future<void> syncPosition(String lat, String long) async {
-    final response = await http.post(
-      Uri.parse(global.apiUrl),
-      body: {
-        'apikey': global.userApikey,
-        'getset': 'set',
-        'name': global.name,
-        'lat': lat,
-        'long': long,
-        'group': global.userApikey,
-      },
+    final auth = ApiKeyCustomAuth(apiToken: global.userApikey);
+    final api_instance = ApiClient(
+      basePath: global.apiUrl,
+      authentication: auth,
     );
-    print(response);
-  }
+    final positions_api = RegisterPositionApi(api_instance);
 
+    try {
+      positions_api.apiPositionsregisterGroupNamePost(global.group, 
+        RegisterPositionJsonld(
+          position: RegisterPositionElementJsonld(
+            name: global.name,
+            lat: lat,
+            lon: long,
+          ),
+        ));
+    } catch (e) {
+      print('Exception when calling RegisterPositionApi->apiPositionsregisterGroupNamePost: $e\n');
+    }
+  }
 }
