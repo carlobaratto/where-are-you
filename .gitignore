@@ -868,3 +868,4 @@ build/
 .dart_tool/
 .idea/
 .flutter-plugins-dependencies
+lib/PHPAPI/db.sqlite
